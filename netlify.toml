@@ -1,6 +1,6 @@
 [build]
 publish = ""
-command = "npm install -g gulp-cli && npm run assemble"
+command = "npm install -g gulp-cli && gulp build && npm run assemble"
 
 [build.environment]
 NODE_VERSION = "12.18.3"
