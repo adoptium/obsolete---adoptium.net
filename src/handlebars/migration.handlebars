@@ -9,15 +9,15 @@
 
     <div class="anchor">
       <a href="#migration-overview" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><a id="migration-overview">Migrating to AdoptOpenJDK</a></h2>
+      <h2 class="bold"><a id="migration-overview">Migrating to Adoptium</a></h2>
     </div>
     <div class="margin-bottom">
       <p>
-        If you are moving from Oracle JDK to OpenJDK from the AdoptOpenJDK project, you'll probably have a few key questions on your mind. Firstly,
-        you'll want to know what the differences are between Oracle JDK and AdoptOpenJDK and whether there are any steps you need to take to migrate.
+        If you are moving from Oracle JDK to OpenJDK from the Adoptium project, you'll probably have a few key questions on your mind. Firstly,
+        you'll want to know what the differences are between Oracle JDK and Adoptium and whether there are any steps you need to take to migrate.
         The answers to common questions around these choices are covered in the sections that follow.
       </p>
-      <p>To understand which platforms are supported, see the <a href="./supported_platforms.html">Platform Support Matrix</a>.</p>
+      {{!-- <p>To understand which platforms are supported, see the <a href="./supported_platforms.html">Platform Support Matrix</a>.</p> --}}
     </div>
 
     <div class="anchor">
@@ -107,17 +107,17 @@
       <h3 id="icedtea-web">IcedTea-Web</h3>
 
       <p>Java Web Start was deprecated by Oracle in Java SE 8 and removed in Java SE 9. IcedTea-Web can provide equivalent functionality
-        for AdoptOpenJDK 8 users.</p>
+        for Adoptium 8 users.</p>
 
-      <p>IcedTea-Web is available to download from the <a href="./icedtea-web.html" target="_blank">Iced-Tea Web project page</a> in Linux, Windows,
+      <p>IcedTea-Web is available to download from the <a href="https://adoptopenjdk.net/icedtea-web.html" target="_blank">Iced-Tea Web project page</a> in Linux, Windows,
       and Portable package formats.</p>
 
-      <p>IcedTea-Web is also available as an optional component of the AdoptOpenJDK installer for 64-bit Windows on OpenJDK 8 that you can select from the <strong>Custom Setup</strong> panel.
+      {{!-- <p>IcedTea-Web is also available as an optional component of the AdoptOpenJDK installer for 64-bit Windows on OpenJDK 8 that you can select from the <strong>Custom Setup</strong> panel.
       You can also choose to associate JNLP files so that when a user clicks on the JNLP file, it is automatically opened with IcedTea-Web.
-      </p>
-      <p>By default, IcedTea-Web is installed into the OpenJDK directory and has the same executable name (<tt>javaws.exe</tt>) as Java Web Start. To configure settings,
+      </p> --}}
+      {{!-- <p>By default, IcedTea-Web is installed into the OpenJDK directory and has the same executable name (<tt>javaws.exe</tt>) as Java Web Start. To configure settings,
       such as security or certificates, start the control panel by running <tt>itweb-settings.exe</tt>.
-      </p>
+      </p> --}}
       <p>Use IcedTea-Web in the same way as Java Web Start. For more information, see <a href="https://docs.oracle.com/javase/tutorial/deployment/webstart/developing.html" target="_blank">
       Developing a Java Web Start application</a> and <a href="https://docs.oracle.com/javase/tutorial/deployment/webstart/deploying.html" target="_blank">Deploying a Java Web Start
       application</a>. Whilst IcedTea-Web is written to operate in the same way as Java Web Start there are a few known differences, which are raised as issues in the
@@ -125,9 +125,9 @@
       </p>
       <p>IcedTea-Web 1.8.x and 2.0.x are compatible with AdoptOpenJDK 8 builds. We know that software which is based on IcedTea-Web supports the execution of OpenJDK 11 based JNLP applications but IcedTea-Web does not contain any tests to check OpenJDK 11 support and we do not bundle it with AdoptOpenJDK 11 builds.</p>
 
-      <p><i class="fa fa-pencil" aria-hidden="true"></i><span class="sr-only">Note:</span> Currently, IcedTea-Web is bundled only with the Windows MSI installer for AdoptOpenJDK 8.
+      {{!-- <p><i class="fa fa-pencil" aria-hidden="true"></i><span class="sr-only">Note:</span> Currently, IcedTea-Web is bundled only with the Windows MSI installer for AdoptOpenJDK 8.
       The installers are available only for x64 Windows systems. Further work is underway to provide IcedTea-Web as an optional component of AdoptOpenJDK 8 installers for other platforms.
-      </p>
+      </p> --}}
 
       <h3 id="openjfx">OpenJFX</h3>
 
@@ -141,12 +141,12 @@
 
       <h3 id="relicensed-lucida-fonts">Relicensed Lucida fonts</h3>
 
-      <p>The Lucida fonts that are available in Oracle JDK 8 have a proprietary 3rd party license. AdoptOpenJDK intend to provide relicensed Lucida fonts. Work is ongoing to minimize any display issues when these fonts are rendered by Freetype and is expected to complete in 2Q 2019.</p>
+      <p>The Lucida fonts that are available in Oracle JDK 8 have a proprietary 3rd party license. Adoptium intend to provide relicensed Lucida fonts. Work is ongoing to minimize any display issues when these fonts are rendered by Freetype and is expected to complete in 2Q 2019.</p>
 
       <h3 id="pisces-and-marlin">Pisces and Marlin</h3>
 
       <p>Oracle JDK 8 uses a proprietary 2D graphics renderer called Ductus, whereas OpenJDK uses an open-source renderer called Pisces. From OpenJDK 9,
-      the Marlin renderer is in use. Work is planned at AdoptOpenJDK to either backport Marlin to OpenJDK 8 and/or minimize any display issues between the two. The outlook for completion is Q2 2019.</p>
+      the Marlin renderer is in use. Work is planned at Adoptium to either backport Marlin to OpenJDK 8 and/or minimize any display issues between the two. The outlook for completion is Q2 2019.</p>
 
       <h3 id="lcms">LCMS</h3>
 
@@ -155,7 +155,7 @@
       <h3 id="jmx">JMX</h3>
 
       <p>The proprietary SNMP package shipped with Oracle JDK 8 is not present in OpenJDK. Use JMX as an alternative, or SNMP4J. These packages are
-      not bundled with the AdoptOpenJDK binaries.</p>
+      not bundled with the Adoptium binaries.</p>
 
       <h3 id="windows-sound-drivers">Windows sound drivers</h3>
 
@@ -164,7 +164,7 @@
 
       <h3 id="java-flight-recorder">Java Flight Recorder</h3>
 
-      <p>Java Flight Recorder (JFR) was decoupled from the Oracle JDK and contributed to the OpenJDK community. Work is underway to backport JFR from OpenJDK 11 to OpenJDK 8. When this work is complete, AdoptOpenJDK will include JFR in OpenJDK 8 binaries.</p>
+      <p>Java Flight Recorder (JFR) was decoupled from the Oracle JDK and contributed to the OpenJDK community. Work is underway to backport JFR from OpenJDK 11 to OpenJDK 8. When this work is complete, Adoptium will include JFR in OpenJDK 8 binaries.</p>
 
       <h3 id="jdk-mission-control">JDK Mission Control</h3>
 
@@ -173,7 +173,7 @@
 
     </div>
 
-    <div class="anchor">
+    {{!-- <div class="anchor">
       <a href="#migration-resources" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
       <h2 class="bold"><a id="migration-resources">More resources</a></h2>
     </div>
@@ -186,7 +186,7 @@
           <li>For HotSpot VM documentation, see the <a href="http://openjdk.java.net/groups/hotspot/docs/RuntimeOverview.html">HotSpot Runtime Overview</a>.</li>
        </ul>
       </p>
-    </div>
+    </div> --}}
 
     <div style="margin-top: 3rem;">
       <a href="./supported_platforms.html" class="no-underline home-links">
