@@ -344,7 +344,7 @@ module.exports.setRadioSelectors = () => {
       const jdkName =  variant.searchableName;
       const jvmName = jvmVariantOption.toLowerCase();
       if (jvmVariantOption == 'HotSpot') {
-        jvmVariantOption = 'Temurin'
+        jvmVariantOption = 'Eclipse Temurin'
       }
       createRadioButtons(jdkName, 'jdk', variant, jdkSelector);
       if (jvmSelector) {
