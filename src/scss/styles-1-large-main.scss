@@ -198,16 +198,19 @@ var {
 
 nav {
   position: relative;
+  height: 6em;
 }
 
 #logo {
-  margin: 1.5rem auto;
+  margin: auto;
   display: table;
   cursor: pointer;
+  padding-bottom: 1em;
 }
 
-#logo  img{
-  height: 2.5em;
+#logo img{
+  height: 3.5em;
+  padding-top: 1.5em;
 }
 
 #header-social-bar {
