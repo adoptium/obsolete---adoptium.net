@@ -25,7 +25,11 @@ $headersize: 1.4rem;
 }
 
 .cc-color-override-1434350510.cc-window {
-  background-color: $brighterblue !important
+  background-color: #A80D55 !important;
+}
+
+.cc-color-override-1434350510 .cc-btn:hover, .cc-color-override-1434350510 .cc-btn:focus {
+  background-color: #14003C !important;
 }
 
 .dark-link, .dark-link:visited, a, a:visited {
@@ -156,7 +160,7 @@ $headersize: 1.4rem;
 }
 
 .fa-social-icon {
-  color: #152935;
+  color: #14003C;
 }
 
 .fa-stack {
@@ -165,7 +169,7 @@ $headersize: 1.4rem;
   border: 1px solid transparent;
   transition: .5s;
   background: #ffffff;
-  opacity: .5;
+  opacity: .75;
 }
 
 .fa-stack:hover {
@@ -704,7 +708,7 @@ footer#solstice-footer a {
 /* The alert message box */
 .alert {
    padding: 20px;
-   background-color: #ff9800; /* orange */
+   background-color:  #FF1464;
    color: white;
 }
 
