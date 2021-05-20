@@ -104,31 +104,6 @@
         by Oracle to the OpenJDK project for releases after Java 8.
       </p>
 
-      <h3 id="icedtea-web">IcedTea-Web</h3>
-
-      <p>Java Web Start was deprecated by Oracle in Java SE 8 and removed in Java SE 9. IcedTea-Web can provide equivalent functionality
-        for Adoptium 8 users.</p>
-
-      <p>IcedTea-Web is available to download from the <a href="https://adoptopenjdk.net/icedtea-web.html" target="_blank">Iced-Tea Web project page</a> in Linux, Windows,
-      and Portable package formats.</p>
-
-      {{!-- <p>IcedTea-Web is also available as an optional component of the AdoptOpenJDK installer for 64-bit Windows on OpenJDK 8 that you can select from the <strong>Custom Setup</strong> panel.
-      You can also choose to associate JNLP files so that when a user clicks on the JNLP file, it is automatically opened with IcedTea-Web.
-      </p> --}}
-      {{!-- <p>By default, IcedTea-Web is installed into the OpenJDK directory and has the same executable name (<tt>javaws.exe</tt>) as Java Web Start. To configure settings,
-      such as security or certificates, start the control panel by running <tt>itweb-settings.exe</tt>.
-      </p> --}}
-      <p>Use IcedTea-Web in the same way as Java Web Start. For more information, see <a href="https://docs.oracle.com/javase/tutorial/deployment/webstart/developing.html" target="_blank">
-      Developing a Java Web Start application</a> and <a href="https://docs.oracle.com/javase/tutorial/deployment/webstart/deploying.html" target="_blank">Deploying a Java Web Start
-      application</a>. Whilst IcedTea-Web is written to operate in the same way as Java Web Start there are a few known differences, which are raised as issues in the
-      <a href="https://github.com/AdoptOpenJDK/icedtea-web" target="_blank">GitHub project</a>. Work is ongoing to minimize or eliminate these differences.
-      </p>
-      <p>IcedTea-Web 1.8.x and 2.0.x are compatible with AdoptOpenJDK 8 builds. We know that software which is based on IcedTea-Web supports the execution of OpenJDK 11 based JNLP applications but IcedTea-Web does not contain any tests to check OpenJDK 11 support and we do not bundle it with AdoptOpenJDK 11 builds.</p>
-
-      {{!-- <p><i class="fa fa-pencil" aria-hidden="true"></i><span class="sr-only">Note:</span> Currently, IcedTea-Web is bundled only with the Windows MSI installer for AdoptOpenJDK 8.
-      The installers are available only for x64 Windows systems. Further work is underway to provide IcedTea-Web as an optional component of AdoptOpenJDK 8 installers for other platforms.
-      </p> --}}
-
       <h3 id="openjfx">OpenJFX</h3>
 
       <p>Back in 2017, JavaFX was decoupled from the Oracle JDK and contributed to the OpenJDK community. The OpenJFX community is focused on OpenJFX 11+ and provides binaries that you can use with Adoptium.</p>
@@ -166,32 +141,13 @@
 
       <p>Java Flight Recorder (JFR) was decoupled from the Oracle JDK and contributed to the OpenJDK community. Work is underway to backport JFR from OpenJDK 11 to OpenJDK 8. When this work is complete, Adoptium will include JFR in OpenJDK 8 binaries.</p>
 
-      <h3 id="jdk-mission-control">JDK Mission Control</h3>
-
-      <p>Java Mission Control (JMC) is being open sourced under the OpenJDK <a href="https://github.com/JDKMissionControl/jmc" target="_blank">JDK Mission Control project</a>. JMC builds are available from the <a href="https://adoptopenjdk.net/jmc.html">AdoptOpenJDK JMC Download Page</a>.</p>
-
     </div>
-
-    {{!-- <div class="anchor">
-      <a href="#migration-resources" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><a id="migration-resources">More resources</a></h2>
-    </div>
-
-    <div class="margin-bottom">
-      <p>Here are a few of the resources available to help you with migrating to AdoptOpenJDK:
-        <ul>
-          <li>Ask questions directly by joining the <a href="https://adoptopenjdk.net/slack.html">AdoptOpenJDK Community Slack</a> group.</li>
-          <li>Learn more about the AdoptOpenJDK project, including build and test infrastructure, by reading the <a href="https://github.com/AdoptOpenJDK/TSC">Technical Steering Committee</a> documentation.</li>
-          <li>For HotSpot VM documentation, see the <a href="http://openjdk.java.net/groups/hotspot/docs/RuntimeOverview.html">HotSpot Runtime Overview</a>.</li>
-       </ul>
-      </p>
-    </div> --}}
 
     <div style="margin-top: 3rem;">
       <a href="./supported_platforms.html" class="no-underline home-links">
         <h2 class="inline-block zero-margin">Supported Platforms&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
-      <a href="https://github.com/AdoptOpenJDK/openjdk-build/issues" class="no-underline home-links">
+      <a href="https://github.com/adoptium/temurin-build/issues" class="no-underline home-links">
         <h2 class="inline-block zero-margin">Submit an Issue&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
     </div>

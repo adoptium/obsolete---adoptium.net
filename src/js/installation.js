@@ -17,6 +17,7 @@ module.exports.load = () => {
     return extension
   });
 
+  // TODO code change to adoptium later
   loadAssetInfo(variant, jvmVariant, 'ga', undefined, undefined, 'latest', 'adoptopenjdk', buildInstallationHTML, () => {
     errorContainer.innerHTML = '<p>Error... no installation information has been found!</p>';
     loading.innerHTML = ''; // remove the loading dots
