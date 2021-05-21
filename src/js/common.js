@@ -152,11 +152,11 @@ function toJson(response) {
   return response
 }
 
-// This will first try to load from openjdk<X>-binaries repos and if that fails
+// This will first try to load from openjdk<X>-binaries repositories and if that fails
 // try openjdk<X>-release, i.e will try the following:
 
-// https://github.com/AdoptOpenJDK/openjdk10-binaries/blob/master/latest_release.json
-// https://github.com/AdoptOpenJDK/openjdk10-releases/blob/master/latest_release.json
+// https://github.com/adoptium/openjdk10-binaries/blob/master/latest_release.json
+// https://github.com/adoptium/openjdk10-releases/blob/master/latest_release.json
 function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse) {
   if ((!url.endsWith('?')) && (!url.endsWith('&'))) {
     url += '?';
@@ -211,6 +211,7 @@ module.exports.loadLatestAssets = (variant, openjdkImp, release, handleResponse,
     variant = 'openjdk-amber';
   }
   const url = `https://api.adoptium.net/v3/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
+  // TODO Code cahnge to adoptium later
   queryAPI(release, url, openjdkImp, 'adoptopenjdk', errorHandler, handleResponse);
 }
 

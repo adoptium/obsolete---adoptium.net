@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://adoptopenjdk.net/dist/json/config.schema.json",
-  "title": "AdoptOpenJDK Release Definitions",
-  "description": "Configuration for product listings on adoptopenjdk.net",
+  "$id": "https://adoptium.net/dist/json/config.schema.json",
+  "title": "Eclipse Adoptium Release Definitions",
+  "description": "Configuration for product listings on adoptium.net",
   "type": "object",
   "required": ["variants", "installCommands", "platforms"],
   "definitions": {

@@ -9,6 +9,7 @@ const errorContainer = document.getElementById('error-container');
 module.exports.load = () => {
   setRadioSelectors();
 
+  // TODO Note code change here to adoptium later
   loadAssetInfo(variant, jvmVariant, 'ga', undefined, undefined, undefined, 'adoptopenjdk', buildArchiveHTML, () => {
     // if there are no releases (beyond the latest one)...
     // report an error, remove the loading dots
@@ -27,7 +28,7 @@ function buildArchiveHTML(aReleases) {
     const release = {
       release_name: aRelease.release_name,
       release_link: aRelease.release_link,
-      dashboard_link: `https://dash.adoptopenjdk.net/version.html?version=${variant}`
+      dashboard_link: `https://dash.adoptium.net/version.html?version=${variant}`
         + `&tag=${encodeURIComponent(aRelease.release_name)}`,
       release_day: publishedAt.format('D'),
       release_month: publishedAt.format('MMMM'),
