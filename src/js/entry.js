@@ -17,9 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return require('./installation').load();
     case 'releases':
       return require('./releases').load();
-    case 'testimonials':
-      return require('./testimonials').load();
-    case 'upstream':
-      return require('./upstream').load();
+    case 'nightly':
+      return require('./nightly').load();
   }
 });

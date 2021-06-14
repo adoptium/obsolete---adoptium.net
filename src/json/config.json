@@ -14,12 +14,6 @@
       "lts": true
     },
     {
-      "searchableName": "openjdk15",
-      "jvm": ["HotSpot"],
-      "label": "OpenJDK 15",
-      "lts": false
-    },
-    {
       "searchableName": "openjdk16",
       "jvm": ["HotSpot"],
       "label": "OpenJDK 16",
