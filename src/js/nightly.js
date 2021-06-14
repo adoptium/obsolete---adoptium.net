@@ -70,11 +70,10 @@ function buildNightlyHTML(files) {
   tableHead.innerHTML = `<tr id='table-header'>
     <th>Platform</th>
     <th>Type</th>
-    <th>Heap Size</th>
     <th>Date</th>
     <th>Binary</th>
     <th>Installer</th>
-    <th>Checksum</th>
+    <th>SHA256</th>
     </tr>`;
 
   const NIGHTLYARRAY = [];
