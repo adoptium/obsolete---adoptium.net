@@ -152,11 +152,6 @@ function toJson(response) {
   return response
 }
 
-// This will first try to load from openjdk<X>-binaries repositories and if that fails
-// try openjdk<X>-release, i.e will try the following:
-
-// https://github.com/adoptium/openjdk10-binaries/blob/master/latest_release.json
-// https://github.com/adoptium/openjdk10-releases/blob/master/latest_release.json
 function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse) {
   if ((!url.endsWith('?')) && (!url.endsWith('&'))) {
     url += '?';
@@ -176,8 +171,12 @@ function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse
     url += 'page_size=1'
   }
 
-  // This a temp fix to not show binaries at Adoptium (none exist)
-  errorHandler();
+  console.log(release)
+
+  // This a temp fix to not show release binaries at Adoptium (none exist)
+  if (release !== 'ea') {
+    errorHandler();
+  }
 
   loadUrl(url, (response) => {
     if (response === null) {
@@ -193,7 +192,7 @@ module.exports.loadAssetInfo = (variant, openjdkImp, releaseType, pageSize, date
     variant = 'openjdk-amber';
   }
 
-  let url = `https://api.adoptium.net/v3/assets/feature_releases/${variant.replace(/\D/g,'')}/${releaseType}`
+  let url = `https://adoptopenjdk-api.eastus.cloudapp.azure.com/v3/assets/feature_releases/${variant.replace(/\D/g,'')}/${releaseType}`
 
   if (pageSize) {
     url += `?page_size=${pageSize}&`
@@ -210,9 +209,9 @@ module.exports.loadLatestAssets = (variant, openjdkImp, release, handleResponse,
   if (variant === 'amber') {
     variant = 'openjdk-amber';
   }
-  const url = `https://api.adoptium.net/v3/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
+  const url = `https://adoptopenjdk-api.eastus.cloudapp.azure.com/v3/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
   // TODO Code cahnge to adoptium later
-  queryAPI(release, url, openjdkImp, 'adoptopenjdk', errorHandler, handleResponse);
+  queryAPI(release, url, openjdkImp, 'adoptium', errorHandler, handleResponse);
 }
 
 function loadUrl(url, callback) {
