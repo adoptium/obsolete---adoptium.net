@@ -2,6 +2,8 @@
 
 const {platforms, installCommands, variants} = require('../json/config');
 
+const api = 'https://api.adoptium.net/v3';
+
 // Enables things like 'lookup["X64_MAC"]'
 const lookup = {};
 platforms.forEach((platform) => lookup[platform.searchableName] = platform);
@@ -171,8 +173,6 @@ function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse
     url += 'page_size=1'
   }
 
-  console.log(release)
-
   // This a temp fix to not show release binaries at Adoptium (none exist)
   if (release !== 'ea') {
     errorHandler();
@@ -192,7 +192,7 @@ module.exports.loadAssetInfo = (variant, openjdkImp, releaseType, pageSize, date
     variant = 'openjdk-amber';
   }
 
-  let url = `https://adoptopenjdk-api.eastus.cloudapp.azure.com/v3/assets/feature_releases/${variant.replace(/\D/g,'')}/${releaseType}`
+  let url = `${api}/assets/feature_releases/${variant.replace(/\D/g,'')}/${releaseType}`
 
   if (pageSize) {
     url += `?page_size=${pageSize}&`
@@ -209,7 +209,7 @@ module.exports.loadLatestAssets = (variant, openjdkImp, release, handleResponse,
   if (variant === 'amber') {
     variant = 'openjdk-amber';
   }
-  const url = `https://adoptopenjdk-api.eastus.cloudapp.azure.com/v3/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
+  const url = `${api}/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
   // TODO Code cahnge to adoptium later
   queryAPI(release, url, openjdkImp, 'adoptium', errorHandler, handleResponse);
 }
