@@ -160,18 +160,10 @@
             "$id": "#/properties/platforms/items/properties/attributes",
             "type": "object",
             "required": [
-              "heap_size",
               "os",
               "architecture"
             ],
             "properties": {
-              "heap_size": {
-                "type": "string",
-                "enum": [
-                  "normal",
-                  "large"
-                ]
-              },
               "os": {
                 "type": "string",
                 "enum": [
