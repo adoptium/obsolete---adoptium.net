@@ -66,13 +66,6 @@ function buildLatestHTML(releasesJson) {
       return;
     }
 
-    let heap_size;
-    if (releaseAsset.binary.heap_size == 'large') {
-      heap_size = 'Large Heap';
-    } else if (releaseAsset.binary.heap_size == 'normal') {
-      heap_size = 'Normal';
-    }
-
     // Skip this asset if it's not a binary type we're interested in displaying
     const binary_type = releaseAsset.binary.image_type.toUpperCase();
     if (!['INSTALLER', 'JDK', 'JRE'].includes(binary_type)) {
@@ -87,7 +80,6 @@ function buildLatestHTML(releasesJson) {
         platform_ordinal: getPlatformOrder(platform),
         platform_supported_version: getSupportedVersion(platform),
         release_name: releaseAsset.release_name,
-        heap_size: heap_size,
         release_link: releaseAsset.release_link,
         release_datetime: moment(releaseAsset.timestamp).format('YYYY-MM-DD hh:mm:ss'),
         early_access: detectEA(releaseAsset.version),

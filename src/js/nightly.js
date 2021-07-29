@@ -92,7 +92,6 @@ function buildNightlyHTML(files) {
     const publishedAt = eachRelease.timestamp;
     NIGHTLYOBJECT.thisReleaseName = eachRelease.release_name.slice(0, 12);
     NIGHTLYOBJECT.thisType = type;
-    NIGHTLYOBJECT.thisHeapSize = eachAsset.heap_size;
     NIGHTLYOBJECT.thisReleaseDay = moment(publishedAt).format('D');
     NIGHTLYOBJECT.thisReleaseMonth = moment(publishedAt).format('MMMM');
     NIGHTLYOBJECT.thisReleaseYear = moment(publishedAt).format('YYYY');

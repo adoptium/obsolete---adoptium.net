@@ -51,7 +51,6 @@
       "officialName": "Linux x64",
       "searchableName": "X64_LINUX",
       "attributes": {
-        "heap_size": "normal",
         "os": "linux",
         "architecture": "x64"
       },
@@ -69,7 +68,6 @@
       "officialName": "Alpine x64",
       "searchableName": "LINUXALPINE",
       "attributes": {
-        "heap_size": "normal",
         "os": "alpine-linux",
         "architecture": "x64"
       },
@@ -80,7 +78,6 @@
       "officialName": "Windows x86",
       "searchableName": "X86-32_WIN",
       "attributes": {
-        "heap_size": "normal",
         "os": "windows",
         "architecture": "x32"
       },
@@ -91,7 +88,6 @@
       "officialName": "Windows x64",
       "searchableName": "X64_WIN",
       "attributes": {
-        "heap_size": "normal",
         "os": "windows",
         "architecture": "x64"
       },
@@ -102,7 +98,6 @@
       "officialName": "Windows aarch64",
       "searchableName": "AARCH64_WIN",
       "attributes": {
-        "heap_size": "normal",
         "os": "windows",
         "architecture": "aarch64"
       },
@@ -113,7 +108,6 @@
       "officialName": "macOS x64",
       "searchableName": "X64_MAC",
       "attributes": {
-        "heap_size": "normal",
         "os": "mac",
         "architecture": "x64"
       },
@@ -124,7 +118,6 @@
       "officialName": "Linux s390x",
       "searchableName": "S390X_LINUX",
       "attributes": {
-        "heap_size": "normal",
         "os": "linux",
         "architecture": "s390x"
       },
@@ -135,7 +128,6 @@
       "officialName": "Linux ppc64le",
       "searchableName": "PPC64LE_LINUX",
       "attributes": {
-        "heap_size": "normal",
         "os": "linux",
         "architecture": "ppc64le"
       },
@@ -146,7 +138,6 @@
       "officialName": "Linux aarch64",
       "searchableName": "AARCH64_LINUX",
       "attributes": {
-        "heap_size": "normal",
         "os": "linux",
         "architecture": "aarch64"
       },
@@ -157,7 +148,6 @@
       "officialName": "Linux arm32",
       "searchableName": "ARM32_LINUX",
       "attributes": {
-        "heap_size": "normal",
         "os": "linux",
         "architecture": "arm"
       },
@@ -168,7 +158,6 @@
       "officialName": "Solaris sparcv9",
       "searchableName": "SPARCV9_SOLARIS",
       "attributes": {
-        "heap_size": "normal",
         "os": "solaris",
         "architecture": "sparcv9"
       },
@@ -179,7 +168,6 @@
       "officialName": "Solaris x64",
       "searchableName": "X64_SOLARIS",
       "attributes": {
-        "heap_size": "normal",
         "os": "solaris",
         "architecture": "x64"
       },
@@ -190,7 +178,6 @@
       "officialName": "AIX ppc64",
       "searchableName": "PPC64_AIX",
       "attributes": {
-        "heap_size": "normal",
         "os": "aix",
         "architecture": "ppc64"
       },
@@ -201,7 +188,6 @@
       "officialName": "Linux riscv64",
       "searchableName": "RISCV64",
       "attributes": {
-        "heap_size": "normal",
         "os": "linux",
         "architecture": "riscv64"
       },
