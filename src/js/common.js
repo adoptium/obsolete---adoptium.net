@@ -173,11 +173,6 @@ function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse
     url += 'page_size=1'
   }
 
-  // // This a temp fix to not show release binaries at Adoptium (none exist)
-  // if (release !== 'ea') {
-  //   errorHandler();
-  // }
-
   loadUrl(url, (response) => {
     if (response === null) {
       errorHandler();
