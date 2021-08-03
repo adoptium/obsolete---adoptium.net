@@ -9,16 +9,15 @@ module.exports.load = () => {
   setRadioSelectors();
 
   Handlebars.registerHelper('fetchExtension', function(filename) {
-    let extension = `.${filename.split('.').pop()}`
+    let extension = `.${filename.split('.').pop()}`;
     // Workaround to prevent extension returning as .gz
     if (extension == '.gz') {
-      extension = '.tar.gz'
+      extension = '.tar.gz';
     }
-    return extension
+    return extension;
   });
-
-  // TODO code change to adoptium later
-  loadAssetInfo(variant, jvmVariant, 'ga', undefined, undefined, 'latest', 'adoptopenjdk', buildInstallationHTML, () => {
+  
+  loadAssetInfo(variant, jvmVariant, 'ga', undefined, undefined, 'latest', 'adoptium', buildInstallationHTML, () => {
     errorContainer.innerHTML = '<p>Error... no installation information has been found!</p>';
     loading.innerHTML = ''; // remove the loading dots
   });
@@ -46,7 +45,7 @@ function buildInstallationHTML(releasesJson) {
       ASSETOBJECT.thisChecksum = eachAsset.package.checksum;
       ASSETOBJECT.thisChecksumLink = eachAsset.package.checksum_link;
       ASSETOBJECT.os = eachAsset.os;
-      ASSETOBJECT.thisInstallCommands = getInstallCommands(ASSETOBJECT.os)
+      ASSETOBJECT.thisInstallCommands = getInstallCommands(ASSETOBJECT.os);
       ASSETOBJECT.thisUnzipCommand = ASSETOBJECT.thisInstallCommands.installCommand.replace('FILENAME', ASSETOBJECT.thisBinaryFilename);
       ASSETOBJECT.thisChecksumCommand = ASSETOBJECT.thisInstallCommands.checksumCommand.replace('FILENAME', ASSETOBJECT.thisBinaryFilename);
 
