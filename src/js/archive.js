@@ -8,16 +8,15 @@ const errorContainer = document.getElementById('error-container');
 // When archive page loads, run:
 module.exports.load = () => {
   setRadioSelectors();
-
-  // TODO Note code change here to adoptium later
-  loadAssetInfo(variant, jvmVariant, 'ga', undefined, undefined, undefined, 'adoptopenjdk', buildArchiveHTML, () => {
+  
+  loadAssetInfo(variant, jvmVariant, 'ga', undefined, undefined, undefined, 'adoptium', buildArchiveHTML, () => {
     // if there are no releases (beyond the latest one)...
     // report an error, remove the loading dots
     loading.innerHTML = '';
     errorContainer.innerHTML = `<p>There are no archived releases yet for ${variant} from Temurin yet.
       See the <a href='./releases.html?variant=${variant}&jvmVariant=${jvmVariant}'>Latest release</a> page.</p>`;
   });
-}
+};
 
 function buildArchiveHTML(aReleases) {
   const releases = [];
@@ -28,8 +27,7 @@ function buildArchiveHTML(aReleases) {
     const release = {
       release_name: aRelease.release_name,
       release_link: aRelease.release_link,
-      dashboard_link: `https://dash.adoptium.net/version.html?version=${variant}`
-        + `&tag=${encodeURIComponent(aRelease.release_name)}`,
+      dashboard_link: `https://dash.adoptium.net/version.html?version=${variant}` + `&tag=${encodeURIComponent(aRelease.release_name)}`,
       release_day: publishedAt.format('D'),
       release_month: publishedAt.format('MMMM'),
       release_year: publishedAt.format('YYYY'),
@@ -57,7 +55,7 @@ function buildArchiveHTML(aReleases) {
           official_name: getOfficialName(platform),
           ordinal: getPlatformOrder(platform),
           assets: [],
-        }
+        };
       }
 
       let binary_constructor = {
@@ -65,12 +63,12 @@ function buildArchiveHTML(aReleases) {
         link: aReleaseAsset.package.link,
         checksum: aReleaseAsset.package.checksum,
         size: Math.floor(aReleaseAsset.package.size / 1000 / 1000),
-      }
+      };
 
       if (aReleaseAsset.installer) {
-        binary_constructor.installer_link = aReleaseAsset.installer.link
-        binary_constructor.installer_checksum = aReleaseAsset.installer.checksum
-        binary_constructor.installer_size =  Math.floor(aReleaseAsset.installer.size / 1000 / 1000)
+        binary_constructor.installer_link = aReleaseAsset.installer.link;
+        binary_constructor.installer_checksum = aReleaseAsset.installer.checksum;
+        binary_constructor.installer_size =  Math.floor(aReleaseAsset.installer.size / 1000 / 1000);
       }
 
       // Add the new binary to the release asset
@@ -98,7 +96,7 @@ function setPagination() {
   $(container).pagination({
     dataSource: Array.from(archiveTableBody.getElementsByClassName('release-row')).map((row) => row.outerHTML),
     pageSize: 5,
-    callback: (rows) => { archiveTableBody.innerHTML = rows.join('') }
+    callback: (rows) => { archiveTableBody.innerHTML = rows.join(''); }
   });
 
   if (container.getElementsByTagName('li').length <= 3) {
