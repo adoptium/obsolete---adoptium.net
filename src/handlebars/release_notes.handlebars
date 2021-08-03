@@ -21,11 +21,11 @@
 
     <div class="anchor">
       <a href="#jdk8u302" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk8u302_notes');">-/+</button> <a id="jdk8u252">OpenJDK 8u302 (1.8.0_302-b07)</a></h2>
+      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk8u302_notes');">-/+</button> <a id="jdk8u302">OpenJDK 8u302 (1.8.0_302-b07)</a></h2>
     </div>
     <div class="margin-bottom softHide" id="jdk8u302_notes">
 
-      You can check the details of these bugs using the <a href="https://bugs.openjdk.java.net/browse/JDK-8227806?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%20openjdk8u302%20ORDER%20BY%20created%20DESC" target="_blank">8u302</a> Fix Version filter in the JDK Bug System.
+      You can check the details of these bugs using the <a href="https://bugs.openjdk.java.net/issues/?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%20openjdk8u302" target="_blank">8u302</a> Fix Version filter in the JDK Bug System.
 
       <h3>Security fixes</h3>
       <ul>
@@ -273,11 +273,572 @@
 
     </div>
 
+    <div class="anchor">
+      <a href="#jdk11_0_12_7" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
+      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk11_0_12_7_notes');">-/+</button> <a id="jdk11_0_12_7">OpenJDK 11.0.12+7</a></h2>
+    </div>
+    <div class="margin-bottom softHide" id="jdk11_0_12_7_notes">
+
+      You can check the details of these bugs using the <a href="https://bugs.openjdk.java.net/issues/?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%2011.0.12" target="_blank">11.0.12</a> Fix Version filter in the JDK Bug System.
+
+      <h3>Security fixes</h3>
+      <ul>
+        <li>JD K-8256157: Improve bytecode assembly</li>
+        <li>JDK-8256491: Better HTTP transport</li>
+        <li>JDK-8258432, CVE-2021-2341: Improve file transfers</li>
+        <li>JDK-8260453: Improve Font Bounding</li>
+        <li>JDK-8260960: Signs of jarsigner signing</li>
+        <li>JDK-8260967, CVE-2021-2369: Better jar file validation</li>
+        <li>JDK-8262380: Enhance XML processing passes</li>
+        <li>JDK-8262403: Enhanced data transfer</li>
+        <li>JDK-8262410: Enhanced rules for zones</li>
+        <li>JDK-8262477: Enhance String Conclusions</li>
+        <li>JDK-8262967: Improve Zip file support</li>
+        <li>JDK-8264066, CVE-2021-2388: Enhance compiler validation</li>
+        <li>JDK-8264079: Improve abstractions</li>
+        <li>JDK-8264460: Improve NTLM support</li>
+      </ul>
+      <h3>Other changes</h3>
+      <ul>
+        <li>JDK-6847157: java.lang.NullPointerException: HDC for component at sun.java2d.loops.Blit.Blit</li>
+        <li>JDK-7106851: Test should not use System.exit</li>
+        <li>JDK-8073446: TimeZone getOffset API does not  return a dst offset between years 2038-2137</li>
+        <li>JDK-8076190: Customizing the generation of a PKCS12 keystore</li>
+        <li>JDK-8153005: Upgrade the default PKCS12 encryption/MAC algorithms</li>
+        <li>JDK-8171303: sun/java2d/pipe/InterpolationQualityTest.java fails on Windows & Linux</li>
+        <li>JDK-8177068: incomplete classpath causes NPE in Flow</li>
+        <li>JDK-8185734: [Windows] Structured Exception Catcher missing around gtest execution</li>
+        <li>JDK-8187450: JNI local refs exceeds capacity warning in NetworkInterface::getAll</li>
+        <li>JDK-8190763: Class cast exception on (CompoundEdit) UndoableEditEvent.getEdit()</li>
+        <li>JDK-8195841: PNGImageReader.readNullTerminatedString() doesnt check for non-null terminated strings with length equal to maxLen</li>
+        <li>JDK-8196100: javax/swing/text/JTextComponent/5074573/bug5074573.java fails</li>
+        <li>JDK-8199646: JShell tests: jdk/jshell/FailOverDirectExecutionControlTest.java failed with java.lang.UnsupportedOperationException</li>
+        <li>JDK-8206925: Support the certificate_authorities extension</li>
+        <li>JDK-8207160: ClassReader::adjustMethodParams can potentially return null if the args list is empty</li>
+        <li>JDK-8207247: AARCH64: Enable Minimal and Client VM builds</li>
+        <li>JDK-8207404: MulticastSocket tests failing on AIX</li>
+        <li>JDK-8207779: Method::is_valid_method() compares 'this' with NULL</li>
+        <li>JDK-8208061: runtime/LoadClass/TestResize.java fails with "Load factor too high" when running in CDS mode.</li>
+        <li>JDK-8209459: TestSHA512MultiBlockIntrinsics failed on AArch64</li>
+        <li>JDK-8210443: Migrate Locale matching tests to JDK Repo.</li>
+        <li>JDK-8213231: ThreadSnapshot::_threadObj can become stale</li>
+        <li>JDK-8213483: ARM32: runtime/ErrorHandling/ShowRegistersOnAssertTest.java jtreg test fail</li>
+        <li>JDK-8213725: JShell NullPointerException due to class file with unexpected package</li>
+        <li>JDK-8213794: ARM32: disable TypeProfiling, CriticalJNINatives, Serviceablity tests for ARM32</li>
+        <li>JDK-8213845: ARM32: Interpreter doesn't call result handler after native calls</li>
+        <li>JDK-8214128: ARM32: wrong stack alignment on Deoptimization::unpack_frames</li>
+        <li>JDK-8214512: ARM32: Jtreg test compiler/c2/Test8062950.java fails on ARM</li>
+        <li>JDK-8214854: JDWP: Unforseen output truncation in logging</li>
+        <li>JDK-8214922: Add vectorization support for fmin/fmax</li>
+        <li>JDK-8215009: GCC 8 compilation error in libjli</li>
+        <li>JDK-8216184: CDS/appCDS tests failed on Windows due to long path to a classlist file</li>
+        <li>JDK-8216259: AArch64: Vectorize Adler32 intrinsics</li>
+        <li>JDK-8216314: SIGILL in CodeHeapState::print_names()</li>
+        <li>JDK-8217348: assert(thread->is_Java_thread()) failed: just checking</li>
+        <li>JDK-8217465: [REDO] - Optimize CodeHeap Analytics</li>
+        <li>JDK-8217561: X86: Add floating-point Math.min/max intrinsics</li>
+        <li>JDK-8217918: C2: -XX:+AggressiveUnboxing is broken</li>
+        <li>JDK-8218458: [TESTBUG] runtime/NMT/CheckForProperDetailStackTrace.java fails with Expected stack trace missing from output</li>
+        <li>JDK-8219142: Remove unused JIMAGE_ResourcePath</li>
+        <li>JDK-8219586: CodeHeap State Analytics processes dead nmethods</li>
+        <li>JDK-8220074: Clean up GCC 8.3 errors in LittleCMS</li>
+        <li>JDK-8220407: compiler/intrinsics/math/TestFpMinMaxIntrinsics.java timedout</li>
+        <li>JDK-8222302: [TESTBUG]test/hotspot/jtreg/compiler/intrinsics/sha/cli/TestUseSHAOptionOnUnsupportedCPU.java fails on any other CPU</li>
+        <li>JDK-8222412: AARCH64: multiple instructions encoding issues</li>
+        <li>JDK-8223020: aarch64: expand minI_rReg and maxI_rReg patterns into separate instructions</li>
+        <li>JDK-8223444: Improve CodeHeap Free Space Management</li>
+        <li>JDK-8223504: Improve performance of forall loops by better inlining of "iterator()" methods</li>
+        <li>JDK-8223667: ASAN build broken</li>
+        <li>JDK-8225081: Remove Telia Company CA certificate expiring in April 2021</li>
+        <li>JDK-8225116: Test OwnedWindowsLeak.java intermittently fails</li>
+        <li>JDK-8225438: javax/net/ssl/TLSCommon/TestSessionLocalPrincipal.java failed with Read timed out</li>
+        <li>JDK-8225756: [testbug] compiler/loopstripmining/CheckLoopStripMining.java sets too short a SafepointTimeoutDelay</li>
+        <li>JDK-8226374: Restrict TLS signature schemes and named groups</li>
+        <li>JDK-8226627: assert(t->singleton()) failed: must be a constant</li>
+        <li>JDK-8226721: Missing intrinsics for Math.ceil, floor, rint</li>
+        <li>JDK-8227080: (fs) Files.newInputStream(...).skip(n) is slow</li>
+        <li>JDK-8227222: vmTestbase/jit/FloatingPoint/gen_math/Loops04/Loops04.java failed XMM register should be 0-15</li>
+        <li>JDK-8227609: (fs) Files.newInputStream(...).skip(n) should allow skipping beyond file size</li>
+        <li>JDK-8230428: Cleanup dead CastIP node code in formssel.cpp</li>
+        <li>JDK-8231460: Performance issue (CodeHeap) with large free blocks</li>
+        <li>JDK-8231713: x86_32 build failures after JDK-8226721 (Missing intrinsics for Math.ceil, floor, rint)</li>
+        <li>JDK-8231841: AArch64: debug.cpp help() is missing an AArch64 line for pns</li>
+        <li>JDK-8232084: HotSpot build failed with GCC 9.2.1</li>
+        <li>JDK-8232591: AArch64: Add missing match rules for smaddl, smsubl and smnegl</li>
+        <li>JDK-8233185: HttpServer.stop() blocks indefinitely when called on dispatch thread</li>
+        <li>JDK-8233787: Break cycle in vm_version* includes</li>
+        <li>JDK-8233948: AArch64: Incorrect mapping between OptoReg and VMReg for high 64 bits of Vector Register</li>
+        <li>JDK-8234355: Buffer overflow in jcmd GC.class_stats due to too many classes</li>
+        <li>JDK-8235368: Update BCEL to Version 6.4.1</li>
+        <li>JDK-8236859: WebSocket over authenticating proxy fails with NPE</li>
+        <li>JDK-8236992: AArch64: remove redundant load_klass in itable stub</li>
+        <li>JDK-8237743: test/langtools/jdk/jshell/FailOverExecutionControlTest.java fails No ExecutionControlProvider with name 'nonExistent' and parameter keys: []</li>
+        <li>JDK-8237804: sun/security/mscapi tests fail with "Key pair not generated, alias <nnnnnn> already exists"</li>
+        <li>JDK-8238175: CTW: Class.getDeclaredMethods fails with assert(k->is_subclass_of(SystemDictionary::Throwable_klass())) failed: invalid exception class</li>
+        <li>JDK-8238567: SoftMainMixer.processAudioBuffers(): Wrong handling of stoppedMixers</li>
+        <li>JDK-8238812: assert(false) failed: bad AD file</li>
+        <li>JDK-8239312: [macos] javax/swing/JFrame/NSTexturedJFrame/NSTexturedJFrame.java</li>
+        <li>JDK-8239386: handle ContendedPaddingWidth in vm_version_aarch64</li>
+        <li>JDK-8239536: Can't use `java.util.List` object after importing `java.awt.List`</li>
+        <li>JDK-8240487: Cleanup whitespace in .cc, .hh, .m, and .mm files</li>
+        <li>JDK-8240848: ArrayIndexOutOfBoundsException buf for TextCallbackHandler</li>
+        <li>JDK-8241082: Upgrade IANA Language Subtag Registry data to 03-16-2020 version</li>
+        <li>JDK-8241087: Build failure with VS 2019 (16.5.0) due to C2039 and C2873</li>
+        <li>JDK-8241101: [s390] jtreg test failure after JDK-8238696: not conformant features string</li>
+        <li>JDK-8241248: NullPointerException in sun.security.ssl.HKDF.extract(HKDF.java:93)</li>
+        <li>JDK-8241372: Several test failures due to javax.net.ssl.SSLException: Connection reset</li>
+        <li>JDK-8241475: AArch64: Add missing support for PopCountVI node</li>
+        <li>JDK-8241829: Cleanup the code for PrinterJob on windows</li>
+        <li>JDK-8241960: The SHA3 message digests impl of SUN provider are not thread safe after cloned</li>
+        <li>JDK-8242010: Upgrade IANA Language Subtag Registry to Version 2020-04-01</li>
+        <li>JDK-8242429: Better implementation for sign extract</li>
+        <li>JDK-8242557: Add length limit for strings in PNGImageWriter</li>
+        <li>JDK-8242919: Paste locks up jshell</li>
+        <li>JDK-8243155: AArch64: Add support for SqrtVF</li>
+        <li>JDK-8243240: AArch64: Add support for MulVB</li>
+        <li>JDK-8243452: JFR: Could not create chunk in repository with over 200 recordings</li>
+        <li>JDK-8243559: Remove root certificates with 1024-bit keys</li>
+        <li>JDK-8243597: AArch64: Add support for integer vector abs</li>
+        <li>JDK-8244031: HttpClient should have more tests for HEAD requests</li>
+        <li>JDK-8244205: HTTP/2 tunnel connections through proxy may be reused regardless of which proxy is selected</li>
+        <li>JDK-8244847: Linux/PPC: runtime/CompressedOops/CompressedClassPointers: smallHeapTest fails</li>
+        <li>JDK-8245511: G1 adaptive IHOP does not account for reclamation of humongous objects by young GC</li>
+        <li>JDK-8246274: G1 old gen allocation tracking is not in a separate class</li>
+        <li>JDK-8247354: [aarch64] PopFrame causes assert(oopDesc::is_oop(obj)) failed: not an oop</li>
+        <li>JDK-8247408: IdealGraph bit check expression canonicalization</li>
+        <li>JDK-8247432: Update IANA Language Subtag Registry to Version 2020-09-29</li>
+        <li>JDK-8247438: JShell: When FailOverExecutionControlProvider fails the proximal cause is not shown</li>
+        <li>JDK-8247753: UIManager.getSytemLookAndFeelClassName() returns wrong value on Fedora 32</li>
+        <li>JDK-8248043: Need to eliminate excessive i2l conversions</li>
+        <li>JDK-8248411: [aarch64] Insufficient error handling when CodeBuffer is exhausted</li>
+        <li>JDK-8248568: compiler/c2/TestBit.java failed: test missing from stdout/stderr</li>
+        <li>JDK-8248870: AARCH64: I2L/L2I conversions can be skipped for masked positive values</li>
+        <li>JDK-8249142: java/awt/FontClass/CreateFont/DeleteFont.sh is unstable</li>
+        <li>JDK-8249189: AARCH64: more L2I conversions can be skipped</li>
+        <li>JDK-8249719: MethodHandle performance suffers from bad ResolvedMethodTable hash function</li>
+        <li>JDK-8249875: GCC 10 warnings -Wtype-limits with JFR code</li>
+        <li>JDK-8250635: MethodArityHistogram should use Compile_lock in favour of fancy checks</li>
+        <li>JDK-8250876: Fix issues with cross-compile on macos</li>
+        <li>JDK-8251031: Some vmTestbase/nsk/monitoring/RuntimeMXBean tests fail with hostnames starting from digits</li>
+        <li>JDK-8251525: AARCH64: Faster Math.signum(fp)</li>
+        <li>JDK-8252259: AArch64: Adjust default value of FLOATPRESSURE</li>
+        <li>JDK-8252311: AArch64: save two words in itable lookup stub</li>
+        <li>JDK-8252779: compiler/graalunit/HotspotTest.java failed after 8251525</li>
+        <li>JDK-8252883: AccessDeniedException caused by delayed file deletion on Windows</li>
+        <li>JDK-8253167: ARM32 builds fail after JDK-8247910</li>
+        <li>JDK-8253572: [windows] CDS archive may fail to open with long file names</li>
+        <li>JDK-8253923: C2 doesn't always run loop opts for compilations that include loops</li>
+        <li>JDK-8253948: Memory leak in ImageFileReader</li>
+        <li>JDK-8254631: Better support ALPN byte wire values in SunJSSE</li>
+        <li>JDK-8254717: isAssignableFrom checks in KeyFactorySpi.engineGetKeySpec appear to be backwards</li>
+        <li>JDK-8255086: Update the root locale display names</li>
+        <li>JDK-8255625: AArch64: Implement Base64.encodeBlock accelerator/intrinsic</li>
+        <li>JDK-8255763: C2: OSR miscompilation caused by invalid memory instruction placement</li>
+        <li>JDK-8255992: JFR EventWriter does not use first string from StringPool with id 0</li>
+        <li>JDK-8256037: [TESTBUG] com/sun/jndi/dns/ConfigTests/PortUnreachable.java fails due to the hard coded threshold is small</li>
+        <li>JDK-8256244: java/lang/ProcessHandle/PermissionTest.java fails with TestNG 7.1</li>
+        <li>JDK-8256287: [windows] add loop fuse to map_or_reserve_memory_aligned</li>
+        <li>JDK-8256523: Streamline Java SHA2 implementation</li>
+        <li>JDK-8257414: Drag n Drop target area is wrong on high DPI systems</li>
+        <li>JDK-8257569: Failure observed with JfrVirtualMemory::initialize</li>
+        <li>JDK-8257574: C2: "failed: parsing found no loops but there are some" assert failure</li>
+        <li>JDK-8257580: Bump update version for OpenJDK: jdk-11.0.12</li>
+        <li>JDK-8257604: JNI_ArgumentPusherVaArg leaks valist</li>
+        <li>JDK-8257621: JFR StringPool misses cached items across consecutive recordings</li>
+        <li>JDK-8257796: [TESTBUG] TestUseSHA512IntrinsicsOptionOnSupportedCPU.java fails on x86_32</li>
+        <li>JDK-8257822: C2 crashes with SIGFPE due to a division that floats above its zero check</li>
+        <li>JDK-8257828: SafeFetch may crash if invoked in non-JavaThreads</li>
+        <li>JDK-8257853: Remove dependencies on JNF's JNI utility functions in AWT and 2D code</li>
+        <li>JDK-8257858: [macOS]: Remove JNF dependency from libosxsecurity/KeystoreImpl.m</li>
+        <li>JDK-8257860: [macOS]: Remove JNF dependency from libosxkrb5/SCDynamicStoreConfig.m</li>
+        <li>JDK-8257988: Remove JNF dependency from libsaproc/MacosxDebuggerLocal.m</li>
+        <li>JDK-8258414: OldObjectSample events too expensive</li>
+        <li>JDK-8258505: [TESTBUG] TestDivZeroWithSplitIf.java fails due to missing UnlockDiagnosticVMOptions</li>
+        <li>JDK-8258753: StartTlsResponse.close() hangs due to synchronization issues</li>
+        <li>JDK-8259061: C2: assert(found) failed: memory-writing node is not placed in its original loop or an ancestor of it</li>
+        <li>JDK-8259227: C2 crashes with SIGFPE due to a division that floats above its zero check</li>
+        <li>JDK-8259232: Bad JNI lookup during printing</li>
+        <li>JDK-8259276: C2: Empty expression stack when reexecuting tableswitch/lookupswitch instructions after deoptimization</li>
+        <li>JDK-8259343: [macOS] Update JNI error handling in Cocoa code.</li>
+        <li>JDK-8259585: Accessible actions do not work on mac os x</li>
+        <li>JDK-8259651: [macOS] Replace JNF_COCOA_ENTER/EXIT macros</li>
+        <li>JDK-8259662: Don't wrap SocketExceptions into SSLExceptions in SSLSocketImpl</li>
+        <li>JDK-8259710: Inlining trace leaks memory</li>
+        <li>JDK-8259729: Missed JNFInstanceOf -> IsInstanceOf conversion</li>
+        <li>JDK-8259777: Incorrect predication condition generated by ADLC</li>
+        <li>JDK-8259786: initialize last parameter of getpwuid_r</li>
+        <li>JDK-8259843: initialize dli_fname array before calling dll_address_to_library_name</li>
+        <li>JDK-8259869: [macOS] Remove desktop module dependencies on JNF Reference APIs</li>
+        <li>JDK-8259886: Improve SSL session cache performance and scalability</li>
+        <li>JDK-8259983: do not use uninitialized expand_ms value in G1CollectedHeap::expand_heap_after_young_collection</li>
+        <li>JDK-8260030: Improve stringStream buffer handling</li>
+        <li>JDK-8260236: better init AnnotationCollector _contended_group</li>
+        <li>JDK-8260255: C1: LoopInvariantCodeMotion constructor can leave some fields uninitialized</li>
+        <li>JDK-8260284: C2: assert(_base == Int) failed: Not an Int</li>
+        <li>JDK-8260380: Upgrade to LittleCMS 2.12</li>
+        <li>JDK-8260420: C2 compilation fails with assert(found_sfpt) failed: no node in loop that's not input to safepoint</li>
+        <li>JDK-8260426: awt debug_mem.c DMem_AllocateBlock might leak memory</li>
+        <li>JDK-8260432: allocateSpaceForGP in freetypeScaler.c might leak memory</li>
+        <li>JDK-8260616: Removing remaining JNF dependencies in the java.desktop module</li>
+        <li>JDK-8260653: Unreachable nodes keep speculative types alive</li>
+        <li>JDK-8260707: java/lang/instrument/PremainClass/InheritAgent0100.java times out</li>
+        <li>JDK-8260925: HttpsURLConnection does not work  with other JSSE provider.</li>
+        <li>JDK-8260926: Trace resource exhausted events unconditionally</li>
+        <li>JDK-8261020: Wrong format parameter in create_emergency_chunk_path</li>
+        <li>JDK-8261027: AArch64: Support for LSE atomics C++ HotSpot code</li>
+        <li>JDK-8261167: print_process_memory_info add a close call after fopen</li>
+        <li>JDK-8261170: Upgrade to freetype 2.10.4</li>
+        <li>JDK-8261198: [macOS] Incorrect JNI parameters in number conversion in A11Y code</li>
+        <li>JDK-8261235: C1 compilation fails with assert(res->vreg_number() == index) failed: conversion check</li>
+        <li>JDK-8261261: The version extra fields needs to be overridable in jib-profiles.js</li>
+        <li>JDK-8261262: Kitchensink24HStress.java crashed with EXCEPTION_ACCESS_VIOLATION</li>
+        <li>JDK-8261354: SIGSEGV at MethodIteratorHost</li>
+        <li>JDK-8261355: No data buffering in SunPKCS11 Cipher encryption when the underlying mechanism has no padding</li>
+        <li>JDK-8261397: try catch Method failing to work when dividing an integer by 0</li>
+        <li>JDK-8261422: Adjust problematic String.format calls in jdk/internal/util/Preconditions.java outOfBoundsMessage</li>
+        <li>JDK-8261447: MethodInvocationCounters frequently run into overflow</li>
+        <li>JDK-8261481: Cannot read Kerberos settings in dynamic store on macOS Big Sur</li>
+        <li>JDK-8261505: Test test/hotspot/jtreg/gc/parallel/TestDynShrinkHeap.java killed by Linux OOM Killer</li>
+        <li>JDK-8261601: free memory in early return in Java_sun_nio_ch_sctp_SctpChannelImpl_receive0</li>
+        <li>JDK-8261649: AArch64: Optimize LSE atomics in C++ code</li>
+        <li>JDK-8261730: C2 compilation fails with assert(store->find_edge(load) != -1) failed: missing precedence edge</li>
+        <li>JDK-8261752: Multiple GC test are missing memory requirements</li>
+        <li>JDK-8261791: (sctp) handleSendFailed in SctpChannelImpl.c potential leaks</li>
+        <li>JDK-8261812: C2 compilation fails with assert(!had_error) failed: bad dominance</li>
+        <li>JDK-8261914: IfNode::fold_compares_helper faces non-canonicalized bool when running JRuby JSON workload</li>
+        <li>JDK-8262093: java/util/concurrent/tck/JSR166TestCase.java failed "assert(false) failed: unexpected node"</li>
+        <li>JDK-8262110: DST starts from incorrect time in 2038</li>
+        <li>JDK-8262121: [11u] Redo 8244287: JFR: Methods samples have line number 0</li>
+        <li>JDK-8262163: Extend settings printout in jcmd VM.metaspace</li>
+        <li>JDK-8262295: C2: Out-of-Bounds Array Load from Clone Source</li>
+        <li>JDK-8262298: G1BarrierSetC2::step_over_gc_barrier fails with assert "bad barrier shape"</li>
+        <li>JDK-8262446: DragAndDrop hangs on Windows</li>
+        <li>JDK-8262461: handle wcstombsdmp return value correctly in unix awt_InputMethod.c</li>
+        <li>JDK-8262465: Very long compilation times and high memory consumption in C2 debug builds</li>
+        <li>JDK-8262726: AArch64: C1 StubAssembler::call_RT can corrupt stack</li>
+        <li>JDK-8262739: String inflation C2 intrinsic prevents insertion of anti-dependencies</li>
+        <li>JDK-8262829: Native crash in Win32PrintServiceLookup.getAllPrinterNames()</li>
+        <li>JDK-8262837: handle split_USE correctly</li>
+        <li>JDK-8262900: ToolBasicTest fails to access HTTP server it starts</li>
+        <li>JDK-8263260: [s390] Support latest hardware (z14 and z15)</li>
+        <li>JDK-8263311: Watch registry changes for remote printers update instead of polling</li>
+        <li>JDK-8263361: Incorrect arraycopy stub selected by C2 for SATB collectors</li>
+        <li>JDK-8263404: RsaPrivateKeySpec is always recognized as RSAPrivateCrtKeySpec in RSAKeyFactory.engineGetKeySpec</li>
+        <li>JDK-8263425: AArch64: two potential bugs in C1 LIRGenerator::generate_address()</li>
+        <li>JDK-8263448: CTW: fatal error: meet not symmetric</li>
+        <li>JDK-8263504: Some OutputMachOpcodes fields are uninitialized</li>
+        <li>JDK-8263557: Possible NULL dereference in Arena::destruct_contents()</li>
+        <li>JDK-8263558: Possible NULL dereference in fast path arena free if ZapResourceArea is true</li>
+        <li>JDK-8263676: AArch64: one potential bug in C1 LIRGenerator::generate_address()</li>
+        <li>JDK-8263729: [test] divert spurious output away from stream under test in ProcessBuilder Basic test</li>
+        <li>JDK-8263846: Bad JNI lookup getFocusOwner in accessibility code on Mac OS X</li>
+        <li>JDK-8264047: Duplicate global variable 'jvm' in libjavajpeg and libawt</li>
+        <li>JDK-8264096: slowdebug jvm crashes when StrInflatedCopy match rule is not supported</li>
+        <li>JDK-8264151: ciMethod::ensure_method_data() should return false is loading resulted in empty state</li>
+        <li>JDK-8264173: [s390] Improve Hardware Feature Detection And Reporting</li>
+        <li>JDK-8264190: Harden TLS interop tests</li>
+        <li>JDK-8264223: CodeHeap::verify fails extra_hops assertion in fastdebug test</li>
+        <li>JDK-8264328: Broken license in javax/swing/JComboBox/8072767/bug8072767.java</li>
+        <li>JDK-8264360: Loop strip mining verification fails with "should be on the backedge"</li>
+        <li>JDK-8264626: C1 should be able to inline excluded methods</li>
+        <li>JDK-8264640: CMS ParScanClosure misses a barrier</li>
+        <li>JDK-8264786: [macos] All Swing/AWT apps cause Allow Notifications prompt to appear when app is launched</li>
+        <li>JDK-8264821: DirectIOTest fails on a system with large block size</li>
+        <li>JDK-8264848: [macos] libjvm.dylib linker warning due to macOS version mismatch</li>
+        <li>JDK-8264923: PNGImageWriter.write_zTXt throws Exception with a typo</li>
+        <li>JDK-8264958: C2 compilation fails with assert "n is later than its clone"</li>
+        <li>JDK-8265099: Revert backport to 11u of 8236859: WebSocket over authenticating proxy fails with NPE</li>
+        <li>JDK-8265154: vinserti128 operand mix up for KNL platforms</li>
+        <li>JDK-8265239: Shenandoah: Shenandoah heap region count could be off by 1</li>
+        <li>JDK-8265417: Backport of JDK-8249672 breaks Solaris x86 build</li>
+        <li>JDK-8265421: java/lang/String/StringRepeat.java test is missing a memory requirement</li>
+        <li>JDK-8265462: Handle multiple slots in the NSS Internal Module from SunPKCS11's Secmod</li>
+        <li>JDK-8265537: x86 version string truncated after JDK-8249672 11u backport</li>
+        <li>JDK-8265666: Enable AIX build platform to make external debug symbols</li>
+        <li>JDK-8265677: CMS: CardTableBarrierSet::write_ref_array_work() lacks storestore barrier</li>
+        <li>JDK-8265690: Use the latest Ubuntu base image version in Docker testing</li>
+        <li>JDK-8265718: Build failure after JDK-8258414 11u backport</li>
+        <li>JDK-8265750: Fatal error in safepoint.cpp after backport of 8258414</li>
+        <li>JDK-8265784: [C2] Hoisting of DecodeN leaves MachTemp inputs behind</li>
+        <li>JDK-8265938: C2's conditional move optimization does not handle top Phi</li>
+        <li>JDK-8266220: keytool still prompt for store password on a password-less pkcs12 file if -storetype pkcs12 is specified</li>
+        <li>JDK-8266293: Key protection using PBEWithMD5AndDES fails with "java.security.InvalidAlgorithmParameterException: Salt must be 8 bytes long"</li>
+        <li>JDK-8266713: [AIX] Build failure after 11u backport of JDK-8247753</li>
+        <li>JDK-8266802: Shenandoah: Round up region size to page size unconditionally</li>
+        <li>JDK-8266892: avoid maybe-uninitialized gcc warnings on linux s390x</li>
+        <li>JDK-8266929: Unable to use algorithms from 3p providers</li>
+        <li>JDK-8267235: [macos_aarch64] InterpreterRuntime::throw_pending_exception messing up LR results in crash</li>
+        <li>JDK-8267561: Shenandoah: Reference processing not properly setup for outside of cycle degenerated GC</li>
+        <li>JDK-8267599: Revert the change to the default PKCS12 macAlgorithm and macIterationCount props for 11u/8u/7u</li>
+        <li>JDK-8267641: [11u] 8227609 backport typo</li>
+        <li>JDK-8267721: Enable sun/security/pkcs11 tests for Amazon Linux 2 AArch64</li>
+        <li>JDK-8268678: LetsEncryptCA.java test fails as Let’s Encrypt Authority X3 is retired</li>
+      </ul>
+
+      <h3>Notes on individual issues:</h3>
+
+      <h4>security-libs/java.security:</h4>
+
+      <h5>JDK-8215293: Customizing PKCS12 keystore Generation</h5>
+
+      New system and security properties have been added to enable users to
+      customize the generation of PKCS #12 keystores. This includes
+      algorithms and parameters for key protection, certificate protection,
+      and MacData. The detailed explanation and possible values for these
+      properties can be found in the "PKCS12 KeyStore properties" section of
+      the `java.security` file.
+
+      Also, support for the following SHA-2 based HmacPBE algorithms has
+      been added to the SunJCE provider:
+
+      * HmacPBESHA224
+      * HmacPBESHA256
+      * HmacPBESHA384
+      * HmacPBESHA512
+      * HmacPBESHA512/224
+      * HmacPBESHA512/256
+
+      <h5>JDK-8256902: Removed Root Certificates with 1024-bit Keys</h5>
+
+      The following root certificates with weak 1024-bit RSA public keys
+      have been removed from the `cacerts` keystore:
+
+      Alias Name: thawtepremiumserverca [jdk]
+      Distinguished Name: EMAILADDRESS=premium-server at thawte.com, CN=Thawte Premium Server CA, OU=Certification Services Division, O=Thawte Consulting cc, L=Cape Town, ST=Western Cape, C=ZA
+
+      Alias Name: verisignclass2g2ca [jdk]
+      Distinguished Name: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 2 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+
+      Alias Name: verisignclass3ca [jdk]
+      Distinguished Name: OU=Class 3 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+
+      Alias Name: verisignclass3g2ca [jdk]
+      Distinguished Name: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 3 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+
+      Alias Name: verisigntsaca [jdk]
+      Distinguished Name: CN=Thawte Timestamping CA, OU=Thawte Certification, O=Thawte, L=Durbanville, ST=Western Cape, C=ZA
+
+      <h5>JDK-8261361: Removed Telia Company's Sonera Class2 CA certificate</h5>
+
+      The following root certificate have been removed from the cacerts truststore:
+
+      Alias Name: soneraclass2ca
+      Distinguished Name: CN=Sonera Class2 CA, O=Sonera, C=FI
+
+      <h5>JDK-8242069: Upgraded the Default PKCS12 Encryption and MAC Algorithms</h5>
+
+      The default encryption and MAC algorithms used in a PKCS #12 keystore
+      have been updated. The new algorithms are based on AES-256 and SHA-256
+      and are stronger than the old algorithms that were based on RC2,
+      DESede, and SHA-1. See the security properties starting with
+      `keystore.pkcs12` in the `java.security` file for detailed
+      information.
+
+      For compatibility, a new system property named
+      `keystore.pkcs12.legacy` is defined that will revert the algorithms to
+      use the older, weaker algorithms. There is no value defined for this
+      property.
+
+      <h4>security-libs/javax.net.ssl:</h4>
+
+      <h5>JDK-8257548: Improve Encoding of TLS Application-Layer Protocol Negotiation (ALPN) Values</h5>
+
+      Certain TLS ALPN values couldn't be properly read or written by the
+      SunJSSE provider. This is due to the choice of Strings as the API
+      interface and the undocumented internal use of the UTF-8 Character Set
+      which converts characters larger than U+00007F (7-bit ASCII) into
+      multi-byte arrays that may not be expected by a peer.
+
+      ALPN values are now represented using the network byte representation
+      expected by the peer, which should require no modification for
+      standard 7-bit ASCII-based character Strings. However, SunJSSE now
+      encodes/decodes String characters as 8-bit ISO_8859_1/LATIN-1
+      characters.  This means applications that used characters above
+      U+000007F that were previously encoded using UTF-8 may need to either
+      be modified to perform the UTF-8 conversion, or set the Java security
+      property `jdk.tls.alpnCharset` to "UTF-8" revert the behavior.
+
+      See the updated guide at
+      https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/alpn.html
+      for more information.
+
+      <h5>JDK-8244460: Support for certificate_authorities Extension</h5>
+
+      The "certificate_authorities" extension is an optional extension
+      introduced in TLS 1.3. It is used to indicate the certificate
+      authorities (CAs) that an endpoint supports and should be used by the
+      receiving endpoint to guide certificate selection.
+
+      With this JDK release, the "certificate_authorities" extension is
+      supported for TLS 1.3 in both the client and the server sides.  This
+      extension is always present for client certificate selection, while it
+      is optional for server certificate selection.
+
+      Applications can enable this extension for server certificate
+      selection by setting the `jdk.tls.client.enableCAExtension` system
+      property to `true`.  The default value of the property is `false`.
+
+      Note that if the client trusts more CAs than the size limit of the
+      extension (less than 2^16 bytes), the extension is not enabled.  Also,
+      some server implementations do not allow handshake messages to exceed
+      2^14 bytes.  Consequently, there may be interoperability issues when
+      `jdk.tls.client.enableCAExtension` is set to `true` and the client
+      trusts more CAs than the server implementation limit.
+
+    </div>
+
+    <div class="anchor">
+      <a href="#jdk16_0_2_7" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
+      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk16_0_2_7_notes');">-/+</button> <a id="jdk16_0_2_7">OpenJDK 16.0.2+7</a></h2>
+    </div>
+    <div class="margin-bottom softHide" id="jdk16_0_2_7_notes">
+
+      You can check the details of these bugs using the <a href="https://bugs.openjdk.java.net/issues/?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%2016.0.2" target="_blank">16.0.2</a> Fix Version filter in the JDK Bug System.
+
+      <ul>
+        <li>JDK-8271096: debug.cpp utilities should be available in product builds.</li>
+        <li>JDK-8268317: PhaseStringOpts::int_stringSize doesn't handle min_jint correctly</li>
+        <li>JDK-8268252: Inconsistent TLS protocol version in debug output</li>
+        <li>JDK-8268252: Inconsistent TLS protocol version in debug output</li>
+        <li>JDK-8268247: [macOS] All Swing/AWT apps cause Allow Notifications prompt to appear when app is launched</li>
+        <li>JDK-8268246: SIGSEGV in get_current_contended_monitor</li>
+        <li>JDK-8268243: StackOverflowError on open WindowsPreferences</li>
+        <li>JDK-8268132: SIGSEGV at MethodIteratorHost</li>
+        <li>JDK-8268028: NullPointerException in sun.security.ssl.HKDF.extract(HKDF.java:93)</li>
+        <li>JDK-8267607: [macos_aarch64] InterpreterRuntime::throw_pending_exception messing up LR results in crash</li>
+        <li>JDK-8267560: Shenandoah: Round up region size to page size unconditionally</li>
+        <li>JDK-8267346: java -Xshare:dump -XX:DumpLoadedClassList=... crashes</li>
+        <li>JDK-8267345: VM crashes during dumping classlist with -Xshare:dump option</li>
+        <li>JDK-8267268: [BACKOUT] JDK-8196415 Disable SHA-1 Signed JARs</li>
+        <li>JDK-8267195: Update LogCompilation junit to 4.13.1</li>
+        <li>JDK-8267152: sun/hotspot/whitebox/CPUInfoTest.java fails on Ice Lake</li>
+        <li>JDK-8267100: [BACKOUT] JDK-8196415 Disable SHA-1 Signed JARs</li>
+        <li>JDK-8267058: Shenandoah: Shenandoah heap region count could be off by 1</li>
+        <li>JDK-8266663: Enable AIX build platform to make external debug symbols</li>
+        <li>JDK-8266659: TestRedirectLinks fails</li>
+        <li>JDK-8266656: assert root method not found in witnessed_reabstraction_in_supers is too strong</li>
+        <li>JDK-8266538: No data buffering in SunPKCS11 Cipher encryption when the underlying mechanism has no padding</li>
+        <li>JDK-8266428: JVM crash with assert(Universe::heap()->is_in(result)) failed: object not in heap</li>
+        <li>JDK-8266325: doc/building.md should mention homebrew install freetype</li>
+        <li>JDK-8266205: Update milestone to fcs for jdk16.0.2+4</li>
+        <li>JDK-8265530: OldObjectSample events too expensive</li>
+        <li>JDK-8265402: Remove Telia Company CA certificate expiring in April 2021</li>
+        <li>JDK-8265194: C2: Out-of-Bounds Array Load from Clone Source</li>
+        <li>JDK-8265141: Duplicate global variable 'jvm' in libjavajpeg and libawt</li>
+        <li>JDK-8265068: TimeZone getOffset API does not  return a DST offset between years 2038-2137</li>
+        <li>JDK-8264904: DST starts from incorrect time in 2038</li>
+        <li>JDK-8264840: Shenandoah: Remove leftover parallel reference processing argument</li>
+        <li>JDK-8264784: Possible NULL dereference in fast path arena free if ZapResourceArea is true</li>
+        <li>JDK-8264627: Don't wrap SocketExceptions into SSLExceptions in SSLSocketImpl</li>
+        <li>JDK-8264537: gtest/GTestWrapper.java vmErrorTest.unimplemented1_vm_assert failed</li>
+        <li>JDK-8264511: Potential memory leaks in JVMTI after JDK-8227745</li>
+        <li>JDK-8264506: Consolidate POSIX code for runtime exit support: os::shutdown</li>
+        <li>JDK-8264451: Kitchensink24HStress.java crashed with EXCEPTION_ACCESS_VIOLATION</li>
+        <li>JDK-8264362: Disable SHA-1 Signed JARs</li>
+        <li>JDK-8264339: Disable SHA-1 Signed JARs</li>
+        <li>JDK-8264276: CDS: java/lang/ModuleLayer.EMPTY_LAYER should be singleton</li>
+        <li>JDK-8264168: StartTlsResponse.close() hangs due to synchronization issues</li>
+        <li>JDK-8263962: C2: JVMS not cloned when needs_clone_jvms() is true</li>
+        <li>JDK-8263957: (fs) FileStore.supportsFileAttributeView might return false negative in case of ext3</li>
+        <li>JDK-8263956: Exclude some failing tests from security/infra/java/security/cert/CertPathValidator</li>
+        <li>JDK-8263941: Test test/hotspot/jtreg/gc/parallel/TestDynShrinkHeap.java killed by Linux OOM Killer</li>
+        <li>JDK-8263939: better init AnnotationCollector _contended_group</li>
+        <li>JDK-8263937: Remove Shenandoah leftovers from ReferenceProcessor</li>
+        <li>JDK-8263932: C4530 was reported from VS 2019 at access bridge</li>
+        <li>JDK-8263874: Uninitialized Method* variables after JDK-8233913</li>
+        <li>JDK-8263872: Possible NULL dereference in Arena::destruct_contents()</li>
+        <li>JDK-8263808: Watch registry changes for remote printers update instead of polling</li>
+        <li>JDK-8263598: DragAndDrop hangs on Windows</li>
+        <li>JDK-8263581: IfNode::fold_compares_helper faces non-canonicalized bool when running JRuby JSON workload</li>
+        <li>JDK-8263299: try catch Method failing to work when dividing an integer by 0</li>
+        <li>JDK-8263298: x86 32-bit build fails when -fcf-protection is passed in the compiler flags</li>
+        <li>JDK-8263297: "jdk/dynalink/TypeConverterFactoryMemoryLeakTest.java failed with ""AssertionError: Should have GCd a method handle by now"""</li>
+        <li>JDK-8263296: Multiple GC test are missing memory requirements</li>
+        <li>JDK-8263295: Shenandoah: re-organize saving/restoring machine state in assembler code</li>
+        <li>JDK-8263294: GitHub actions should use MSVC 14.28</li>
+        <li>JDK-8263293: jpackage tests fail when Desktop is not supported</li>
+        <li>JDK-8263292: Epsilon: clean up unused includes</li>
+        <li>JDK-8263291: UseCompressedClassPointers depends on UseCompressedOops in vmError.cpp</li>
+        <li>JDK-8263290: Code IfNode::fold_compares_helper more defensively</li>
+        <li>JDK-8263289: Regression introduced with JDK-8250984 - memory might be null in some machines</li>
+        <li>JDK-8263288: Several test failures due to javax.net.ssl.SSLException: Connection reset</li>
+        <li>JDK-8263287: Crash caused by lambda proxy class loaded in Shutdown hook</li>
+        <li>JDK-8263286: [TESTBUG] gc/g1/TestGCLogMessages.java fails if ergonomics detect too small InitialHeapSize</li>
+        <li>JDK-8263285: AccessDeniedException caused by delayed file deletion on Windows</li>
+        <li>JDK-8263284: Epsilon: improve performance under contention during virtual space expansion</li>
+        <li>JDK-8263283: Zero error reporting is broken after JDK-8255711</li>
+        <li>JDK-8263282: Zero: skip serviceability/sa tests</li>
+        <li>JDK-8263281: java/lang/StringBuilder/HugeCapacity.java fails without Compact Strings</li>
+        <li>JDK-8263280: runtime/cds/serviceability/ReplaceCriticalClassesForSubgraphs.java fails without CompactStrings</li>
+        <li>JDK-8263279: Shenandoah: Rename store-val to IU-barrier</li>
+        <li>JDK-8263278: Add Shenandoah test config to compiler/gcbarriers/UnsafeIntrinsicsTest.java</li>
+        <li>JDK-8263277: Shenandoah: Use object size for full GC humongous compaction</li>
+        <li>JDK-8263276: Shenandoah: Disable class-unloading in I-U mode</li>
+        <li>JDK-8263275: Shenandoah: ShenandoahMarkingContext asserts are unnecessary</li>
+        <li>JDK-8263274: Shenandoah: uninitialized label in VerifyThreadGCState</li>
+        <li>JDK-8263273: Shenandoah: Full GC does not need to remark threads and drain SATB buffers</li>
+        <li>JDK-8263272: gc/shenandoah/mxbeans tests fail with -Xcomp</li>
+        <li>JDK-8263267: Upgrade to FreeType 2.10.4</li>
+        <li>JDK-8263020: Native crash in Win32PrintServiceLookup.getAllPrinterNames()</li>
+        <li>JDK-8262771: WindowsFileAttributes does not know about Unix domain sockets</li>
+        <li>JDK-8262770:  Double-rounding possibility in float fma</li>
+        <li>JDK-8262769: runtime/jni/checked/TestCheckedReleaseArrayElements.java fails with stderr not empty</li>
+        <li>JDK-8262767: Using -Xcheck:jni can lead to a double-free after JDK-8193234</li>
+        <li>JDK-8262765: NMT: tuning statistic shows incorrect hash distribution</li>
+        <li>JDK-8262763: aarch64: fix typo in verify_oop_array</li>
+        <li>JDK-8262253: [PPC64] AES intrinsics write beyond the destination array</li>
+        <li>JDK-8262252: Restore HandleArea used in Deoptimization::uncommon_trap</li>
+        <li>JDK-8262251: Cannot programmatically retrieve Metaspace max set via JAVA_TOOL_OPTIONS</li>
+        <li>JDK-8262250: Wrong format in SAP copyright header of OsVersionTest</li>
+        <li>JDK-8262249: The version extra fields needs to be overridable in jib-profiles.js</li>
+        <li>JDK-8262248: Test java/lang/System/OsVersionTest.java still failing on BigSur patch versions after JDK-8253702</li>
+        <li>JDK-8262247: BigSur version number reported as 10.16</li>
+        <li>JDK-8262246: Fix incorrect result of Math.abs() with char type</li>
+        <li>JDK-8262245: isStandalone property: remove dependency on pretty-print</li>
+        <li>JDK-8262243: Windows IME was disabled after DnD operation</li>
+        <li>JDK-8262240: PPC64 Zero build fails with 'VMError::controlled_crash(int)::FunctionDescriptor functionDescriptor' has incomplete type and cannot be defined</li>
+        <li>JDK-8261764: jdk/net/ExtendedSocketOption/AsynchronousSocketChannelNAPITest.java fails intermittently</li>
+        <li>JDK-8261763: Dynalink leaks memory when generating type converters</li>
+        <li>JDK-8261762: Upgrade to LittleCMS 2.12</li>
+        <li>JDK-8261761: XML declaration is not followed by a newline</li>
+        <li>JDK-8261488: testlibrary_tests/ctw/JarDirTest.java fails with InvalidPathException on windows</li>
+        <li>JDK-8261389: C2: assert(false) failed: unscheduable graph</li>
+        <li>JDK-8261388: AArch64: Wrong code generated for shifting right and accumulating four unsigned short integers</li>
+        <li>JDK-8261387: Remove EA from JDK 16 version string starting with Initial RC promotion on Feb 04</li>
+        <li>JDK-8261386: ParallelGC: oldgen expansion needs release-store for _end</li>
+        <li>JDK-8261385: StringBuilder::insert is incorrect without Compact Strings</li>
+        <li>JDK-8261382: Add 2 HARICA roots to cacerts truststore</li>
+        <li>JDK-8261381: (tz) Upgrade time-zone data to tzdata2021a</li>
+        <li>JDK-8261380: ProblemList two security/krb5 tests on Linux</li>
+        <li>JDK-8260997: Final nroff manpage update for JDK 16</li>
+        <li>JDK-8260996: JFR: Events dropped when streaming over a chunk rotation</li>
+        <li>JDK-8260995: [vector] ZGC: VectorReshape test produces incorrect results with ZGC enabled</li>
+        <li>JDK-8260994: Build failures after JDK-8253353</li>
+        <li>JDK-8260993: JVM crashes when executing PhaseIdealLoop::match_fill_loop</li>
+        <li>JDK-8260992: add a regression test for 8260370</li>
+        <li>JDK-8260991: Crash in C2: guarantee(n != NULL) failed: No Node</li>
+        <li>JDK-8260990: ZGC: Handle incorrect processor id reported by the operating system</li>
+        <li>JDK-8260989: C2: LoopLimit node is not eliminated</li>
+        <li>JDK-8260988: C2 compilation fails with assert(vtable_index == Method::invalid_vtable_index) failed: correct sentinel value</li>
+        <li>JDK-8260987: Uninitialized variable after JDK-8257513</li>
+        <li>JDK-8260986: AllocateUninitializedArray C2 intrinsic fails with void.class input</li>
+        <li>JDK-8260985: Some fields in HaltNode is not cloned</li>
+        <li>JDK-8260984: Incorrect encoding of AVX-512 kmovq instruction</li>
+        <li>JDK-8260983: C1: 3-arg StubAssembler::call_RT stack-use condition is incorrect</li>
+        <li>JDK-8260982: Incorrect predication condition generated by ADLC</li>
+        <li>JDK-8260981: Misplaced curly brace in Matcher::find_shared_post_visit</li>
+        <li>JDK-8260980: "C2: assert failed (""Bad derived pointer"") with -XX:+VerifyRegisterAllocator"</li>
+        <li>JDK-8260979: Fix optimization-unstable code involving signed integer overflow</li>
+        <li>JDK-8259606: C2: assert((constant_addr - _masm.code()->consts()->start()) == con.offset())</li>
+        <li>JDK-8258473: JCE doesn't provide any class to handle RSA private key in PKCS#1</li>
+      </ul>
+    </div>
+
     <div style="margin-top: 3rem;">
       <a href="./supported_platforms.html" class="no-underline home-links">
         <h2 class="inline-block zero-margin">Supported Platforms&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
-      <a href="https://github.com/adoptium/temurin-build/issues" class="no-underline home-links">
+      <a href="https://github.com/adoptium/adoptium-support/issues" class="no-underline home-links">
         <h2 class="inline-block zero-margin">Submit an Issue&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
        
