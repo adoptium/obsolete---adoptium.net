@@ -7,107 +7,270 @@
 
   <div class="align-left support">
 
-    <p>We're currently working out our faq page. Please check back later!</p>
-
-    {{!--<div class="anchor">
+    <div class="anchor">
       <a href="#introduction" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
       <h2 class="bold"><a id="introduction">Introduction</a></h2>
     </div>
     <div class="margin-bottom">
       <h3>OpenJDK Release Notes</h3>
       <p>
-        OpenJDK 8u212-b03 and 11.0.3+7 were the first non-Oracle led OpenJDK releases,
-        their release notes are listed below. For release notes prior to 8u212-b03 and
-        11.0.3+7 please refer to the Oracle website.
-
-        More recently we've been swapping to showing the release notes hosted by
-        <a href="https://foojay.io" target="_blank">foojay.io</a>, an open source
-        community around OpenJDK topics that is from one of our sponsors, Azul Systems.
+        The release notes below are taken from the official release announcements in the appropriate OpenJDK mailing list. 
+        Any extra Eclipse Temurin only issues will be clearly demarcated using an Eclipse Temurin heading.
       </p>
     </div>
 
     <div class="anchor">
-      <a href="#jdk8u272" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk8u272_notes');">-/+</button> <a id="jdk8u272">OpenJDK 8u272 (1.8.0_272-b10)</a></h2>
-      <h3 style="text-align: center;">(<a href="https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u272-b10/OpenJDK8U-sources_8u272b10.tar.gz">Upstream Source Tarball OpenJDK 8u272-b10</a>)</h3>
+      <a href="#jdk8u302" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
+      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk8u302_notes');">-/+</button> <a id="jdk8u252">OpenJDK 8u302 (1.8.0_302-b07)</a></h2>
     </div>
-    <div class="margin-bottom softHide" id="jdk8u272_notes">
-      For 8u272 fixes see <a href="https://foojay.io/java-8/?quarter=102020&tab=allissues" target="_blank">Combined CVE and JDK bug view</a> at foojay.io.
-      Please note you may not have permission to click through to the JBS bug itself, in which case you'll need to read the CVE directly.
-    </div>
+    <div class="margin-bottom softHide" id="jdk8u302_notes">
 
-    <div class="anchor">
-      <a href="#jdk8u252" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><button type="button" onclick="showHideReleaseNotes('jdk8u252_notes');">-/+</button> <a id="jdk8u252">OpenJDK 8u252 (1.8.0_252-b09)</a></h2>
-      <h3 style="text-align: center;">(<a href="https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u252-b09/OpenJDK8U-sources_8u252b09.tar.gz">Upstream Source Tarball OpenJDK 8u252-b09</a>)</h3>
-    </div>
-    <div class="margin-bottom softHide" id="jdk8u252_notes">
-
-      You can check the details of these bugs using the <a href="https://bugs.openjdk.java.net/browse/JDK-8227806?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%20openjdk8u252%20ORDER%20BY%20created%20DESC" target="_blank">8u252</a> Fix Version filter in the JDK Bug System.
+      You can check the details of these bugs using the <a href="https://bugs.openjdk.java.net/browse/JDK-8227806?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%20openjdk8u302%20ORDER%20BY%20created%20DESC" target="_blank">8u302</a> Fix Version filter in the JDK Bug System.
 
       <h3>Security fixes</h3>
       <ul>
-        <li>JDK-8223898, CVE-2020-2754: Forward references to Nashorn</li>
-        <li>JDK-8223904, CVE-2020-2755: Improve Nashorn matching</li>
-        <li>JDK-8224541, CVE-2020-2756: Better mapping of serial ENUMs</li>
-        <li>JDK-8224549, CVE-2020-2757: Less Blocking Array Queues</li>
-        <li>JDK-8225603: Enhancement for big integers</li>
-        <li>JDK-8227542: Manifest improved jar headers</li>
-        <li>JDK-8231415, CVE-2020-2773: Better signatures in XML</li>
-        <li>JDK-8233250: Better X11 rendering</li>
-        <li>JDK-8233410: Better Build Scripting</li>
-        <li>JDK-8234027: Better JCEKS key support</li>
-        <li>JDK-8234408, CVE-2020-2781: Improve TLS session handling</li>
-        <li>JDK-8234825, CVE-2020-2800: Better Headings for HTTP Servers</li>
-        <li>JDK-8234841, CVE-2020-2803: Enhance buffering of byte buffers</li>
-        <li>JDK-8235274, CVE-2020-2805: Enhance typing of methods</li>
-        <li>JDK-8236201, CVE-2020-2830: Better Scanner conversions</li>
-        <li>JDK-8238960: linux-i586 builds are inconsistent as the newly build jdk is not able to reserve enough space for object heap</li>
+        <li>JDK-8256157: Improve bytecode assembly</li>
+        <li>JDK-8256491: Better HTTP transport</li>
+        <li>JDK-8258432, CVE-2021-2341: Improve file transfers</li>
+        <li>JDK-8260453: Improve Font Bounding</li>
+        <li>JDK-8260960: Signs of jarsigner signing</li>
+        <li>JDK-8260967, CVE-2021-2369: Better jar file validation</li>
+        <li>JDK-8262380: Enhance XML processing passes</li>
+        <li>JDK-8262403: Enhanced data transfer</li>
+        <li>JDK-8262410: Enhanced rules for zones</li>
+        <li>JDK-8262477: Enhance String Conclusions</li>
+        <li>JDK-8262967: Improve Zip file support</li>
+        <li>JDK-8264066, CVE-2021-2388: Enhance compiler validation</li>
+        <li>JDK-8264079: Improve abstractions</li>
+        <li>JDK-8264460: Improve NTLM support</li>
       </ul>
 
       <h3>Other changes</h3>
       <ul>
-        <li>JDK-8005819: Support cross-realm MSSFU</li>
-        <li>JDK-8022263: use same Clang warnings on BSD as on Linux</li>
-        <li>JDK-8038631: Create wrapper for awt.Robot with additional functionality</li>
-        <li>JDK-8047212: runtime/ParallelClassLoading/bootstrap/random/inner-complex assert(ObjectSynchronizer::verify_objmon_isinpool(inf)) failed: monitor is invalid</li>
-        <li>JDK-8055283: Expand ResourceHashtable with C_HEAP allocation, removal and some unit tests</li>
-        <li>JDK-8068184: Fix for JDK-8032832 caused a deadlock</li>
-        <li>JDK-8079693: Add support for ECDSA P-384 and P-521 curves to XML Signature</li>
-        <li>JDK-8132130: some docs cleanup</li>
-        <li>JDK-8135318: CMS wrong max_eden_size for check_gc_overhead_limit</li>
-        <li>JDK-8144445: Maximum size checking in Marlin ArrayCache utility methods is not optimal</li>
-        <li>JDK-8144446: Automate the Marlin crash test</li>
-        <li>JDK-8144526: Remove Marlin logging use of deleted internal API</li>
-        <li>JDK-8144630: Use PrivilegedAction to create Thread in Marlin RendererStats</li>
-        <li>JDK-8144654: Improve Marlin logging</li>
-        <li>JDK-8144718: Pisces / Marlin Strokers may generate invalid curves with huge coordinates and round joins</li>
-        <li>JDK-8166976: TestCipherPBECons has wrong @run line</li>
-        <li>JDK-8167409: Invalid value passed to critical JNI function</li>
-        <li>JDK-8181872: C1: possible overflow when strength reducing integer multiply by constant</li>
-        <li>JDK-8187078: -XX:+VerifyOops finds numerous problems when running JPRT</li>
-        <li>JDK-8191227: issues with unsafe handle resolution</li>
-        <li>JDK-8197441: Signature#initSign/initVerify for an invalid private/public key fails with ClassCastException for SunPKCS11 provider</li>
-        <li>JDK-8204152: SignedObject throws NullPointerException for null keys with an initialized Signature object</li>
-        <li>JDK-8215756: Memory leaks in the AWT on macOS</li>
-        <li>JDK-8216472: (se) Stack overflow during selection operation leads to crash (win)</li>
-        <li>JDK-8219244: NMT: Change ThreadSafepointState's allocation type from mtInternal to mtThread</li>
-        <li>JDK-8219597: (bf) Heap buffer state changes could provoke unexpected exceptions</li>
-        <li>JDK-8225128: Add exception for expiring DocuSign root to VerifyCACerts test</li>
-        <li>JDK-8225130: Add exception for expiring Comodo roots to VerifyCACerts test</li>
-        <li>JDK-8229022: BufferedReader performance can be improved by using StringBuilder</li>
-        <li>JDK-8229345: Memory leak due to vtable stubs not being shared on SPARC</li>
-        <li>JDK-8229872: (fs) Increase buffer size used with getmntent</li>
-        <li>JDK-8230235: Rendering HTML with empty img attribute and documentBaseKey cause Exception</li>
-        <li>JDK-8231430: C2: Memory stomp in max_array_length() for T_ILLEGAL type</li>
-        <li>JDK-8235744: PIT: test/jdk/javax/swing/text/html/TestJLabelWithHTMLText.java times out in linux-x64</li>
-        <li>JDK-8235904: Infinite loop when rendering huge lines</li>
-        <li>JDK-8236179: C1 register allocation error with T_ADDRESS</li>
-        <li>JDK-8237368: Problem with NullPointerException in RMI TCPEndpoint.read</li>
-        <li>JDK-8240521: Revert backport of 8231584: Deadlock with ClassLoader.findLibrary and System.loadLibrary call</li>
-        <li>JDK-8241296: Segfault in JNIHandleBlock::oops_do()</li>
-        <li>JDK-8241307: Marlin renderer should not be the default in 8u252</li>
+        <li>JDK-6878250: (so) IllegalBlockingModeException thrown when reading from a closed SocketChannel's InputStream</li>
+        <li>JDK-6990210: [TEST_BUG] EventDispatchThread/HandleExceptionOnEDT/HandleExceptionOnEDT.java fails on gnome</li>
+        <li>JDK-7059970: Test case: javax/imageio/plugins/png/ITXtTest.java is not closing a file</li>
+        <li>JDK-7106851: Test should not use System.exit</li>
+        <li>JDK-8019470: Changes needed to compile JDK 8 on MacOS with clang compiler</li>
+        <li>JDK-8028618: [TEST BUG] javax/swing/JScrollBar/bug4202954/bug4202954.java fails</li>
+        <li>JDK-8030123: java/beans/Introspector/Test8027648.java fails</li>
+        <li>JDK-8032050: Clean up for java/rmi/activation/Activatable/shutdownGracefully/ShutdownGracefully.java</li>
+        <li>JDK-8033289: clang: clean up unused function warning</li>
+        <li>JDK-8034856: gcc warnings compiling src/solaris/native/sun/security/pkcs11</li>
+        <li>JDK-8034857: gcc warnings compiling src/solaris/native/sun/management</li>
+        <li>JDK-8035000: clean up ActivationLibrary.DestroyThread</li>
+        <li>JDK-8035054: JarFacade.c should not include ctype.h</li>
+        <li>JDK-8035287: gcc warnings compiling various libraries files</li>
+        <li>JDK-8036095: RMI tests using testlibrary.RMID and testlibrary.JavaVM do not pass through vmoptions</li>
+        <li>JDK-8037825: Fix warnings and enable "warnings as errors" in serviceability native libraries</li>
+        <li>JDK-8042891: Format issues embedded in macros for two g1 source files</li>
+        <li>JDK-8043264: hsdis library not picked up correctly on expected paths</li>
+        <li>JDK-8043646: libosxapp.dylib fails to build on Mac OS 10.9 with clang</li>
+        <li>JDK-8047939: [TESTBUG] Rewrite test/runtime/8001071/Test8001071.sh</li>
+        <li>JDK-8055754: filemap.cpp does not compile with clang</li>
+        <li>JDK-8064909: FragmentMetaspace.java got OutOfMemoryError</li>
+        <li>JDK-8066508: JTReg tests timeout on slow devices when run using JPRT</li>
+        <li>JDK-8066807: langtools/test/Makefile should use -agentvm not -samevm</li>
+        <li>JDK-8071374: -XX:+PrintAssembly -XX:+PrintSignatureHandlers crash fastdebug VM with assert(limit == __null || limit <= nm->code_end()) in RelocIterator::initialize</li>
+        <li>JDK-8073446: TimeZone getOffset API does not return a dst offset between years 2038-2137</li>
+        <li>JDK-8074835: Resolve disabled warnings for libj2gss</li>
+        <li>JDK-8074836: Resolve disabled warnings for libosxkrb5</li>
+        <li>JDK-8075071: [TEST_BUG] TimSortStackSize2.java: OOME: Java heap space: MaxHeap shrinked by MaxRAMFraction</li>
+        <li>JDK-8077364: "if( !this )" construct prevents build on Xcode 6.3</li>
+        <li>JDK-8078855: [TEST_BUG] javax/swing/JComboBox/8032878/bug8032878.java fails in WindowsClassicLookAndFeel</li>
+        <li>JDK-8081764: [TEST_BUG] Test javax/swing/plaf/aqua/CustomComboBoxFocusTest.java fails on Windows, Solaris Sparcv9 and Linux but passes on MacOSX</li>
+        <li>JDK-8129511: PlatformMidi.c:83 uses malloc without malloc header</li>
+        <li>JDK-8130308: Too low memory usage in TestPromotionFromSurvivorToTenuredAfterMinorGC.java</li>
+        <li>JDK-8130430: [TEST_BUG] remove unnecessary internal calls from javax/swing/JRadioButton/8075609/bug8075609.java</li>
+        <li>JDK-8132148: G1 hs_err region dump legend out of sync with region values</li>
+        <li>JDK-8132709: [TESTBUG] gc/g1/TestHumongousShrinkHeap.java might fail on embedded</li>
+        <li>JDK-8134672: [TEST_BUG] Some tests should check isDisplayChangeSupported</li>
+        <li>JDK-8134883: C1 hard crash in range check elimination in Nashorn test262parallel</li>
+        <li>JDK-8136592: [TEST_BUG] Fix 2 platform-specific closed regtests for jigsaw</li>
+        <li>JDK-8138820: JDK Hotspot build fails with Xcode 7.0.1</li>
+        <li>JDK-8151786: [TESTBUG] java/beans/XMLEncoder/Test4625418.java timed out intermittently</li>
+        <li>JDK-8159898: Negative array size in java/beans/Introspector/Test8027905.java</li>
+        <li>JDK-8166046: [TESTBUG] compiler/stringopts/TestStringObjectInitialization.java fails with OOME</li>
+        <li>JDK-8166724: gc/g1/TestHumongousShrinkHeap.java fails with OOME</li>
+        <li>JDK-8172188: JDI tests fail due to "permission denied" when creating temp file</li>
+        <li>JDK-8177809: File.lastModified() is losing milliseconds (always ends in 000)</li>
+        <li>JDK-8178403: DirectAudio in JavaSound may hang and leak</li>
+        <li>JDK-8180478: tools/launcher/MultipleJRE.sh fails on Windows because of extra-''</li>
+        <li>JDK-8183910: gc/arguments/TestAggressiveHeap.java fails intermittently</li>
+        <li>JDK-8190332: PngReader throws NegativeArraySizeException/OOM error when IHDR width is very large</li>
+        <li>JDK-8190679: java/util/Arrays/TimSortStackSize2.java fails with "Initial heap size set to a larger value than the maximum heap size"</li>
+        <li>JDK-8191955: AArch64: incorrect prefetch distance causes an internal error</li>
+        <li>JDK-8196092: javax/swing/JComboBox/8032878/bug8032878.java fails</li>
+        <li>JDK-8199265: java/util/Arrays/TimSortStackSize2.java fails with OOM</li>
+        <li>JDK-8200550: Xcode 9.3 produce warning -Wexpansion-to-defined</li>
+        <li>JDK-8202299: Java Keystore fails to load PKCS12/PFX certificates created in WindowsServer2016</li>
+        <li>JDK-8203196: C1 emits incorrect code due to integer overflow in _tableswitch keys</li>
+        <li>JDK-8205014: com/sun/jndi/ldap/DeadSSLLdapTimeoutTest.java failed with "Read timed out"</li>
+        <li>JDK-8206243: java -XshowSettings fails if memory.limit_in_bytes overflows LONG.max</li>
+        <li>JDK-8206925: Support the certificate_authorities extension</li>
+        <li>JDK-8209996: [PPC64] Fix JFR profiling</li>
+        <li>JDK-8214345: infinite recursion while checking super class</li>
+        <li>JDK-8217230: assert(t == t_no_spec) failure in NodeHash::check_no_speculative_types()</li>
+        <li>JDK-8217348: assert(thread->is_Java_thread()) failed: just checking</li>
+        <li>JDK-8225081: Remove Telia Company CA certificate expiring in April 2021</li>
+        <li>JDK-8225116: Test OwnedWindowsLeak.java intermittently fails</li>
+        <li>JDK-8228757: Fail fast if the handshake type is unknown</li>
+        <li>JDK-8230428: Cleanup dead CastIP node code in formssel.cpp</li>
+        <li>JDK-8231631: sun/net/ftp/FtpURLConnectionLeak.java fails intermittently with NPE</li>
+        <li>JDK-8231841: AArch64: debug.cpp help() is missing an AArch64 line for pns</li>
+        <li>JDK-8231949: [PPC64, s390]: Make async profiling more reliable</li>
+        <li>JDK-8234011: (zipfs) Memory leak in ZipFileSystem.releaseDeflater()</li>
+        <li>JDK-8239053: [8u] clean up undefined-var-template warnings</li>
+        <li>JDK-8239400: [8u] clean up undefined-var-template warnings</li>
+        <li>JDK-8241649: Optimize Character.toString</li>
+        <li>JDK-8241829: Cleanup the code for PrinterJob on windows</li>
+        <li>JDK-8242565: Policy initialization issues when the denyAfter constraint is enabled</li>
+        <li>JDK-8243559: Remove root certificates with 1024-bit keys</li>
+        <li>JDK-8247350: [aarch64] assert(false) failed: wrong size of mach node</li>
+        <li>JDK-8249142: java/awt/FontClass/CreateFont/DeleteFont.sh is unstable</li>
+        <li>JDK-8249278: Revert JDK-8226253 which breaks the spec of AccessibleState.SHOWING for JList</li>
+        <li>JDK-8250876: Fix issues with cross-compile on macos</li>
+        <li>JDK-8252883: AccessDeniedException caused by delayed file deletion on Windows</li>
+        <li>JDK-8253375: OSX build fails with Xcode 12.0 (12A7209)</li>
+        <li>JDK-8254631: Better support ALPN byte wire values in SunJSSE</li>
+        <li>JDK-8255086: Update the root locale display names</li>
+        <li>JDK-8255734: VM should ignore SIGXFSZ on ppc64, s390 too</li>
+        <li>JDK-8256818: SSLSocket that is never bound or connected leaks socket resources</li>
+        <li>JDK-8257039: [8u] GenericTaskQueue destructor is incorrect</li>
+        <li>JDK-8257670: sun/security/ssl/SSLSocketImpl/SSLSocketLeak.java reports leaks</li>
+        <li>JDK-8257884: Re-enable sun/security/ssl/SSLSocketImpl/SSLSocketLeak.java as automatic test</li>
+        <li>JDK-8257997: sun/security/ssl/SSLSocketImpl/SSLSocketLeak.java again reports leaks after JDK-8257884</li>
+        <li>JDK-8257999: Parallel GC crash in gc/parallel/TestDynShrinkHeap.java: new region is not in covered_region</li>
+        <li>JDK-8258419: RSA cipher buffer cleanup</li>
+        <li>JDK-8258669: fastdebug jvm crashes when do event based tracing for monitor inflation</li>
+        <li>JDK-8258753: StartTlsResponse.close() hangs due to synchronization issues</li>
+        <li>JDK-8259271: gc/parallel/TestDynShrinkHeap.java still fails "assert(covered_region.contains(new_memregion)) failed: new region is not in covered_region"</li>
+        <li>JDK-8259619: C1: 3-arg StubAssembler::call_RT stack-use condition is incorrect</li>
+        <li>JDK-8259886: Improve SSL session cache performance and scalability</li>
+        <li>JDK-8260029: aarch64: fix typo in verify_oop_array</li>
+        <li>JDK-8260236: better init AnnotationCollector _contended_group</li>
+        <li>JDK-8260255: C1: LoopInvariantCodeMotion constructor can leave some fields uninitialized</li>
+        <li>JDK-8260484: CheckExamples.java / NoJavaLangTest.java fail with jtreg 4.2</li>
+        <li>JDK-8260704: ParallelGC: oldgen expansion needs release-store for _end</li>
+        <li>JDK-8261355: No data buffering in SunPKCS11 Cipher encryption when the underlying mechanism has no padding</li>
+        <li>JDK-8261867: Backport relevant test changes & additions from JDK-8130125</li>
+        <li>JDK-8262110: DST starts from incorrect time in 2038</li>
+        <li>JDK-8262446: DragAndDrop hangs on Windows</li>
+        <li>JDK-8262726: AArch64: C1 StubAssembler::call_RT can corrupt stack</li>
+        <li>JDK-8262730: Enable jdk8u MacOS external debug symbols</li>
+        <li>JDK-8262864: No debug symbols in image for Windows --with-native-debug-symbols=external</li>
+        <li>JDK-8263061: copy wrong unpack200 debuginfo to bin directory after 8252395</li>
+        <li>JDK-8263504: Some OutputMachOpcodes fields are uninitialized</li>
+        <li>JDK-8263600: change rmidRunning to a simple lookup</li>
+        <li>JDK-8264509: jdk8u MacOS zipped debug symbols won't build</li>
+        <li>JDK-8264562: assert(verify_field_bit(1)) failed: Attempting to write an uninitialized event field: type</li>
+        <li>JDK-8264640: CMS ParScanClosure misses a barrier</li>
+        <li>JDK-8264816: Weak handles leak causes GC to take longer</li>
+        <li>JDK-8265462: Handle multiple slots in the NSS Internal Module from SunPKCS11's Secmod</li>
+        <li>JDK-8265666: Enable AIX build platform to make external debug symbols</li>
+        <li>JDK-8265832: runtime/StackGap/testme.sh fails to compile in 8u</li>
+        <li>JDK-8265988: Fix sun/text/IntHashtable/Bug4170614 for JDK 8u</li>
+        <li>JDK-8266191: Missing aarch64 parts of JDK-8181872 (C1: possible overflow when strength reducing integer multiply by constant)</li>
+        <li>JDK-8266723: JFR periodic events are causing extra allocations</li>
+        <li>JDK-8266929: Unable to use algorithms from 3p providers</li>
+        <li>JDK-8267235: [macos_aarch64] InterpreterRuntime::throw_pending_exception messing up LR results in crash</li>
+        <li>JDK-8267426: MonitorVmStartTerminate test timed out on Embedded VM</li>
+        <li>JDK-8267545: [8u] Enable Xcode 12 builds on macOS</li>
+        <li>JDK-8267689: [aarch64] Crash due to bad shift in indirect addressing mode</li>
+        <li>JDK-8268444: keytool -v -list print is incorrect after backport JDK-8141457</li>
+        <li>JDK-8269388: Default build of OpenJDK 8 fails on newer GCCs with warnings as errors on format-overflow</li>
+        <li>JDK-8269468: JDK-8269388 breaks the build on older GCCs</li>
+        <li>JDK-8270533: AArch64: size_fits_all_mem_uses should return false if its output is a CAS</li>
       </ul>
+
+      <h3>Notes on individual issues</h3>
+      <h4>security-libs/java.security</h4>
+
+      <h5>JDK-8256902: Removed Root Certificates with 1024-bit Keys</h5>
+      
+      The following root certificates with weak 1024-bit RSA public keys
+      have been removed from the `cacerts` keystore:
+
+      <ul>
+        <li>
+          Alias Name: thawtepremiumserverca [jdk]<br/>
+          Distinguished Name: EMAILADDRESS=premium-server at thawte.com, CN=Thawte Premium Server CA, OU=Certification Services Division, O=Thawte Consulting cc, L=Cape Town, ST=Western Cape, C=ZA
+        </li>
+
+        <li>
+          Alias Name: verisignclass2g2ca [jdk]<br/>
+          Distinguished Name: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 2 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+        </li>
+
+        <li>
+          Alias Name: verisignclass3ca [jdk]<br/>
+          Distinguished Name: OU=Class 3 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+        </li>
+
+        <li>
+          Alias Name: verisignclass3g2ca [jdk]<br/>
+          Distinguished Name: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 3 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+        </li>
+
+        <li>
+          Alias Name: verisigntsaca [jdk]<br/>
+          Distinguished Name: CN=Thawte Timestamping CA, OU=Thawte Certification, O=Thawte, L=Durbanville, ST=Western Cape, C=ZA
+        </li>
+      </ul>
+
+      <h5>JDK-8261361: Removed Telia Company's Sonera Class2 CA certificate</h5>
+      
+      The following root certificate have been removed from the cacerts truststore:
+
+      Alias Name: soneraclass2ca
+      Distinguished Name: CN=Sonera Class2 CA, O=Sonera, C=FI
+
+      <h4>security-libs/javax.net.ssl:</h4>
+
+      <h5>JDK-8257548: Improve Encoding of TLS Application-Layer Protocol Negotiation (ALPN) Values</h5>
+      
+      Certain TLS ALPN values couldn't be properly read or written by the
+      SunJSSE provider. This is due to the choice of Strings as the API
+      interface and the undocumented internal use of the UTF-8 Character Set
+      which converts characters larger than U+00007F (7-bit ASCII) into
+      multi-byte arrays that may not be expected by a peer.
+
+      ALPN values are now represented using the network byte representation
+      expected by the peer, which should require no modification for
+      standard 7-bit ASCII-based character Strings. However, SunJSSE now
+      encodes/decodes String characters as 8-bit ISO_8859_1/LATIN-1
+      characters.  This means applications that used characters above
+      U+000007F that were previously encoded using UTF-8 may need to either
+      be modified to perform the UTF-8 conversion, or set the Java security
+      property `jdk.tls.alpnCharset` to "UTF-8" revert the behavior.
+
+      See the updated guide at
+      https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/alpn.html
+      for more information.
+
+      <h5>JDK-8244460: Support for certificate_authorities Extension</h5>
+      
+      The "certificate_authorities" extension is an optional extension
+      introduced in TLS 1.3. It is used to indicate the certificate
+      authorities (CAs) that an endpoint supports and should be used by the
+      receiving endpoint to guide certificate selection.
+
+      With this JDK release, the "certificate_authorities" extension is
+      supported for TLS 1.3 in both the client and the server sides.  This
+      extension is always present for client certificate selection, while it
+      is optional for server certificate selection.
+
+      Applications can enable this extension for server certificate
+      selection by setting the `jdk.tls.client.enableCAExtension` system
+      property to `true`.  The default value of the property is `false`.
+
+      Note that if the client trusts more CAs than the size limit of the
+      extension (less than 2^16 bytes), the extension is not enabled.  Also,
+      some server implementations do not allow handshake messages to exceed
+      2^14 bytes.  Consequently, there may be interoperability issues when
+      `jdk.tls.client.enableCAExtension` is set to `true` and the client
+      trusts more CAs than the server implementation limit.
+
     </div>
 
     <div style="margin-top: 3rem;">
@@ -118,7 +281,7 @@
         <h2 class="inline-block zero-margin">Submit an Issue&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
        
-    </div>--}}
+    </div>
   </div>
 
 </main>
