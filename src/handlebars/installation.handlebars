@@ -7,15 +7,15 @@
   <div class="align-left support">
 
     <p>We're currently working out our installation page. Please check back later!</p>
-    {{!-- <div class="margin-bottom">
-      <p>AdoptOpenJDK binaries are available for <a href="./releases.html">download</a> in the following types of installation package:</p>
+    <div class="margin-bottom">
+      <p>Temurin binaries are available for <a href="./releases.html">download</a> in the following types of installation package:</p>
       <ul>
         <li><a href="#archives">Archive files</a></li>
         <li><a href="#installers">Installers</a></li>
       </ul>
       <p>The binaries are supported on the architectures and operating systems listed in <a href="./supported_platforms.html">Supported Platforms</a>. If you're migrating
-      to AdoptOpenJDK, you can learn about the differences between Oracle JDK and AdoptOpenJDK in our <a href="./migration.html" target="_blank">Migration Guide</a> and any
-      steps that you might need to take. For example, how to use IcedTea-Web as an alternative to Web Start.
+      to Temurin, you can learn about the differences between Oracle JDK and Temurin in our <a href="./migration.html" target="_blank">Migration Guide</a> and any
+      steps that you might need to take. {{!--For example, how to use IcedTea-Web as an alternative to Web Start. --}}
       </p>
 
     <div class="margin-bottom">
@@ -108,7 +108,7 @@
 
       <h3 id="windows-msi">Windows MSI installer packages</h3>
 
-        <p>AdoptOpenJDK Windows installer packages are available as standard <tt>.msi</tt> files, which can be run with an interactive user interface or run silently
+        <p>Temurin Windows installer packages are available as standard <tt>.msi</tt> files, which can be run with an interactive user interface or run silently
         from the command line. The installer is designed for use on a per-machine basis, not per-user basis, so you can have only one installation of the MSI
         on a machine for all users.</p>
 
@@ -121,7 +121,7 @@
         <p>1. <a href="./releases.html">Download</a> the <tt>.msi</tt> file. Open it to launch the installation program.</p>
         <p>2. Read and accept the license if you are happy with the terms.</p>
         <p>3. On the <strong>Custom Setup</strong> screen you can choose the features that you want to install and optionally change the default installation
-          directory. By default, AdoptOpenJDK installs to <tt>c:\Program Files\AdoptOpenJDK\&lt;package&gt;</tt> with the following features, which you can deselect, if necessary:
+          directory. By default, Temurin installs to <tt>c:\Program Files\Temurin\&lt;package&gt;</tt> with the following features, which you can deselect, if necessary:
                 <br>
                 <ul>
                   <li>Add the installation to the <strong>PATH</strong> environment variable</li>
@@ -131,8 +131,8 @@
                 <br>
                 <ul>
                   <li>Updating the <strong>JAVA_HOME</strong> environment variable</li>
-                  <li>Installing IcedTea-Web (AdoptOpenJDK 8 only)</li>
-                  <li>Associate <tt>.jnlp</tt> files with the IcedTea-Web application (AdoptOpenJDK 8 only)</li>
+                  {{!-- <li>Installing IcedTea-Web (Temurin 8 only)</li>
+                  <li>Associate <tt>.jnlp</tt> files with the IcedTea-Web application (Temurin 8 only)</li> --}}
                 </ul>
         <p>4. When you have chosen the features that you want to install, click <strong>Next</strong>.</p>
         <p>5. Click <strong>Install</strong> to begin the installation.</p>
@@ -155,7 +155,7 @@
 
           <tr>
             <td><tt>FeatureMain</tt></td>
-            <td>Core AdoptOpenJDK installation (DEFAULT)</td>
+            <td>Core Temurin installation (DEFAULT)</td>
           </tr>
 
           <tr>
@@ -173,7 +173,7 @@
             <td>Update the <strong>JAVA_HOME</strong> environment variable</td>
           </tr>
 
-          <tr>
+          {{!--<tr>
             <td><tt>FeatureIcedTeaWeb</tt></td>
             <td>Install <a href="https://www.github.com/adoptopenjdk/icedtea-web" target="_blank">IcedTea-Web</a></td>
           </tr>
@@ -181,7 +181,7 @@
           <tr>
             <td><tt>FeatureJNLPFileRunWith</tt></td>
             <td>Associate <tt>.jnlp</tt> files with IcedTea-web</td>
-          </tr>
+          </tr> --}}
 
           <tr>
             <td><tt>FeatureOracleJavaSoft</tt></td>
@@ -190,7 +190,7 @@
 
         </table>
 
-        <p>Note: <tt>FeatureOracleJavaSoft</tt> can be used to prevent Oracle Java launching from PATH when AdoptOpenJDK is uninstalled. Reinstall Oracle Java if you need
+        <p>Note: <tt>FeatureOracleJavaSoft</tt> can be used to prevent Oracle Java launching from PATH when Temurin is uninstalled. Reinstall Oracle Java if you need
         to restore the Oracle registry keys.</p>
 
         <p>Optional parameters can be used that group some of the features together:</p>
@@ -204,7 +204,7 @@
             <td>INSTALLLEVEL=1</td>
             <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith</td>
           </tr>
-
+          {{!--
           <tr>
             <td>INSTALLLEVEL=2</td>
             <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome,FeatureIcedTeaWeb</td>
@@ -213,13 +213,13 @@
           <tr>
             <td>INSTALLLEVEL=3</td>
             <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome,FeatureIcedTeaWeb,FeatureJNLPFileRunWith</td>
-          </tr>
+          </tr> --}}
         </table>
 
         <p>3. Run the command on the target workstation.</p>
 
-        <p>The following example silently installs AdoptOpenJDK, updates the PATH, associates <tt>.jar</tt> files with Java applications and defines JAVA_HOME:</p>
-        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome INSTALLDIR="c:\Program Files\AdoptOpenJDK\" /quiet</code></pre>
+        <p>The following example silently installs Temurin, updates the PATH, associates <tt>.jar</tt> files with Java applications and defines JAVA_HOME:</p>
+        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome INSTALLDIR="c:\Program Files\Temurin\" /quiet</code></pre>
         <p>Note: You must use <tt>INSTALLDIR</tt> with <tt>FeatureMain</tt>.
         </p>
 
@@ -229,15 +229,15 @@
         <p>If you want to launch an interactive installation in another language you can use the Windows installer <tt>TRANSFORMS</tt> option to set
         your language choice. For example, to set the UI language to German, use code <tt>1031</tt>, which must be preceded by a <tt>:</tt>.</p>
         <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi INSTALLLEVEL=1 TRANSFORMS=:1031</code></pre>
-        <p>For a list of supported codes, see the <a href="https://github.com/AdoptOpenJDK/openjdk-installer/blob/master/wix/Lang/LanguageList.config" target="_blank">Language list</a>.
+        <p>For a list of supported codes, see the <a href="https://github.com/adoptium/installer/blob/master/wix/Lang/LanguageList.config" target="_blank">Language list</a>.
         </p>
 
      <h4 id="windows-msi-upgrade">Reinstalling or upgrading</h4>
 
-       <p>To reinstall AdoptOpenJDK in silent mode with default features, run the following command:</p>
+       <p>To reinstall Temurin in silent mode with default features, run the following command:</p>
        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi REINSTALL=ALL /quiet</code></pre>
 
-       <p>If you want to upgrade AdoptOpenJDK in silent mode, run the following command:</p>
+       <p>If you want to upgrade Temurin in silent mode, run the following command:</p>
        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi REINSTALL=ALL REINSTALLMODE=amus /quiet</code></pre>
 
        <p><tt>REINSTALLMODE</tt> options: (from <a href="https://www.advancedinstaller.com/user-guide/control-events.html" target="_blank">Control Events</a>)</p>
@@ -257,7 +257,7 @@
           <li>Upgrading 8.0.2.1 to 8.0.3.1 works.</li>
           <li>Upgrading 8.0.2.1 to 8.0.2.2 does not work. Uninstall the previous <tt>.msi</tt> and install the new one.</li>
           <li>Upgrading 8.0.2.1 to 8.1.2.1 works.</li>
-          <li>Upgrading 8.0.2.1 to 11.0.2.1 does not work. AdoptOpenJDK does not provide upgrades for major versions. Either keep both installations or uninstall the older one.</li>
+          <li>Upgrading 8.0.2.1 to 11.0.2.1 does not work. Temurin does not provide upgrades for major versions. Either keep both installations or uninstall the older one.</li>
        </ul>
 
       <h4>Reference reading</h4>
@@ -272,7 +272,7 @@
 
     <h3 id="macos-pkg">macOS PKG installer packages</h3>
 
-      <p>AdoptOpenJDK macOS installer packages are available as standard <tt>.pkg</tt> files, which can be run with an interactive user interface or run silently
+      <p>Temurin macOS installer packages are available as standard <tt>.pkg</tt> files, which can be run with an interactive user interface or run silently
         from the <strong>Terminal</strong> command line.
       </p>
 
@@ -306,10 +306,10 @@
        <pre><code class="highlighted">installer -pkg &lt;path_to_pkg&gt;/&lt;pkg_name&gt;.pkg -target /</code></pre>
        <p>4. Enter the Administrator password.
        </p>
-       <p>5. AdoptOpenJDK installs to <tt>/Library/Java/JavaVirtualMachines/AdoptOpenJDK-&lt;version&gt;.&lt;jdk|jre&gt;/</tt>
+       <p>5. Temurin installs to <tt>/Library/Java/JavaVirtualMachines/Temurin-&lt;version&gt;.&lt;jdk|jre&gt;/</tt>
        </p>
   </div>
-
+  {{!--
   <div class="margin-bottom">
 
     <h3 id="linux-pkg">Linux RPM and DEB installer packages</h3>
@@ -466,7 +466,7 @@ EOF
       <pre><code class="highlighted">zypper install adoptopenjdk-8-hotspot</code></pre>
 
   </div>
-  </div>
+  </div> --}}
 
   <div class="align-left support">
     <div style="margin-top: 3rem;">
@@ -476,10 +476,10 @@ EOF
       <a href="./support.html" class="no-underline home-links">
         <h2 id="support-link" class="inline-block zero-margin">Support&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
-      <a href="https://github.com/AdoptOpenJDK/openjdk-build/issues" class="no-underline home-links">
+      <a href="https://github.com/adoptium/temurin-build/issues" class="no-underline home-links">
         <h2 id="issues-link" class="inline-block zero-margin">Submit an issue&nbsp;<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></h2>
       </a>
-    </div> --}}
+    </div>
   </div>
 </main>
 
