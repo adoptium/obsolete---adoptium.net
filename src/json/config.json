@@ -18,7 +18,7 @@
       "jvm": ["HotSpot"],
       "label": "OpenJDK 16",
       "lts": false
-    }
+    },
     {
       "searchableName": "openjdk17",
       "jvm": ["HotSpot"],
