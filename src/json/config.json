@@ -18,6 +18,12 @@
       "jvm": ["HotSpot"],
       "label": "OpenJDK 16",
       "lts": "latest"
+    },
+    {
+      "searchableName": "openjdk17",
+      "jvm": ["HotSpot"],
+      "label": "OpenJDK 17",
+      "lts": false
     }
   ],
   "installCommands": [
