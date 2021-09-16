@@ -23,7 +23,7 @@
       "searchableName": "openjdk17",
       "jvm": ["HotSpot"],
       "label": "OpenJDK 17",
-      "lts": "true"
+      "lts": true
     }
   ],
   "installCommands": [
