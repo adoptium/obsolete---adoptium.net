@@ -121,6 +121,16 @@
       "supported_version": "10.10 or later"
     },
     {
+      "officialName": "macOS arch64",
+      "searchableName": "AARCH64_MAC",
+      "attributes": {
+        "os": "mac",
+        "architecture": "aarch64"
+      },
+      "osDetectionString": "not-to-be-detected",
+      "supported_version": "11 or later"
+    },
+    {
       "officialName": "Linux s390x",
       "searchableName": "S390X_LINUX",
       "attributes": {
