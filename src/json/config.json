@@ -121,7 +121,7 @@
       "supported_version": "10.10 or later"
     },
     {
-      "officialName": "macOS arch64",
+      "officialName": "macOS aarch64",
       "searchableName": "AARCH64_MAC",
       "attributes": {
         "os": "mac",
