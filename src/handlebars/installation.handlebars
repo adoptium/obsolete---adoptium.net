@@ -12,6 +12,7 @@
       <ul>
         <li><a href="#archives">Archive files</a></li>
         <li><a href="#installers">Installers</a></li>
+        <li><a href="#packages">Package managers</a></li>
       </ul>
       <p>The binaries are supported on the architectures and operating systems listed in <a href="./supported_platforms.html">Supported Platforms</a>. If you're migrating
       to Temurin, you can learn about the differences between Oracle JDK and Temurin in our <a href="./migration.html" target="_blank">Migration Guide</a> and any
@@ -266,207 +267,248 @@
        </ul>
 
     </div>
-  </div>
 
-  <div class="margin-bottom">
+    <div class="margin-bottom">
 
-    <h3 id="macos-pkg">macOS PKG installer packages</h3>
+      <h3 id="macos-pkg">macOS PKG installer packages</h3>
 
-      <p>Temurin macOS installer packages are available as standard <tt>.pkg</tt> files, which can be run with an interactive user interface or run silently
-        from the <strong>Terminal</strong> command line.
+        <p>Temurin macOS installer packages are available as standard <tt>.pkg</tt> files, which can be run with an interactive user interface or run silently
+          from the <strong>Terminal</strong> command line.
+        </p>
+
+      <h4 id="macos-pkg-gui">GUI installation</h4>
+
+        <p>Instructions for running an interactive installation using the macOS PKG installer.
+        </p>
+        <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.
+        </p>
+        <p>2. Navigate to the folder that contains the file and open it to launch the installation program or drag the icon to your Application folder.
+        </p>
+        <p>3. The <strong>Introduction</strong> screen indicates the target location for the installation, which you can change later in the install process. Click <strong>Continue</strong>.
+        </p>
+        <p>4. Read the license, click <strong>Continue</strong> and accept the license if you are happy with the terms.
+        </p>
+        <p>5. Change the target location for the installation. Click <strong>Install</strong> to complete the installation.
+        </p>
+
+
+      <h4 id="macos-pkg-cmdline">Command-line installation</h4>
+
+        <p>A silent installation allows you to install the macOS package without user interaction, which can be useful for widescale
+          deployment. You must have administrator privileges. Follow these steps:
+        </p>
+
+        <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.
+        </p>
+        <p>2. Launch the Terminal app (<tt>terminal.app</tt>).
+        </p>
+        <p>3. Run the following command:</p>
+        <pre><code class="highlighted">installer -pkg &lt;path_to_pkg&gt;/&lt;pkg_name&gt;.pkg -target /</code></pre>
+        <p>4. Enter the Administrator password.
+        </p>
+        <p>5. Temurin installs to <tt>/Library/Java/JavaVirtualMachines/temurin-&lt;version&gt;.&lt;jdk|jre&gt;/</tt>
+        </p>
+    </div>
+    {{!--
+    <div class="margin-bottom">
+
+      <h3 id="linux-pkg">Linux RPM and DEB installer packages</h3>
+
+        <p>AdoptOpenJDK RPM and DEB packages are available for installing on your favourite Linux distribution.
+        </p>
+
+      <h4 id="linux-pkg-deb">Deb installation on Debian or Ubuntu</h4>
+
+        <p>
+          You need the codename of your Debian or Ubuntu version. It is usually recorded in
+          <code>/etc/os-release</code> and can be extracted on Debian by running  
+          <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
+          and on Ubuntu by running
+          <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
+        </p>
+
+        <ol>
+          <li>Ensure the necessary packages are present:
+            <pre>
+              <code class="highlighted">
+  sudo apt-get install wget apt-transport-https gnupg
+              </code>
+            </pre>
+          </li>
+          <li>Import the AdoptOpenJDK GPG key:
+            <pre>
+              <code class="highlighted">
+  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+              </code>
+            </pre>
+          </li>
+          <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
+            <pre>
+              <code class="highlighted">
+  echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
+              </code>
+            </pre>
+          </li>
+          <li>Refresh the package indexes:
+            <pre>
+              <code class="highlighted">
+  sudo apt-get update
+              </code>
+            </pre>
+          </li>
+          <li>To see which variants of AdoptOpenJDK are available, run
+            <pre>
+              <code class="highlighted">
+  sudo apt-cache search adoptopenjdk
+              </code>
+            </pre>
+          </li>
+          <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
+            <pre>
+              <code class="highlighted">
+  sudo apt-get install adoptopenjdk-11-hotspot
+              </code>
+            </pre>
+          </li>
+        </ol>
+
+      <h4 id="linux-pkg-deb-derivates">Deb installation on Raspberry Pi OS, Linux Mint and other Debian-based distributions</h4>
+
+        <p>
+          Raspberry Pi OS (formerly known as Raspbian), Linux Mint and other Debian- and Ubuntu-based distributions are usually based
+          on a specific Debian or Ubuntu release. For example, Linux Mint 20.04 (Ulyanna) is based on Ubuntu 20.04 (Focal Fossa),
+          Raspberry Pi OS 10 is based on Debian GNU/Linux 10 (Buster). Because AdoptOpenJDK only offers repositories for Debian and
+          Ubuntu, you need to find out which Debian or Ubuntu version your distribution is based on. This is usually recorded in
+          <code>/etc/os-release</code> and can usually be extracted on Debian-based distributions by running  
+          <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
+          and on Ubuntu-based distributions by running
+          <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
+        </p>
+
+        <ol>
+          <li>Ensure the necessary packages are present:
+            <pre>
+              <code class="highlighted">
+  sudo apt-get install wget apt-transport-https gnupg
+              </code>
+            </pre>
+          </li>
+          <li>Import the AdoptOpenJDK GPG key:
+            <pre>
+              <code class="highlighted">
+  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+              </code>
+            </pre>
+          </li>
+          <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
+            <pre>
+              <code class="highlighted">
+  echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
+              </code>
+            </pre>
+          </li>
+          <li>Refresh the package indexes:
+            <pre>
+              <code class="highlighted">
+  sudo apt-get update
+              </code>
+            </pre>
+          </li>
+          <li>To see which variants of AdoptOpenJDK are available, run
+            <pre>
+              <code class="highlighted">
+  sudo apt-cache search adoptopenjdk
+              </code>
+            </pre>
+          </li>
+          <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
+            <pre>
+              <code class="highlighted">
+  sudo apt-get install adoptopenjdk-11-hotspot
+              </code>
+            </pre>
+          </li>
+        </ol>
+
+      <h4 id="linux-pkg-rpm">RPM installation</h4>
+
+        <p>RPM packages are maintained in artifactory for various Linux distributions. For a full list (with artifactory <tt>baseurl</tt> values), see
+          <a href="https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/" target="_blank">Supported RPM versions</a>.
+        </p>
+
+        <p><strong>RPM installation on Centos, RHEL, or Fedora</strong></p>
+        <p>The following steps describe how to install an RPM package for Centos. To install an RPM for RHEL or Fedora update the <tt>baseurl</tt> value accordingly.
+        </p>
+        <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
+        <pre><code class="highlighted">
+  cat &lt;&lt;&apos;EOF&apos; &gt; /etc/yum.repos.d/adoptopenjdk.repo
+  [AdoptOpenJDK]
+  name=AdoptOpenJDK
+  baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
+  enabled=1
+  gpgcheck=1
+  gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+  EOF
+        </code></pre>
+
+        <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
+        <pre><code class="highlighted">yum install adoptopenjdk-8</code></pre>
+
+        <p><strong>RPM installation on openSUSE or SLES</strong></p>
+        <p>The following steps describe how to install an RPM package on openSUSE v15. To install an RPM for SLES, or
+          to install a different version of openSUSE, switch the <tt>baseurl</tt> value.
+        </p>
+
+        <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
+        <pre><code class="highlighted">zypper ar -f http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.0/$(uname -m) adoptopenjdk</code></pre>
+
+        <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
+        <pre><code class="highlighted">zypper install adoptopenjdk-8-hotspot</code></pre>
+
+    </div>
+    </div> --}}
+    </div>
+
+    <h2 id="packages">Package Managers</h2>
+
+    <div class="margin-bottom">
+      <p>Package managers are currently available for Windows. Installation steps
+        are covered in the following sections:
       </p>
+        <ul>
+          <li><a href="#windows-winget">Windows winget</a></li>
+        </ul>
 
-    <h4 id="macos-pkg-gui">GUI installation</h4>
+    </div>
 
-      <p>Instructions for running an interactive installation using the macOS PKG installer.
-      </p>
-      <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.
-      </p>
-      <p>2. Navigate to the folder that contains the file and open it to launch the installation program or drag the icon to your Application folder.
-      </p>
-      <p>3. The <strong>Introduction</strong> screen indicates the target location for the installation, which you can change later in the install process. Click <strong>Continue</strong>.
-      </p>
-      <p>4. Read the license, click <strong>Continue</strong> and accept the license if you are happy with the terms.
-      </p>
-      <p>5. Change the target location for the installation. Click <strong>Install</strong> to complete the installation.
-      </p>
+    <div class="margin-bottom">
 
+      <h3 id="windows-winget">Windows Winget</h3>
 
-    <h4 id="macos-pkg-cmdline">Command-line installation</h4>
+        <p>Temurin Windows installer packages are available on winget, which can be run silently
+        from the command line. The installer is designed for use on a per-machine basis, not per-user basis, so you can have only one installation of the MSI
+        on a machine for all users.</p>
 
-       <p>A silent installation allows you to install the macOS package without user interaction, which can be useful for widescale
-         deployment. You must have administrator privileges. Follow these steps:
-       </p>
+        <p>Note: Windows installer packages are supported only on Windows x64 systems.</p>
 
-       <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.
-       </p>
-       <p>2. Launch the Terminal app (<tt>terminal.app</tt>).
-       </p>
-       <p>3. Run the following command:</p>
-       <pre><code class="highlighted">installer -pkg &lt;path_to_pkg&gt;/&lt;pkg_name&gt;.pkg -target /</code></pre>
-       <p>4. Enter the Administrator password.
-       </p>
-       <p>5. Temurin installs to <tt>/Library/Java/JavaVirtualMachines/temurin-&lt;version&gt;.&lt;jdk|jre&gt;/</tt>
-       </p>
-  </div>
-  {{!--
-  <div class="margin-bottom">
+        <h4 id="windows-winget-install">Winget installation</h4>
 
-    <h3 id="linux-pkg">Linux RPM and DEB installer packages</h3>
+        <p>Run the following command to install the package.</p>
 
-      <p>AdoptOpenJDK RPM and DEB packages are available for installing on your favourite Linux distribution.
-      </p>
+        <pre><code class="highlighted">winget install EclipseFoundation.AdoptiumOpenJDK.17</code></pre>
 
-    <h4 id="linux-pkg-deb">Deb installation on Debian or Ubuntu</h4>
+        <p>Note: You can install a different major version by change the version number at the end of the package name.</p>
 
-      <p>
-        You need the codename of your Debian or Ubuntu version. It is usually recorded in
-        <code>/etc/os-release</code> and can be extracted on Debian by running  
-        <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
-        and on Ubuntu by running
-        <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
-      </p>
+        <h4 id="windows-winget-upgrade">Winget upgrade</h4>
 
-      <ol>
-        <li>Ensure the necessary packages are present:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install wget apt-transport-https gnupg
-            </code>
-          </pre>
-        </li>
-        <li>Import the AdoptOpenJDK GPG key:
-          <pre>
-            <code class="highlighted">
-wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-            </code>
-          </pre>
-        </li>
-        <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
-          <pre>
-            <code class="highlighted">
-echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
-            </code>
-          </pre>
-        </li>
-        <li>Refresh the package indexes:
-          <pre>
-            <code class="highlighted">
-sudo apt-get update
-            </code>
-          </pre>
-        </li>
-        <li>To see which variants of AdoptOpenJDK are available, run
-          <pre>
-            <code class="highlighted">
-sudo apt-cache search adoptopenjdk
-            </code>
-          </pre>
-        </li>
-        <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install adoptopenjdk-11-hotspot
-            </code>
-          </pre>
-        </li>
-      </ol>
+        <p>Run the following command to upgrade the package to the latest minor version of the currently installed major version.</p>
+        <pre><code class="highlighted">winget upgrade EclipseFoundation.AdoptiumOpenJDK.17</code></pre>
 
-    <h4 id="linux-pkg-deb-derivates">Deb installation on Raspberry Pi OS, Linux Mint and other Debian-based distributions</h4>
+        <h4 id="windows-winget-uninstall">Winget uninstall</h4>
 
-      <p>
-        Raspberry Pi OS (formerly known as Raspbian), Linux Mint and other Debian- and Ubuntu-based distributions are usually based
-        on a specific Debian or Ubuntu release. For example, Linux Mint 20.04 (Ulyanna) is based on Ubuntu 20.04 (Focal Fossa),
-        Raspberry Pi OS 10 is based on Debian GNU/Linux 10 (Buster). Because AdoptOpenJDK only offers repositories for Debian and
-        Ubuntu, you need to find out which Debian or Ubuntu version your distribution is based on. This is usually recorded in
-        <code>/etc/os-release</code> and can usually be extracted on Debian-based distributions by running  
-        <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
-        and on Ubuntu-based distributions by running
-        <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
-      </p>
-
-      <ol>
-        <li>Ensure the necessary packages are present:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install wget apt-transport-https gnupg
-            </code>
-          </pre>
-        </li>
-        <li>Import the AdoptOpenJDK GPG key:
-          <pre>
-            <code class="highlighted">
-wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-            </code>
-          </pre>
-        </li>
-        <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
-          <pre>
-            <code class="highlighted">
-echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
-            </code>
-          </pre>
-        </li>
-        <li>Refresh the package indexes:
-          <pre>
-            <code class="highlighted">
-sudo apt-get update
-            </code>
-          </pre>
-        </li>
-        <li>To see which variants of AdoptOpenJDK are available, run
-          <pre>
-            <code class="highlighted">
-sudo apt-cache search adoptopenjdk
-            </code>
-          </pre>
-        </li>
-        <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install adoptopenjdk-11-hotspot
-            </code>
-          </pre>
-        </li>
-      </ol>
-
-    <h4 id="linux-pkg-rpm">RPM installation</h4>
-
-       <p>RPM packages are maintained in artifactory for various Linux distributions. For a full list (with artifactory <tt>baseurl</tt> values), see
-         <a href="https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/" target="_blank">Supported RPM versions</a>.
-       </p>
-
-       <p><strong>RPM installation on Centos, RHEL, or Fedora</strong></p>
-       <p>The following steps describe how to install an RPM package for Centos. To install an RPM for RHEL or Fedora update the <tt>baseurl</tt> value accordingly.
-       </p>
-       <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
-       <pre><code class="highlighted">
-cat &lt;&lt;&apos;EOF&apos; &gt; /etc/yum.repos.d/adoptopenjdk.repo
-[AdoptOpenJDK]
-name=AdoptOpenJDK
-baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
-enabled=1
-gpgcheck=1
-gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
-EOF
-       </code></pre>
-
-      <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
-      <pre><code class="highlighted">yum install adoptopenjdk-8</code></pre>
-
-      <p><strong>RPM installation on openSUSE or SLES</strong></p>
-      <p>The following steps describe how to install an RPM package on openSUSE v15. To install an RPM for SLES, or
-        to install a different version of openSUSE, switch the <tt>baseurl</tt> value.
-      </p>
-
-      <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
-      <pre><code class="highlighted">zypper ar -f http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.0/$(uname -m) adoptopenjdk</code></pre>
-
-      <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
-      <pre><code class="highlighted">zypper install adoptopenjdk-8-hotspot</code></pre>
-
-  </div>
-  </div> --}}
+        <p>Run the following command to uninstall the package.</p>
+        <pre><code class="highlighted">winget uninstall EclipseFoundation.AdoptiumOpenJDK.17</code></pre>
+    </div>
 
   <div class="align-left support">
     <div style="margin-top: 3rem;">
