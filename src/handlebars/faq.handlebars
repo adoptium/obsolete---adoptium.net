@@ -8,12 +8,14 @@
   <div class="align-left support">
 
     <p>
-       We are currently working through our first release of Eclipse Temurin and
-       will be updating this FAQ as and when things are completed and available.
-       If you want to talk to us or ask additional questions the best place is
-       <a href="https://adoptium.net/slack.html">our slack instance</a> or via an
-       issue in the <a href="https://github.com/adoptium/adoptium-support">support
-       channel</a> if your question is not covered by one of the entries below.
+       We have completed our first releases at Eclipse Temurin and will be
+       updating this FAQ as and when things are completed and available.  If
+       you want to talk to us or ask additional questions the best place is
+       <a href="https://adoptium.net/slack.html">our slack instance</a> or
+       via an issue in the
+       <a href="https://github.com/adoptium/adoptium-support">support
+       channel</a> if your question is not covered by one of the entries
+       below.
     </p>
 
     <div class="anchor">
@@ -21,28 +23,8 @@
       <h2 class="bold"><a id="whereAreJDKs">Where are the latest JDKs?</a></h2>
     </div>
     <div class="margin-bottom"> <p>
-       Most of the Eclipse Temurin builds with HotSpot for 8u302-b08, 11.0.12+7 and 16.0.2+7 are now available. Some
-       builds are not yet ready but we are working hard to get them ready.
-       You can follow progress via that table in
-       <a href="https://github.com/adoptium/adoptium/issues/68">adoptium#68</a>
-       for the current status of each platform/version combination.
-    </p></div>
-
-    <div class="anchor">
-      <a href="#whyDelay" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><a id="whyDelay">Why the delay compared to upstream OpenJDK?</a></h2>
-    </div>
-    <div class="margin-bottom"> <p>
-       Unlike some of the releases which were performed at AdoptOpenJDK the
-       team is performing additional testing with brand new infrastructure
-       in order to be able to release
-       <a href="https://openjdk.java.net/groups/conformance/JckAccess">TCK</a>-compatible
-       JDKs which means it is taking longer than usual to complete the
-       release cycle. We are unable to release on any individual
-       platform/version combination until this is complete.  Please bear
-       with us - we are working very hard behind the scenes to make this
-       happen and the experiences we have gained should make the process
-       much quicker on future cycles.
+       Most of the Eclipse Temurin builds with HotSpot for 8u302-b08,
+       11.0.12+7, 16.0.2+7 and jdk-17+35 are now available on this site.
     </p></div>
 
     <div class="anchor">
@@ -65,6 +47,42 @@
       producing them as before, but there are
       <a href="https://adoptium.net/members.html">more larger companies</a>
       now involved in the working group.
+    </p></div>
+
+    <div class="anchor">
+      <a href="#AdoptOpenJDK" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
+      <h2 class="bold"><a id="AdoptOpenJDK">Why doesn't the AdoptOpenJDK site redirect here?</a></h2>
+    </div>
+    <div class="margin-bottom"> <p>
+       <strong>Two reasons. Firstly:</strong> Since users are stil transtioning we
+       have left the old site working as it did before with the same layout
+       and buttons as before. The links on the old site will give you the
+       latest Temurin builds, but this should not be relied on and <strong>users
+       should begin to migrate over to using the Adoptium API and website to download
+       Temurin binaries</strong>. There are some variants which are not yet available
+       at Adoptium, and these can
+       <a href="#apiContinuity">still be obtained</a> through the old site, so
+       we are not removing the old site as this would result in some
+       functionality disappearing with no warning. It's not ideal, and
+       causes some SEO confusion, but we feel it is the right option for
+       now. In the future the Adoptium web site will be more than just
+       Temurin so a pure redirect at between the domains would not ba appropriate.
+    </p>
+    <p>
+      <strong>Secondly:</strong> As alluded to at the end of the previous
+      paragraph, some things are not available at Adoptium.net and so a
+      the old web site is retained without an explicit redirect in order to
+      continue hosting them at present. This
+      includes things like the
+      <a href="https://adoptopenjdk.net/upstream.html">Upstream builds</a>,
+      <a href="https://adoptopenjdk.net/icedtea-web.html">IcedTea-WEB</a>,
+      <a href="https://adoptopenjdk.net/jmc.html">JDK Mission control</a>
+      and the
+      <a href="https://adoptopenjdk.net/installation.html#installers">Linux RPM/DEB
+      installers</a> (We're working on this - see
+      <a href="#linuxPackages">later FAQ entry</a>) and we
+      would expect to get lots of complaints if this stuff just disappeared
+      from view and that would not be the best option for our customers..
     </p></div>
 
     <div class="anchor">
@@ -138,19 +156,6 @@
        We are working on a solution for that at the moment with
        <a href="https://github.com/adoptium/installer/issues/330">this
        issue</a> as an umbrella for the work
-    </p></div>
-
-    <div class="anchor">
-      <a href="#alpineBuilds" class="anchor"><img src="dist/assets/anchor.png" alt="anchor icon"></a>
-      <h2 class="bold"><a id="alpineBuilds">What about Alpine Linux builds?</a></h2>
-    </div>
-    <div class="margin-bottom"><p>
-       This topic is something that has generated a bit of conversation
-       recently. We are currently considering our option but are leaning
-       towards headless musl-based builds for the JDK17 LTS release. If you
-       want to provide any input to that decision-making process, please get
-       involved in
-       <a href="https://github.com/adoptium/containers/issues/1">containers#1</a>
     </p></div>
 
     <div class="anchor">
