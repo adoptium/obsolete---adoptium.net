@@ -10,7 +10,6 @@
       "searchableName": "openjdk11",
       "jvm": ["HotSpot"],
       "label": "OpenJDK 11",
-      "default": true,
       "lts": true
     },
     {
@@ -23,6 +22,7 @@
       "searchableName": "openjdk17",
       "jvm": ["HotSpot"],
       "label": "OpenJDK 17",
+      "default": true,
       "lts": true
     }
   ],
