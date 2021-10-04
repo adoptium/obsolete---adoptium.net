@@ -1,6 +1,6 @@
 // prefix for assets (e.g. logo)
 
-const {platforms, installCommands, variants} = require('../json/config');
+const {platforms, members, installCommands, variants} = require('../json/config');
 
 const api = 'https://api.adoptium.net/v3';
 
@@ -76,6 +76,10 @@ module.exports.getSupportedVersion = (searchableName) => {
     }
   }
   return supported_version
+}
+
+module.exports.getMembers = () => {
+  return members
 }
 
 // gets the INSTALLATION COMMANDS when you pass in 'os'

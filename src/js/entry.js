@@ -19,5 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return require('./releases').load();
     case 'nightly':
       return require('./nightly').load();
+    case 'members':
+      return require('./members').load();
+    case 'sponsors':
+      return require('./sponsors').load();
   }
 });

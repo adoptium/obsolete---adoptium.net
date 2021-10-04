@@ -59,6 +59,47 @@
         }
       }
     },
+    "members": {
+      "$id": "#/properties/members",
+      "type": "array",
+      "title": "List of Working Group Members",
+      "items": {
+        "$id": "#/properties/members/items",
+        "type": "object",
+        "required": ["name", "logo", "url", "tier"],
+        "properties": {
+          "name": {
+            "$id": "#/properties/members/items/properties/name",
+            "type": "string",
+            "title": "Company Name",
+            "examples": ["Microsoft", "IBM"]
+          },
+          "logo": {
+            "$id": "#/properties/members/items/properties/logo",
+            "type": "string",
+            "title": "Logo filename",
+            "examples": ["microsoft.svg", "IBM.png"]
+          },
+          "url": {
+            "$id": "#/properties/members/items/properties/url",
+            "type": "string",
+            "title": "Company URL",
+            "examples": ["https://ibm.com", "https://newrelic.com/"]
+          },
+          "tier": {
+            "$id": "#/properties/members/items/properties/tier",
+            "type": "string",
+            "enum": [
+              "strategic",
+              "enterprise",
+              "participant",
+              "sponsor"
+            ],
+            "title": "Membership tier"
+          }
+        }
+      }
+    },
     "installCommands": {
       "$id": "#/properties/installCommands",
       "type": "array",

@@ -1,0 +1,23 @@
+{{> header title='Sponsors | ' }}
+
+<main class="grey-bg">
+
+  <h1 class="margin-bottom large-title">Sponsors</h1>
+
+  <div class="info-page-container sponsors blue-link-section">
+    <div id="members">
+      <script id="template-selector" type="text/x-handlebars-template">
+      <p>Additionally to our <a href="./members.html">Working Group Members</a> Adoptium is proud to receive financial donations (both one-off and regularly) from the following companies.</p>
+      <table id="services-grid">
+        <tr>
+          \{{#each sponsors}}
+          <td><a target="_blank" href="\{{url}}"><img src="dist/assets/\{{logo}}" alt="\{{name}} logo"></a></td>
+          \{{/each}}
+      </table>
+      </script>
+    </div>
+  </div>
+
+</main>
+
+{{> footer }}
