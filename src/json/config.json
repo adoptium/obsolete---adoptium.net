@@ -26,6 +26,80 @@
       "lts": true
     }
   ],
+  "members": [
+    {
+      "name": "Alibaba",
+      "logo": "alibaba.svg",
+      "url": "https://alibabacloud.com",
+      "tier": "strategic"
+    },
+    {
+      "name": "Azul",
+      "logo": "azul.svg",
+      "url": "https://www.azul.com",
+      "tier": "strategic"
+    },
+    {
+      "name": "Huawei",
+      "logo": "huawei.svg",
+      "url": "https://huawei.com",
+      "tier": "strategic"
+    },
+    {
+      "name": "Karakun",
+      "logo": "karakun.svg",
+      "url": "https://karakun.com",
+      "tier": "strategic"
+    },
+    {
+      "name": "Microsoft",
+      "logo": "microsoft.svg",
+      "url": "https://microsoft.com",
+      "tier": "strategic"
+    },
+    {
+      "name": "Red Hat",
+      "logo": "redhat.svg",
+      "url": "https://www.redhat.com",
+      "tier": "strategic"
+    },
+    {
+      "name": "IBM",
+      "logo": "ibm.svg",
+      "url": "https://ibm.com",
+      "tier": "enterprise"
+    },
+    {
+      "name": "iJUG",
+      "logo": "ijug.png",
+      "url": "https://www.ijug.eu",
+      "tier": "participant"
+    },
+    {
+      "name": "Managecat",
+      "logo": "managecat.png",
+      "url": "https://managecat.com",
+      "tier": "participant"
+    },
+    {
+      "name": "New Relic",
+      "logo": "newrelic.svg",
+      "url": "https://newrelic.com",
+      "tier": "participant"
+    },
+    {
+      "name": "CarGurus",
+      "logo": "cargurus.svg",
+      "url": "https://www.cargurus.com",
+      "tier": "sponsor"
+    },
+    {
+      "name": "Delphix",
+      "logo": "delphix.svg",
+      "url": "https://www.delphix.com/",
+      "tier": "sponsor"
+    }
+  ],
   "installCommands": [
     {
       "name": "tar",
