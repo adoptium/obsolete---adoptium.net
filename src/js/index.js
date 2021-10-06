@@ -4,7 +4,6 @@ const {
   loadLatestAssets,
   makeQueryString,
   setRadioSelectors,
-  setTickLink
 } = require('./common');
 const {
   jvmVariant,
@@ -77,12 +76,6 @@ function buildHomepageHTML(releasesJson, jckJSON, OS) {
         // (this filters out all non-binary attachments, e.g. SHA checksums - these contain the platform name, but are not binaries)
         if (matchingFile == null) {
           const uppercaseOSname = OS.searchableName.toUpperCase();
-          if (Object.keys(jckJSON).length !== 0) {
-            if (jckJSON[releasesJson.tag_name] && Object.prototype.hasOwnProperty.call(jckJSON[releasesJson.tag_name], uppercaseOSname)) {
-              document.getElementById('jck-approved-tick').classList.remove('hide');
-              setTickLink();
-            }
-          }
           // thirdly check if JDK or JRE (we want to serve JDK by default)
           if (eachAsset.binary.image_type == 'jdk') {
             // fourthly, check if the user's OS searchableName string matches part of this binary's name (e.g. ...X64_LINUX...)

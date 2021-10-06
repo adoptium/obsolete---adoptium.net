@@ -246,21 +246,6 @@ module.exports.buildMenuTwisties = () => {
   }
 }
 
-module.exports.setTickLink = () => {
-  const ticks = document.getElementsByClassName('tick');
-  for (let i = 0; i < ticks.length; i++) {
-    ticks[i].addEventListener('click', (event) => {
-      var win = window.open('https://en.wikipedia.org/wiki/Technology_Compatibility_Kit', '_blank');
-      if (win) {
-        win.focus();
-      } else {
-        alert('New tab blocked - please allow popups.');
-      }
-      event.preventDefault();
-    });
-  }
-}
-
 // builds up a query string (e.g. "variant=openjdk8&jvmVariant=hotspot")
 const makeQueryString = module.exports.makeQueryString = (params) => {
   return Object.keys(params).map((key) => key + '=' + params[key]).join('&');

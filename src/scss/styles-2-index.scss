@@ -116,13 +116,9 @@ h2.transition-bright {
   z-index: 100;
 }
 
-#dl-latest span.tick {
-  top: 0.3rem;
-  right: -0.2rem;
-  margin-right: 0.2rem;
-  img {
-    height: 1.2rem;
-  }
+.tick {
+  height: 1.5em;
+  vertical-align: middle;
 }
 
 .index-btn-container {
