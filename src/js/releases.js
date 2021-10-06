@@ -87,8 +87,6 @@ function buildLatestHTML(releasesJson) {
       };
     }
 
-    console.log(releaseAsset)
-
     let binary_constructor = {
       type: binary_type,
       link: releaseAsset.binary.package.link,
