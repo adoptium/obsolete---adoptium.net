@@ -1,4 +1,10 @@
 main .support {
+  max-width: 40rem;
+  margin: 0 auto;
+  width: 80%;
+}
+
+main .support-matrix {
   max-width: 80rem;
   margin: 0 auto;
   width: 80%;
@@ -8,32 +14,44 @@ main .support h2 {
   text-align: center;
 }
 
-.support th {
+.support table, .support th, .support td {
+  border: 1px solid black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: 0.5rem;
+}
+
+.support-matrix th {
   background-color: #aeadad97;
   color: #14003c;
 }
 
-.support th, .support td {
+.support-matrix th, .support-matrix td {
     border-bottom: 1px solid #d9dbe0;
     padding: 0;
     margin: 0;
 }
 
-.support p {
+.support-matrix p {
   line-height: 0.5em !important;
 }
 
-.support table {
+.support-matrix table {
   width: 100%;
   border-spacing: 0;
 }
 
-.support tr {
+.support-matrix tr {
   margin: 0;
   display: table-row;
   padding: 0;
 }
 
-.support tr:hover {
+.support-matrix tr:hover {
   background-color: #bcd4e6;
+}
+
+.supported {
+  color: #3e8ebd;
+  font-size: 1.5rem;
 }
