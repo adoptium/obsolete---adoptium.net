@@ -27,7 +27,6 @@ function buildArchiveHTML(aReleases) {
     const release = {
       release_name: aRelease.release_name,
       release_link: aRelease.release_link,
-      dashboard_link: `https://dash.adoptium.net/version.html?version=${variant}` + `&tag=${encodeURIComponent(aRelease.release_name)}`,
       release_day: publishedAt.format('D'),
       release_month: publishedAt.format('MMMM'),
       release_year: publishedAt.format('YYYY'),

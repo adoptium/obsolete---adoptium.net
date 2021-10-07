@@ -1,5 +1,5 @@
 const {findPlatform, getSupportedVersion, getOfficialName, getPlatformOrder,
-  detectLTS, detectEA, loadLatestAssets, orderPlatforms, setRadioSelectors, setTickLink} = require('./common');
+  detectLTS, detectEA, loadLatestAssets, orderPlatforms, setRadioSelectors} = require('./common');
 const {jvmVariant, variant} = require('./common');
 
 const loading = document.getElementById('loading');
@@ -117,8 +117,6 @@ function buildLatestHTML(releasesJson) {
 
   const templateSelector = Handlebars.compile(document.getElementById('template-selector').innerHTML);
   document.getElementById('latest-selector').innerHTML = templateSelector({releases});
-
-  setTickLink();
 
   global.populateFilters('all');
 
