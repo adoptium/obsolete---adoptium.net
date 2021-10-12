@@ -61,6 +61,18 @@ function buildLatestHTML(releasesJson) {
   releasesJson.forEach((releaseAsset) => {
     const platform = findPlatform(releaseAsset.binary);
 
+    // Adding date to latest release
+    const publishedAt = moment(releasesJson.timestamp);
+    const release = {
+      release_name: releasesJson.release_name,
+      release_link: releasesJson.release_link,
+      release_day: publishedAt.format('D'),
+      release_month: publishedAt.format('MMMM'),
+      release_year: publishedAt.format('YYYY'),
+      early_access: detectEA(releasesJson.version_data),
+      platforms: {},
+    };
+
     // Skip this asset if its platform could not be matched (see the website's 'config.json')
     if (!platform) {
       return;
