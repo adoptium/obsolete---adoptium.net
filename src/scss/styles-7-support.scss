@@ -4,52 +4,54 @@ main .support {
   width: 80%;
 }
 
+main .support-matrix {
+  max-width: 80rem;
+  margin: 0 auto;
+  width: 80%;
+}
+
 main .support h2 {
   text-align: center;
 }
 
-.tick-demo img {
-    height: 1.3rem !important;
-    padding-top: 0px;
-}
-
 .support table, .support th, .support td {
-    border: 1px solid black;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding: 0.5rem;
+  border: 1px solid black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: 0.5rem;
 }
 
-.fa-star-o.hotspot{
-    color: orange;
+.support-matrix th {
+  background-color: #aeadad97;
+  color: #14003c;
 }
 
-.fa-star-o.openj9{
-    color: purple;
+.support-matrix th, .support-matrix td {
+    border-bottom: 1px solid #d9dbe0;
+    padding: 0;
+    margin: 0;
 }
 
-.commercial-table {
-    border-collapse: separate;
-    border-spacing: 0 1rem;
-    border-width: 0px !important;
+.support-matrix p {
+  line-height: 0.5em !important;
 }
 
-.commercial-table td {
-    padding: 2rem;
-    background-color: white;
-    line-height: 1.8rem;
+.support-matrix table {
+  width: 100%;
+  border-spacing: 0;
 }
 
-.commercial-table td img {
-    width: 8rem;
+.support-matrix tr {
+  margin: 0;
+  display: table-row;
+  padding: 0;
 }
 
-@media all and (max-width: 800px) {
-
-  .commercial-table td {
-    padding: 1rem;
-    display: block;
-  }
-
+.support-matrix tr:hover {
+  background-color: #bcd4e6;
 }
 
+.supported {
+  color: #3e8ebd;
+  font-size: 1.5rem;
+}
