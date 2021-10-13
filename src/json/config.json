@@ -192,7 +192,7 @@
         "architecture": "x64"
       },
       "osDetectionString": "Mac OS X OSX macOS Macintosh",
-      "supported_version": "10.10 or later"
+      "supported_version": "10.14 or later"
     },
     {
       "officialName": "macOS aarch64",
