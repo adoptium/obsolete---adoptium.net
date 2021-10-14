@@ -205,9 +205,6 @@ module.exports.loadAssetInfo = (variant, openjdkImp, releaseType, pageSize, date
 }
 
 module.exports.loadLatestAssets = (variant, openjdkImp, release, handleResponse, errorHandler) => {
-  if (variant === 'amber') {
-    variant = 'openjdk-amber';
-  }
   const url = `${api}/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
   queryAPI(release, url, openjdkImp, 'adoptium', errorHandler, handleResponse);
 }

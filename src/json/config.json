@@ -24,6 +24,12 @@
       "label": "Temurin 17",
       "default": true,
       "lts": true
+    },
+    {
+      "searchableName": "openjdk18",
+      "jvm": ["HotSpot"],
+      "label": "Temurin 18 (EA)",
+      "lts": false
     }
   ],
   "members": [

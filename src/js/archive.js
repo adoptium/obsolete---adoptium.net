@@ -14,7 +14,7 @@ module.exports.load = () => {
     // report an error, remove the loading dots
     loading.innerHTML = '';
     errorContainer.innerHTML = `<p>There are no archived releases yet for ${variant} from Temurin yet.
-      See the <a href='./releases.html?variant=${variant}&jvmVariant=${jvmVariant}'>Latest release</a> page.</p>`;
+      See the <a href='./nightly.html?variant=${variant}&jvmVariant=${jvmVariant}'>Nightly</a> page.</p>`;
   });
 };
 
