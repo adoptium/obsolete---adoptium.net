@@ -178,7 +178,7 @@ function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse
   }
 
   loadUrl(url, (response) => {
-    if (response === null) {
+    if ((response === null) || (JSON.parse(response).length === 0)) {
       errorHandler();
     } else {
       handleResponse(toJson(response), false);
