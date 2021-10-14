@@ -4,7 +4,7 @@
 
 This repository contains the source code for [https://adoptium.net](https://adoptium.net).
 
-The `master` branch contains the source code necessary for development. A Jenkins job is used to run a build on this source code, and the output of this build is pushed to the `gh-pages` branch. GitHub Pages then uses this `gh-pages` branch to host the live, production website.
+The `main` branch contains the source code necessary for development. The production website is hosted on [Netlify](https://app.netlify.com/sites/eclipsefdn-adoptium/deploys) which also supports pull request staging.
 
 ## Developers
 
