@@ -7,6 +7,5 @@ git checkout main -- NOTICE
 git checkout main -- LICENSE
 cp tmp/sitemap.xml .
 git checkout main -- robots.txt
-git checkout main -- CNAME
 echo "These files are ready to be moved onto the production web server:"
 ls
