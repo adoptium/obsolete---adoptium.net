@@ -42,12 +42,13 @@ module.exports.load = () => {
   setRadioSelectors();
 
   const throwError = () => {
-    errorContainer.innerHTML = `<p>There are no releases available for ${variant} from Temurin yet.`;
+    errorContainer.innerHTML = `<p>There are no releases available for ${variant}.
+      Please check our <a href='nightly.html?variant=${variant}&jvmVariant=${jvmVariant}' target='blank'>Nightly Builds</a>.</p>`;
     loading.innerHTML = ''; // remove the loading dots
   }
 
   loadLatestAssets(variant, jvmVariant, 'latest', buildLatestHTML, throwError, () => {
-    errorContainer.innerHTML = `<p>There are no releases available for ${variant} on the ${jvmVariant} JVM.
+    errorContainer.innerHTML = `<p>There are no releases available for ${variant}.
       Please check our <a href='nightly.html?variant=${variant}&jvmVariant=${jvmVariant}' target='blank'>Nightly Builds</a>.</p>`;
     loading.innerHTML = ''; // remove the loading dots
   });

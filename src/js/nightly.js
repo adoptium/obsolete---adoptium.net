@@ -48,7 +48,7 @@ function populateNightly() {
   };
 
   loadAssetInfo(variant, jvmVariant, 'ea', numberpicker.value, moment(datepicker.value).format('YYYY-MM-DD'), 'ea', 'adoptium', handleResponse, () => {
-    errorContainer.innerHTML = '<p>Error... no releases have been found!</p>';
+    errorContainer.innerHTML = '<p>Error... No builds have been found! Check again soon</p>';
     loading.innerHTML = ''; // remove the loading dots
   });
 }

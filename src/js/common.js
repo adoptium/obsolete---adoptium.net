@@ -178,7 +178,7 @@ function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse
   }
 
   loadUrl(url, (response) => {
-    if (response === null) {
+    if ((response === null) || (JSON.parse(response).length === 0)) {
       errorHandler();
     } else {
       handleResponse(toJson(response), false);
@@ -205,9 +205,6 @@ module.exports.loadAssetInfo = (variant, openjdkImp, releaseType, pageSize, date
 }
 
 module.exports.loadLatestAssets = (variant, openjdkImp, release, handleResponse, errorHandler) => {
-  if (variant === 'amber') {
-    variant = 'openjdk-amber';
-  }
   const url = `${api}/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
   queryAPI(release, url, openjdkImp, 'adoptium', errorHandler, handleResponse);
 }
