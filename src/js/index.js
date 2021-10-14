@@ -30,7 +30,7 @@ module.exports.load = () => {
   const OS = detectOS();
 
   if (OS) {
-    dlText.innerHTML = `Download Eclipse Temurin for <var platform-name>${OS.officialName}</var>`;
+    dlText.innerHTML = `Download Temurin for <var platform-name>${OS.officialName}</var>`;
   }
   dlText.classList.remove('invisible');
 
