@@ -222,6 +222,118 @@ h2.transition-bright {
   color: white;
 }
 
+@media only screen and (max-width : 1700px) {
+  .intro {
+    font-size: 1.5rem !important;
+    max-width: 30rem !important;
+  }
+
+  .home-buttons a {
+    width: 14em !important;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width : 1250px) {
+  .left-block h1 {
+    font-size: 3.5em;
+  }
+  
+  .left-block h2 {
+    font-size: 1em;
+  }
+
+  .intro {
+    font-size: 1em !important;
+    max-width: 25rem !important;
+  }
+
+  .right-block {
+    top: -85%;
+  }
+}
+
+// Ipad Pro portrait etc
+@media only screen and (max-width : 1024px) and (max-height : 1366px) {
+  .pink-bg {
+    height: 50%;
+  }
+
+  .right-block {
+    top: -95%;
+  }
+
+  .home-buttons a {
+    width: 12em !important;
+    font-size: .7em;
+    line-height: 3rem;
+  }
+}
+
+// Ipad portrait etc
+@media only screen and (max-width : 768px) and (max-height : 1024px) {
+  .right-block {
+    top: -100%;
+  }
+
+  .intro {
+    font-size: .7em !important;
+    max-width: 20rem !important;
+  }
+
+  .left-block h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+  .intro {
+    font-size: 1em !important;
+    max-width: 25rem !important;
+  }
+
+  .right-block {
+    top: -105%;
+  }
+
+  .pink-bg {
+    height: 90%;
+  }
+}
+
+// Phone width etc
+@media only screen and (max-width : 400px) {
+  .pink-bg {
+    height: 90%;
+  }
+  
+  .background-picture {
+    background: none;
+  }
+
+  .left-block {
+    left: auto;
+    top: -95%;
+  }
+
+  .left-block h1 {
+    font-size: 2em;
+  }
+
+  .dl-button {
+    width: 70% !important;
+  }
+
+  .right-block {
+    left: auto;
+    top: -90% !important;
+  }
+
+  .intro {
+    text-align: center !important;
+  }
+}
+
 .home-buttons a {
   margin: 0 !important;
 }
