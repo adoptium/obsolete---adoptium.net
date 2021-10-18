@@ -203,7 +203,8 @@ h2.transition-bright {
 .left-block {
   position: relative;
   left: -20%;
-  top: -75%;
+  height: 55%;
+  margin-top: -60em;
   color: white;
 }
 
@@ -217,12 +218,12 @@ h2.transition-bright {
 
 .right-block {
   position: relative;
-  left: 30%;
-  top: -100%;
+  margin-left: 60%;
+  top: -15em;
   color: white;
 }
 
-@media only screen and (max-width : 1700px) {
+@media only screen and (max-width : 1700px) and (min-width : 1251px) {
   .intro {
     font-size: 1.5rem !important;
     max-width: 30rem !important;
@@ -232,9 +233,13 @@ h2.transition-bright {
     width: 14em !important;
     font-size: 1em;
   }
+
+  .left-block {
+    margin-top: -55em;
+  }
 }
 
-@media only screen and (max-width : 1250px) {
+@media only screen and (max-width : 1250px) and (min-width : 1025px){
   .left-block h1 {
     font-size: 3.5em;
   }
@@ -248,41 +253,8 @@ h2.transition-bright {
     max-width: 25rem !important;
   }
 
-  .right-block {
-    top: -85%;
-  }
-}
-
-// Ipad Pro portrait etc
-@media only screen and (max-width : 1024px) and (max-height : 1366px) {
-  .pink-bg {
-    height: 50%;
-  }
-
-  .right-block {
-    top: -95%;
-  }
-
-  .home-buttons a {
-    width: 12em !important;
-    font-size: .7em;
-    line-height: 3rem;
-  }
-}
-
-// Ipad portrait etc
-@media only screen and (max-width : 768px) and (max-height : 1024px) {
-  .right-block {
-    top: -100%;
-  }
-
-  .intro {
-    font-size: .7em !important;
-    max-width: 20rem !important;
-  }
-
-  .left-block h1 {
-    font-size: 2.5em;
+  .left-block {
+    margin-top: -45em;
   }
 }
 
@@ -313,7 +285,7 @@ h2.transition-bright {
 
   .left-block {
     left: auto;
-    top: -95%;
+    margin-top: -50em !important;
   }
 
   .left-block h1 {
@@ -324,15 +296,57 @@ h2.transition-bright {
     width: 70% !important;
   }
 
+  .home-buttons a {
+    width: 30%;
+  }
+
   .right-block {
-    left: auto;
-    top: -90% !important;
+    margin-left: auto;
+    top: -2em !important;
   }
 
   .intro {
     text-align: center !important;
   }
 }
+
+// Ipad Pro portrait etc
+@media only screen and (max-width : 1024px) and (min-width : 769px) and (max-height : 1366px) {
+  .pink-bg {
+    height: 50% !important;
+  }
+
+  .left-block {
+    margin-top: -40em !important;
+  }
+
+  .right-block {
+    top: -5em;
+  }
+
+  .home-buttons a {
+    width: 12em !important;
+    font-size: .7em;
+    line-height: 3rem;
+  }
+}
+
+// Ipad portrait etc
+@media only screen and (max-width : 768px) and (max-height : 1024px) {
+  .right-block {
+    top: -15em;
+  }
+
+  .intro {
+    font-size: .7em !important;
+    max-width: 20rem !important;
+  }
+
+  .left-block h1 {
+    font-size: 2.5em;
+  }
+}
+
 
 .home-buttons a {
   margin: 0 !important;
