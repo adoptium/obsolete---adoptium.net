@@ -28,16 +28,13 @@ $headersize: 1.4rem;
   background: rgb(31,2,46);
   background: linear-gradient(0deg, rgba(249,18,98,1) 0%, rgba(31,2,46,1) 100%);
   height: 85%;
-  z-index: -1;
   padding: 0 !important;
 }
 
 .background-picture {
   clip-path: polygon(70% 0, 100% 0, 100% 100%, 50% 100%);
-  background-image: url("../assets/people_working.jpg");
-  filter: grayscale(100%);
+  background: linear-gradient(to top, #14003ca7, #14003ca7), url("../assets/people_working.jpg");
   background-size: contain;
-  background-color: #cccccc;
   height: 100%;
 }
 
