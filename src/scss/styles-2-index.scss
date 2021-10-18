@@ -4,18 +4,12 @@ $brighterblue: #3D70B2;
 $accentgrey: #dadada;
 
 main .intro {
-  max-width: 40rem;
-  margin-bottom: 1rem;
+  max-width: 35rem;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  line-height: 1.8rem;
-}
-
-main .intro i {
-  font-size: 1.8rem;
-  margin-right: 0.5rem;
-  transform: translateY(0.3rem);
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 main .intro a {
@@ -39,9 +33,9 @@ main .intro a:hover {
 }
 
 a.dl-button {
-  background-color: $brighterblue;
-  color: $maingrey;
-  border-radius: 0.2rem;
+  background-color: white;
+  color: black;
+  border-radius: 2rem;
   width: 20rem;
   line-height: 5rem;
   font-size: 1.5rem;
@@ -204,4 +198,42 @@ h2.transition-bright {
   #minor-links span {
     display: none;
   }
+}
+
+.left-block {
+  position: relative;
+  left: -20%;
+  top: -75%;
+  color: white;
+}
+
+.left-block h1 {
+  font-size: 5em;
+}
+
+.left-block h2 {
+  font-size: 2em;
+}
+
+.right-block {
+  position: relative;
+  left: 30%;
+  top: -100%;
+  color: white;
+}
+
+.home-buttons a {
+  margin: 0 !important;
+}
+
+.home-button-left {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background-color: #ED115F !important;
+  color: white !important;
+}
+
+.home-button-right {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }

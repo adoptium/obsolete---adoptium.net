@@ -3,7 +3,6 @@ const {
   findPlatform,
   loadLatestAssets,
   makeQueryString,
-  setRadioSelectors,
 } = require('./common');
 const {
   jvmVariant,
@@ -13,7 +12,6 @@ const {
 // set variables for all index page HTML elements that will be used by the JS
 const loading = document.getElementById('loading');
 const errorContainer = document.getElementById('error-container');
-const dlText = document.getElementById('dl-text');
 const dlLatest = document.getElementById('dl-latest');
 const dlArchive = document.getElementById('dl-archive');
 const dlOther = document.getElementById('dl-other');
@@ -23,16 +21,8 @@ const dlVersionText = document.getElementById('dl-version-text');
 
 // When index page loads, run:
 module.exports.load = () => {
-  setRadioSelectors();
-  removeRadioButtons();
-
   // Try to match up the detected OS with a platform from 'config.json'
   const OS = detectOS();
-
-  if (OS) {
-    dlText.innerHTML = `Download Temurin for <var platform-name>${OS.officialName}</var>`;
-  }
-  dlText.classList.remove('invisible');
 
   const handleResponse = (releasesJson) => {
     if (!releasesJson) {
@@ -53,15 +43,6 @@ module.exports.load = () => {
     loading.innerHTML = ''; // remove the loading dots
   });
 };
-
-function removeRadioButtons() {
-  const buttons = document.getElementsByClassName('btn-label');
-  for (var a = 0; a < buttons.length; a++) {
-    if (buttons[a].firstChild.getAttribute('lts') === 'false') {
-      buttons[a].style.display = 'none';
-    }
-  }
-}
 
 function buildHomepageHTML(releasesJson, jckJSON, OS) {
   let matchingFile = null;
