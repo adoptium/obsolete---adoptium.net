@@ -1,47 +1,57 @@
 {{> header title='' }}
 
-<main class="pink-bg home-main">
-  <div class="background-picture"></div>
-  <div class="left-block">
-    <h1>Prebuilt OpenJDK <br/>Binaries for Free!</h1>
-    <div id='loading'><img src='dist/assets/loading_dots.gif' height='40' width='40' alt="Content is loading."></div>
-    <div id="error-container"></div>
-    <a href="./releases.html" class="dl-button a-button fadeIn invisible" id="dl-latest">
-      <div id="dl-version">
-        <i id="dl-icon" class="fa fa-download" aria-hidden="true"></i>
-        <span>Latest release</span>
-        <i id="dl-icon-2" class="fa fa-arrow-circle-o-right hide" aria-hidden="true"></i>
-      </div>
-      <div class="dl-description">
-        <var id="dl-version-text" class="small-dl-text" release-version</var>
-        <div id="jck-approved-tick" class='tick hide' data-tooltip="This build is JCK certified."><img src='./dist/assets/tick.png' alt="This build is JCK certified."></div>
-      </div>
-    </a>
-    <h2>Configure your download</h2>
-        <a href="./releases.html" class="dl-button dl-thin-button a-button fadeIn invisible" id="dl-other">
-      <div>
-        <span>Other platforms</span>
-        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-      </div>
-    </a>
+<main class="grey-bg home-main">
+  <div class="d-md-flex front-tile h-md-100 align-items-center">
 
-    <a href="./archive.html" class="dl-button dl-thin-button a-button fadeIn invisible" id="dl-archive">
-      <div>
-        <span>Release Archive</span>
-        <i class="fa fa-archive" aria-hidden="true"></i>
+      <!-- First Half -->
+      <div class="col-md-6 p-0 h-md-100">
+          <div class="text-white align-items-center h-100 text-center justify-content-center left-heading">
+              <h1>Prebuilt OpenJDK <br/>Binaries for Free!</h1>
+              <div id='loading'><img src='dist/assets/loading_dots.gif' height='40' width='40' alt="Content is loading."></div>
+              <div id="error-container"></div>
+              <a href="./releases.html" class="dl-button a-button fadeIn invisible" id="dl-latest">
+                <div id="dl-version">
+                  <i id="dl-icon" class="fa fa-download" aria-hidden="true"></i>
+                  <span>Latest release</span>
+                  <i id="dl-icon-2" class="fa fa-arrow-circle-o-right hide" aria-hidden="true"></i>
+                </div>
+                <div class="dl-description">
+                  <var id="dl-version-text" class="small-dl-text" release-version</var>
+                  <div id="jck-approved-tick" class='tick hide' data-tooltip="This build is JCK certified."><img src='./dist/assets/tick.png' alt="This build is JCK certified."></div>
+                </div>
+              </a>
+              <h2>Configure your download</h2>
+                  <a href="./releases.html" class="dl-button dl-thin-button a-button fadeIn invisible" id="dl-other">
+                <div>
+                  <span>Other platforms</span>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                </div>
+              </a>
+
+              <a href="./archive.html" class="dl-button dl-thin-button a-button fadeIn invisible" id="dl-archive">
+                <div>
+                  <span>Release Archive</span>
+                  <i class="fa fa-archive" aria-hidden="true"></i>
+                </div>
+              </a>
+          </div>
       </div>
-    </a>
-  </div>
-  <div class="right-block">
-    <p class="intro">
-      Java™ is the world's leading programming language and platform.
-      The Adoptium Working Group promotes and supports high-quality, TCK certified runtimes and associated technology for use across the Java ecosystem.<br/>
-      {{!-- <a href="faq.html#temurinName">Eclipse Temurin</a> is the name of the OpenJDK distribution from Adoptium. --}}
-    </p>
-    <div class="home-buttons">
-      <a class="dl-button a-button home-button-left" href="./join.html"><span>Join the Working group</span></a>
-      <a class="dl-button a-button home-button-right" href="./members.html"><span>View our Members</span></a>
-    </div>
+
+      <!-- Second Half -->
+      <div class="col-md-6 p-0 h-md-100">
+          <div class="text-white align-items-center h-md-100 justify-content-center right-heading">
+              <p class="intro">
+                Java™ is the world's leading programming language and platform.
+                The Adoptium Working Group promotes and supports high-quality, TCK certified runtimes and associated technology for use across the Java ecosystem.<br/>
+                {{!-- <a href="faq.html#temurinName">Eclipse Temurin</a> is the name of the OpenJDK distribution from Adoptium. --}}
+              </p>
+              <div class="home-buttons">
+                <a class="dl-button a-button home-button-left" href="./join.html"><span>Join the Working group</span></a>
+                <a class="dl-button a-button home-button-right" href="./members.html"><span>View our Members</span></a>
+              </div>
+          </div>
+      </div>
+          
   </div>
 
   <div class="grey-bg">This is a div</div>

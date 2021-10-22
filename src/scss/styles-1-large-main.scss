@@ -24,19 +24,21 @@ $headersize: 1.4rem;
   color: $mainblue;
 }
 
-.pink-bg {
-  background: rgb(31,2,46);
-  background: linear-gradient(0deg, rgba(249,18,98,1) 0%, rgba(31,2,46,1) 100%);
-  height: 92.5%;
-  padding: 0 !important;
+.front-tile {
+  background: rgba(249,18,98,1);
+  background:
+    linear-gradient(115deg, (rgba(249,18,98,1) 0%, rgba(31,2,46,1)) 55%, transparent 55.1%),
+    linear-gradient(to top, #14003ca7, #14003ca7), url("../assets/people_working.jpg") right;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.background-picture {
-  clip-path: polygon(70% 0, 100% 0, 100% 100%, 50% 100%);
-  background: linear-gradient(to top, #14003ca7, #14003ca7), url("../assets/people_working.jpg");
-  background-size: contain;
-  height: 100%;
-}
+// .pink-bg {
+//   // background: rgb(31,2,46);
+//   // background: linear-gradient(to top, rgba(249,18,98,1) 0%, rgba(31,2,46,1));
+//   background-color: #013A6B;
+//   background-image: -webkit-linear-gradient(160deg, #013A6B 50%, #004E95 50%);
+// }
 
 html, body {
   height: 100%;
@@ -362,12 +364,7 @@ html, body {
 }
 
 main {
-  padding: 2rem 2rem 5rem 2rem;
   text-align: center;
-}
-
-.home-main {
-  padding: 3rem 2rem 5rem 2rem;
 }
 
 #error-container {
@@ -659,6 +656,11 @@ footer#solstice-footer {
   padding-bottom: 26px;
   font-size: 14px;
   border-top: none;
+  text-align: left;
+}
+
+.footer-container h2 {
+  font-size: 1.5em;
 }
 
 @media (max-width: 767px) {
@@ -669,15 +671,14 @@ footer#solstice-footer {
 
 footer#solstice-footer li {
   padding-bottom: 1em;
+  font-size: 14px;
+  font-weight: 250;
 }
 
 footer#solstice-footer .nav {
-  margin-left: -40px;
-  margin-bottom: 25px;
-}
-
-footer#solstice-footer p {
-  line-height: 1rem;
+  // margin-left: -40px;
+  // margin-bottom: 25px;
+  display: inline;
 }
 
 footer#solstice-footer a {
@@ -685,42 +686,11 @@ footer#solstice-footer a {
   color: white;
 }
 
-.nav>li, .nav>li>a {
-  position: relative;
-  display: block;
+#copyright-text {
+  line-height: 1em !important;
+  margin-bottom: 0;
+  padding-top: 1em;
 }
-
-.list-inline>li {
-  display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-@media (min-width: 768px) {
-  .col-sm-6 {
-      float: left;
-      width: 25%;
-  }
-
-  .footer-row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }  
-}
-
-@media (min-width: 1200px) {
-  .footer-container {
-      width: 1170px;
-  }
-}
-
-@media (min-width: 992px) {
-  .social-media {
-      text-align: right;
-  }
-}
-
 
 // STAGING SERVER BANNER CSS
 
@@ -729,6 +699,8 @@ footer#solstice-footer a {
    padding: 20px;
    background-color:  #FF1464;
    color: white;
+   margin-bottom: 0 !important;
+   border-radius: 0 !important;
 }
 
 /* The close button */
