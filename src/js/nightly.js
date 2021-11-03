@@ -13,20 +13,20 @@ const templateString = $('#template').html();
 module.exports.load = () => {
 
   Handlebars.registerHelper('fetchExtension', function(filename) {
-    let extension = `.${filename.split('.').pop()}`
+    let extension = `.${filename.split('.').pop()}`;
     // Workaround to prevent extension returning as .gz
     if (extension == '.gz') {
-      extension = '.tar.gz'
+      extension = '.tar.gz';
     }
-    return extension
+    return extension;
   });
 
   setRadioSelectors();
   setDatePicker();
   populateNightly(); // run the function to populate the table on the Nightly page.
 
-  numberpicker.onchange = datepicker.onchange = () => { populateNightly() };
-}
+  numberpicker.onchange = datepicker.onchange = () => { populateNightly(); };
+};
 
 function setDatePicker() {
   $(datepicker).datepicker();
@@ -84,7 +84,7 @@ function buildNightlyHTML(files) {
     const eachRelease = file.release;
 
     const NIGHTLYOBJECT = {};
-    const type = eachAsset.image_type
+    const type = eachAsset.image_type;
 
     NIGHTLYOBJECT.thisPlatform = findPlatform(eachAsset); // get the searchableName, e.g. MAC or X64_LINUX.
 

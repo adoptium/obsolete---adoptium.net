@@ -3,11 +3,11 @@ const {getMembers} = require('./common');
 let sponsors = [];
 
 module.exports.load = () => {
-  let members = getMembers()
+  let members = getMembers();
   for (let member of members) {
     switch(member.tier) {
       case 'sponsor':
-        sponsors.push(member)
+        sponsors.push(member);
       break;
     }
   }
@@ -17,7 +17,7 @@ module.exports.load = () => {
 
   const templateSelector = Handlebars.compile(document.getElementById('template-selector').innerHTML);
   document.getElementById('members').innerHTML = templateSelector({sponsors});
-}
+};
 
 // Randomly shuffle members
 function shuffle(array) {

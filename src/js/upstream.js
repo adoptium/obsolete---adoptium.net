@@ -3,7 +3,7 @@ const {findPlatform, getSupportedVersion, getOfficialName, getPlatformOrder,
 const {variant} = require('./common');
 
 // Hard coded as Red Hat only ship hotspot
-const jvmVariant = 'hotspot'
+const jvmVariant = 'hotspot';
 
 const loading = document.getElementById('loading');
 const errorContainer = document.getElementById('error-container');
@@ -42,16 +42,16 @@ module.exports.load = () => {
   });
 
   Handlebars.registerHelper('fetchArch', function(title) {
-    return title.split(' ')[1]
+    return title.split(' ')[1];
   });
 
   Handlebars.registerHelper('fetchExtension', function(filename) {
-    let extension = `.${filename.split('.').pop()}`
+    let extension = `.${filename.split('.').pop()}`;
     // Workaround to prevent extension returning as .gz
     if (extension == '.gz') {
-      extension = '.tar.gz'
+      extension = '.tar.gz';
     }
-    return extension
+    return extension;
   });
 
   const LTS = detectLTS(variant);
@@ -60,12 +60,13 @@ module.exports.load = () => {
   .download-last-version:after {
       content: "${LTS}";
   }
-  `
+  `;
+
   if (LTS !== null) {
-    const styleSheet = document.createElement('style')
-    styleSheet.type = 'text/css'
-    styleSheet.innerText = styles
-    document.head.appendChild(styleSheet)
+    const styleSheet = document.createElement('style');
+    styleSheet.type = 'text/css';
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
   }
 
   setRadioSelectors();
@@ -78,13 +79,13 @@ module.exports.load = () => {
       See the <a href='./releases.html?variant=${variant}&jvmVariant=${jvmVariant}'>Latest release</a> page.</p>`;
   });
 
-    const buttons = document.getElementsByClassName('btn-label');
-    for (var a = 0; a < buttons.length; a++) {
-      if (buttons[a].firstChild.getAttribute('lts') !== 'true') {
-        buttons[a].style.display = 'none';
-      }
+  const buttons = document.getElementsByClassName('btn-label');
+  for (var a = 0; a < buttons.length; a++) {
+    if (buttons[a].firstChild.getAttribute('lts') !== 'true') {
+      buttons[a].style.display = 'none';
     }
-}
+  }
+};
 
 function buildUpstreamHTML(releasesJson) {
 
@@ -128,11 +129,10 @@ function buildUpstreamHTML(releasesJson) {
       link: releaseAsset.package.link,
       signature_link: releaseAsset.package.signature_link,
       size: Math.floor(releaseAsset.package.size / 1000 / 1000)
-    }
+    };
 
     // Add the new binary to the release asset
     release.binaries.push(binary_constructor);
-
 
     // We have the first binary, so add the release asset.
     if (release.binaries.length === 1) {
@@ -162,26 +162,26 @@ global.filterOS = () => {
   let os = document.getElementById('os-filter');
   let arch = document.getElementById('arch-filter');
   if (arch.options[arch.selectedIndex].value === 'Any') {
-    filterTable(os.options[os.selectedIndex].value, 'os')
-    global.populateFilters('arch')
+    filterTable(os.options[os.selectedIndex].value, 'os');
+    global.populateFilters('arch');
   } else if (os.options[os.selectedIndex].value == 'Any') {
-    global.filterArch()
+    global.filterArch();
   } else {
-    filterTable(os.options[os.selectedIndex].value, 'multi', arch.options[arch.selectedIndex].value)
+    filterTable(os.options[os.selectedIndex].value, 'multi', arch.options[arch.selectedIndex].value);
   }
-}
+};
 
 global.filterArch = () => {
   let arch = document.getElementById('arch-filter');
   let os = document.getElementById('os-filter');
   if (os.options[os.selectedIndex].value === 'Any') {
-    filterTable(arch.options[arch.selectedIndex].value, 'arch')
+    filterTable(arch.options[arch.selectedIndex].value, 'arch');
   } else if (arch.options[arch.selectedIndex].value == 'Any') {
-    global.filterOS()
+    global.filterOS();
   } else {
-    filterTable(arch.options[arch.selectedIndex].value, 'multi', os.options[os.selectedIndex].value)
+    filterTable(arch.options[arch.selectedIndex].value, 'multi', os.options[os.selectedIndex].value);
   }
-}
+};
 
 global.populateFilters = (filter) => {
   let releaseTable = document.getElementById('latest-selector').getElementsByClassName('releases-table');
@@ -189,14 +189,14 @@ global.populateFilters = (filter) => {
   let ARCHES = ['Any'];
   for (let release of releaseTable) {
     if (release.style.display !== 'none') {
-      OSES.push(release.querySelector('.os').innerHTML.split(' ')[0])
-      ARCHES.push(release.querySelector('.arch').innerHTML)
+      OSES.push(release.querySelector('.os').innerHTML.split(' ')[0]);
+      ARCHES.push(release.querySelector('.arch').innerHTML);
     }
   }
 
   if (filter == 'all' || filter == 'os') {
     let osFilter = document.getElementById('os-filter');
-    let selected = osFilter.options[osFilter.selectedIndex].value
+    let selected = osFilter.options[osFilter.selectedIndex].value;
     osFilter.innerHTML = '';
 
     for (let os of new Set(OSES)) {
@@ -210,21 +210,21 @@ global.populateFilters = (filter) => {
 
   if (filter == 'all' || filter == 'arch') {
     let archFilter = document.getElementById('arch-filter');
-    let selected = archFilter.options[archFilter.selectedIndex].value
+    let selected = archFilter.options[archFilter.selectedIndex].value;
     archFilter.innerHTML = '';
 
     for (let arch of new Set(ARCHES)) {
       let option = document.createElement('option');
       option.text = arch;
       option.value = arch;
-      archFilter.append(option)
+      archFilter.append(option);
     }
     archFilter.value=selected;
   }
-}
+};
 
 function filterTable(string, type, string1) {
-  let tables = document.getElementById('latest-selector').getElementsByClassName('releases-table')
+  let tables = document.getElementById('latest-selector').getElementsByClassName('releases-table');
   for (let table of tables) {
     if (type === 'multi') {
       let os = table.querySelector('.os').innerHTML;

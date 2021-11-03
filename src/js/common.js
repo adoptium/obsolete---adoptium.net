@@ -24,19 +24,18 @@ module.exports.getVariantObject = (variantName) => variants.find((variant) => va
 
 module.exports.findPlatform = (binaryData) => {
   const matchedPlatform = platforms.filter((platform) => {
-      return Object.prototype.hasOwnProperty.call(platform, 'attributes')
-        && Object.keys(platform.attributes).every((attr) => platform.attributes[attr] === binaryData[attr])
+      return Object.prototype.hasOwnProperty.call(platform, 'attributes') && Object.keys(platform.attributes).every((attr) => platform.attributes[attr] === binaryData[attr]);
     })[0];
 
   return matchedPlatform === undefined ? null : matchedPlatform.searchableName;
-}
+};
 
 // gets the OFFICIAL NAME when you pass in 'searchableName'
 module.exports.getOfficialName = (searchableName) => lookup[searchableName].officialName;
 
 module.exports.getPlatformOrder = (searchableName) => {
   return platforms.findIndex((platform) => platform.searchableName == searchableName);
-}
+};
 
 module.exports.orderPlatforms = (input, attr = 'thisPlatformOrder') => {
   return sortByProperty(input, attr);
@@ -63,49 +62,49 @@ const sortByProperty = module.exports.sortByProperty = (input, property, descend
 module.exports.getSupportedVersion = (searchableName) => {
   let supported_version = lookup[searchableName].supported_version;
   if (typeof supported_version === 'object') {
-    supported_version = supported_version[jvmVariant]
+    supported_version = supported_version[jvmVariant];
     if (typeof supported_version === 'object') {
-      let major_version = parseInt(variant.replace(/\D/g,''))
-      let supported_version_string
+      let major_version = parseInt(variant.replace(/\D/g,''));
+      let supported_version_string;
       for (let version in supported_version) {
         if (major_version >= parseInt(version)) {
-          supported_version_string = supported_version[version]
+          supported_version_string = supported_version[version];
         }
       }
-      supported_version = supported_version_string
+      supported_version = supported_version_string;
     }
   }
-  return supported_version
-}
+  return supported_version;
+};
 
 module.exports.getMembers = () => {
-  return members
-}
+  return members;
+};
 
 // gets the INSTALLATION COMMANDS when you pass in 'os'
 module.exports.getInstallCommands = (os) => {
-  let installObject
+  let installObject;
   switch(os) {
     case 'windows':
-      installObject = fetchInstallObject('powershell')
+      installObject = fetchInstallObject('powershell');
       break;
     case 'aix':
-      installObject = fetchInstallObject('gunzip')
+      installObject = fetchInstallObject('gunzip');
       break;
     case 'solaris':
-      installObject = fetchInstallObject('gunzip')
+      installObject = fetchInstallObject('gunzip');
       break;
     default:
       // defaults to tar installation
-      installObject = fetchInstallObject('tar')
+      installObject = fetchInstallObject('tar');
   }
-  return installObject
-}
+  return installObject;
+};
 
 function fetchInstallObject(command) {
   for (let installCommand of installCommands){
     if (command == installCommand.name) {
-      return installCommand
+      return installCommand;
     }
   }
 }
@@ -118,44 +117,43 @@ module.exports.detectOS = () => {
     /*global platform*/
     // Workaround for Firefox on macOS which is 32 bit only
     if (platform.os.family == 'OS X') {
-      platform.os.architecture = 64
+      platform.os.architecture = 64;
     }
-    return aPlatform.osDetectionString.toUpperCase().includes(platform.os.family.toUpperCase())
-      && aPlatform.attributes.architecture.endsWith(platform.os.architecture); // 32 or 64 int
+    return aPlatform.osDetectionString.toUpperCase().includes(platform.os.family.toUpperCase()) && aPlatform.attributes.architecture.endsWith(platform.os.architecture); // 32 or 64 int
   }) || null;
-}
+};
 
 module.exports.detectLTS = (version) => {
   for (let variant of variants) {
     if (variant.searchableName == version) {
       if (variant.lts == true) {
-        return 'LTS'
+        return 'LTS';
       } else if (variant.lts == false ) {
-        return null
+        return null;
       } else {
-        return variant.lts
+        return variant.lts;
       }
     }
   }
-}
+};
 
 module.exports.detectEA = (version) => {
   if ((version.pre) && (version.pre == 'ea')) {
-    return true
+    return true;
   } else { 
-    return false
+    return false;
   }
-}
+};
 
 function toJson(response) {
   while (typeof response === 'string') {
     try {
-      response = JSON.parse(response)
+      response = JSON.parse(response);
     } catch (e) {
-      return null
+      return null;
     }
   }
-  return response
+  return response;
 }
 
 function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse) {
@@ -170,11 +168,11 @@ function queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse
   }
 
   if (vendor !== undefined) {
-    url += `vendor=${vendor}&`
+    url += `vendor=${vendor}&`;
   }
 
   if (vendor === 'openjdk') {
-    url += 'page_size=1'
+    url += 'page_size=1';
   }
 
   loadUrl(url, (response) => {
@@ -191,23 +189,23 @@ module.exports.loadAssetInfo = (variant, openjdkImp, releaseType, pageSize, date
     variant = 'openjdk-amber';
   }
 
-  let url = `${api}/assets/feature_releases/${variant.replace(/\D/g,'')}/${releaseType}`
+  let url = `${api}/assets/feature_releases/${variant.replace(/\D/g,'')}/${releaseType}`;
 
   if (pageSize) {
-    url += `?page_size=${pageSize}&`
+    url += `?page_size=${pageSize}&`;
   }
 
   if (datePicker) {
-    url += `before=${datePicker}&`
+    url += `before=${datePicker}&`;
   }
 
   queryAPI(release, url, openjdkImp, vendor, errorHandler, handleResponse);
-}
+};
 
 module.exports.loadLatestAssets = (variant, openjdkImp, release, handleResponse, errorHandler) => {
   const url = `${api}/assets/latest/${variant.replace(/\D/g,'')}/${openjdkImp}`;
   queryAPI(release, url, openjdkImp, 'adoptium', errorHandler, handleResponse);
-}
+};
 
 function loadUrl(url, callback) {
   const xobj = new XMLHttpRequest();
@@ -218,7 +216,7 @@ function loadUrl(url, callback) {
     } else if (
       xobj.status != '200' && // if the status is NOT 'ok', remove the loading dots, and display an error:
       xobj.status != '0') { // for IE a cross domain request has status 0, we're going to execute this block fist, than the above as well.
-      callback(null)
+      callback(null);
     }
   };
   xobj.send(null);
@@ -239,18 +237,18 @@ module.exports.buildMenuTwisties = () => {
 
     thisLine.onclick = function () {
       this.parentNode.classList.toggle('open');
-    }
+    };
   }
-}
+};
 
 // builds up a query string (e.g. "variant=openjdk8&jvmVariant=hotspot")
 const makeQueryString = module.exports.makeQueryString = (params) => {
   return Object.keys(params).map((key) => key + '=' + params[key]).join('&');
-}
+};
 
  module.exports.setUrlQuery = (params) => {
   window.location.search = makeQueryString(params);
-}
+};
 
 function getQueryByName(name) {
   const url = window.location.href;
@@ -281,7 +279,7 @@ module.exports.persistUrlQuery = () => {
       }
     }
   });
-}
+};
 
 module.exports.setRadioSelectors = () => {
   const jdkSelector = document.getElementById('jdk-selector');
@@ -324,7 +322,7 @@ module.exports.setRadioSelectors = () => {
       const jdkName =  variant.searchableName;
       const jvmName = jvmVariantOption.toLowerCase();
       if (jvmVariantOption == 'HotSpot') {
-        jvmVariantOption = 'Eclipse Temurin'
+        jvmVariantOption = 'Eclipse Temurin';
       }
       createRadioButtons(jdkName, 'jdk', variant, jdkSelector);
       if (jvmSelector) {
@@ -367,29 +365,29 @@ module.exports.setRadioSelectors = () => {
       break;
     }
   }
-}
+};
 
 global.renderChecksum = function(checksum) {
-  var modal = document.getElementById('myModal')
-  document.getElementById('modal-body').innerHTML = checksum
-  modal.style.display = 'inline'
-}
+  var modal = document.getElementById('myModal');
+  document.getElementById('modal-body').innerHTML = checksum;
+  modal.style.display = 'inline';
+};
 
 global.hideChecksum = function() {
-  var modal = document.getElementById('myModal')
-  modal.style.display = 'none'
-}
+  var modal = document.getElementById('myModal');
+  modal.style.display = 'none';
+};
 
 global.showHideReleaseNotes = function(notes_id) {
-  var notes_div = document.getElementById(notes_id)
+  var notes_div = document.getElementById(notes_id);
   if (notes_div.classList.contains('softHide')) {
     notes_div.classList.remove('softHide');
   } else {
     notes_div.classList.add('softHide');
   }
-}
+};
 
 global.copyStringToClipboard = function() {
-  document.getElementById('modal-body').select()
+  document.getElementById('modal-body').select();
   document.execCommand('copy');
-}
+};

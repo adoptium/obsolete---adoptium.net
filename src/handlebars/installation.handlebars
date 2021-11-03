@@ -132,13 +132,10 @@
                 <br>
                 <ul>
                   <li>Updating the <strong>JAVA_HOME</strong> environment variable</li>
-                  {{!-- <li>Installing IcedTea-Web (Temurin 8 only)</li>
-                  <li>Associate <tt>.jnlp</tt> files with the IcedTea-Web application (Temurin 8 only)</li> --}}
                 </ul>
         <p>4. When you have chosen the features that you want to install, click <strong>Next</strong>.</p>
         <p>5. Click <strong>Install</strong> to begin the installation.</p>
         <p>6. When the installation is finished, click <strong>Finish</strong> to close the program.</p>
-
 
      <h4 id="windows-msi-cmdline">Command-line installation</h4>
 
@@ -174,16 +171,6 @@
             <td>Update the <strong>JAVA_HOME</strong> environment variable</td>
           </tr>
 
-          {{!--<tr>
-            <td><tt>FeatureIcedTeaWeb</tt></td>
-            <td>Install <a href="https://www.github.com/adoptopenjdk/icedtea-web" target="_blank">IcedTea-Web</a></td>
-          </tr>
-
-          <tr>
-            <td><tt>FeatureJNLPFileRunWith</tt></td>
-            <td>Associate <tt>.jnlp</tt> files with IcedTea-web</td>
-          </tr> --}}
-
           <tr>
             <td><tt>FeatureOracleJavaSoft</tt></td>
             <td>Updates registry keys HKLM\SOFTWARE\JavaSoft\</td>
@@ -205,16 +192,6 @@
             <td>INSTALLLEVEL=1</td>
             <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith</td>
           </tr>
-          {{!--
-          <tr>
-            <td>INSTALLLEVEL=2</td>
-            <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome,FeatureIcedTeaWeb</td>
-          </tr>
-
-          <tr>
-            <td>INSTALLLEVEL=3</td>
-            <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome,FeatureIcedTeaWeb,FeatureJNLPFileRunWith</td>
-          </tr> --}}
         </table>
 
         <p>3. Run the command on the target workstation.</p>
@@ -372,7 +349,7 @@
           </li>
         </ol>
 
-      <h4 id="linux-pkg-deb-derivates">Deb installation on Raspberry Pi OS, Linux Mint and other Debian-based distributions</h4>
+      <h4 id="linux-pkg-deb-derivatives">Deb installation on Raspberry Pi OS, Linux Mint and other Debian-based distributions</h4>
 
         <p>
           Raspberry Pi OS (formerly known as Raspbian), Linux Mint and other Debian- and Ubuntu-based distributions are usually based
