@@ -7,6 +7,7 @@ rules:
   no-console: 0
   no-inner-declarations: 0
   quotes: [2, single]
+  semi: [2, always]
 globals:
   Handlebars: true
   moment: true
