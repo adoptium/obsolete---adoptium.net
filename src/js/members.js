@@ -5,17 +5,17 @@ let enterpriseMembers = [];
 let participantMembers = [];
 
 module.exports.load = () => {
-  let members = getMembers()
+  let members = getMembers();
   for (let member of members) {
     switch(member.tier) {
       case 'strategic':
-        strategicMembers.push(member)
+        strategicMembers.push(member);
       break;
       case 'enterprise':
-        enterpriseMembers.push(member)
+        enterpriseMembers.push(member);
       break;
       case 'participant':
-        participantMembers.push(member)
+        participantMembers.push(member);
       break;
     }
   }
@@ -27,7 +27,7 @@ module.exports.load = () => {
 
   const templateSelector = Handlebars.compile(document.getElementById('template-selector').innerHTML);
   document.getElementById('members').innerHTML = templateSelector({strategicMembers, enterpriseMembers, participantMembers});
-}
+};
 
 // Randomly shuffle members
 function shuffle(array) {
