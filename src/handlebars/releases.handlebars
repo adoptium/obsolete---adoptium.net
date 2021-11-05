@@ -44,6 +44,9 @@
 
       <div id="latest-selector">
         <script id="template-selector" type="text/x-handlebars-template">
+         \{{#if source_url}}
+            <span><a href="\{{source_url}}"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Source Code</a><span/>
+         \{{/if}}
           {{! Create each platform's selector tile }}
           \{{#each releases}}
               <table class="main-download__variant__table releases-table">

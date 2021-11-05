@@ -45,6 +45,9 @@ function buildArchiveHTML(aReleases) {
 
       // Skip this asset if it's not a binary type we're interested in displaying
       const binary_type = aReleaseAsset.image_type.toUpperCase();
+      if (binary_type == 'SOURCES') {
+        release.source_url = aReleaseAsset.package.link;
+      }
       if (!['INSTALLER', 'JDK', 'JRE'].includes(binary_type)) {
         return;
       }
