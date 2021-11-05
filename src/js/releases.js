@@ -59,7 +59,7 @@ function buildLatestHTML(releasesJson) {
 
   // Array of releases that have binaries we want to display
   let releases = [];
-  let source_url;
+  let source;
 
   releasesJson.forEach((releaseAsset) => {
     const platform = findPlatform(releaseAsset.binary);
@@ -72,7 +72,7 @@ function buildLatestHTML(releasesJson) {
     // Skip this asset if it's not a binary type we're interested in displaying
     const binary_type = releaseAsset.binary.image_type.toUpperCase();
     if (binary_type == 'SOURCES') {
-      source_url = releaseAsset.binary.package.link;
+      source = releaseAsset;
     }
     if (!['INSTALLER', 'JDK', 'JRE'].includes(binary_type)) {
       return;
@@ -122,7 +122,7 @@ function buildLatestHTML(releasesJson) {
   });
 
   const templateSelector = Handlebars.compile(document.getElementById('template-selector').innerHTML);
-  document.getElementById('latest-selector').innerHTML = templateSelector({releases, source_url});
+  document.getElementById('latest-selector').innerHTML = templateSelector({releases, source});
 
   global.populateFilters('all');
 
