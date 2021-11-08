@@ -24,22 +24,6 @@ $headersize: 1.4rem;
   color: $mainblue;
 }
 
-.front-tile {
-  background: rgba(249,18,98,1);
-  background:
-    linear-gradient(115deg, (rgba(249,18,98,1) 0%, rgba(31,2,46,1)) 55%, transparent 55.1%),
-    linear-gradient(to top, #14003ca7, #14003ca7), url("../assets/people_working.jpg") right;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-// .pink-bg {
-//   // background: rgb(31,2,46);
-//   // background: linear-gradient(to top, rgba(249,18,98,1) 0%, rgba(31,2,46,1));
-//   background-color: #013A6B;
-//   background-image: -webkit-linear-gradient(160deg, #013A6B 50%, #004E95 50%);
-// }
-
 html, body {
   height: 100%;
   margin: 0;
@@ -234,7 +218,7 @@ nav {
 }
 
 #logo img{
-  height: 3.5em;
+  height: 5em;
   padding-top: 1.5em;
 }
 
@@ -268,7 +252,7 @@ nav {
   background-color: $palegrey;
   z-index: 1000;
   width: 90%;
-  max-width: 16rem;
+  max-width: 17rem;
   padding: 0 2rem 2rem 2rem;
   top: 0;
   left: 0;

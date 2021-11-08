@@ -12,6 +12,16 @@ main .intro {
   text-align: left;
 }
 
+.front-tile {
+  background: rgba(249,18,98,1);
+  background:
+    linear-gradient(115deg, (rgba(249,18,98,1) 0%, rgba(31,2,46,1)) 55%, transparent 55.1%),
+    linear-gradient(to top, #14003ca7, #14003ca7), url("../assets/people_working.jpg") right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
 main .intro a {
   text-decoration: none;
   color: $brighterblue;
