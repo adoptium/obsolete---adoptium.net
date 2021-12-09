@@ -23,5 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return require('./members').load();
     case 'sponsors':
       return require('./sponsors').load();
+    case 'download':
+      return require('./download').load();
   }
 });

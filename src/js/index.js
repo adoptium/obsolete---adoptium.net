@@ -93,9 +93,9 @@ function buildHomepageHTML(releasesJson, jckJSON, OS) {
   // if there IS a matching binary for the user's OS...
   if (matchingFile) {
     if (matchingFile.binary.installer) {
-      dlLatest.href = matchingFile.binary.installer.link; // set the main download button's link to be the installer's download url
+      dlLatest.href = `./download.html?link=${matchingFile.binary.installer.link}`; // set the main download button's link to be the installer's download url
     } else {
-      dlLatest.href = matchingFile.binary.package.link; // set the main download button's link to be the binary's download url
+      dlLatest.href = `./download.html?link=${matchingFile.binary.package.link}`; // set the main download button's link to be the binary's download url
       dlVersionText.innerHTML += ` - ${Math.floor(matchingFile.binary.package.size / 1000 / 1000)} MB`;
     }
     // set the download button's version number to the latest release

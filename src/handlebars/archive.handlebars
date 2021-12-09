@@ -78,13 +78,13 @@
                           \{{/if}}
                           \{{#if installer_link}}
                           <td class='download-td'>
-                            <a class='blue-button no-underline' href='\{{installer_link}}'><var binary-info>\{{type}}</var></a>
+                            <a class='blue-button no-underline' href='./download.html?link=\{{installer_link}}'><var binary-info>\{{type}}</var></a>
                           </td>
                           \{{else}}
                           <td><div class='empty-download'>&nbsp;Not available</div></td>
                           \{{/if}}
                           <td class='download-td'>
-                            <a class='grey-button no-underline' href='\{{link}}'><var binary-info>\{{type}} (\{{size}} MB)</var></a>
+                            <a class='grey-button no-underline' href='./download.html?link=\{{link}}'><var binary-info>\{{type}} (\{{size}} MB)</var></a>
                           </td>
                           <td><a href='javascript:renderChecksum("\{{checksum}}");' class='dark-link'>Checksum</a></td>
                         </tr>

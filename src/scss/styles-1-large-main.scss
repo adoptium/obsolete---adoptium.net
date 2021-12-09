@@ -729,3 +729,23 @@ footer#solstice-footer a {
    color: black;
 }
 
+.home-buttons a {
+  margin: 0 !important;
+  width: 12em !important;
+}
+
+.home-button-left {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 2rem !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 2rem !important;
+  background-color: #ED115F !important;
+  color: white !important;
+}
+
+.home-button-right {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 2rem !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 2rem !important;
+} 

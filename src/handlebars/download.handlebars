@@ -1,0 +1,28 @@
+{{> header title='Thank You | ' }}
+
+<main class="grey-bg">
+   <h1 class="margin-bottom large-title">Thank you for your download!</h1>
+   <div id="download" class="support">
+      <script id="template-selector" type="text/x-handlebars-template">
+         \{{#if link}}
+         <meta http-equiv="refresh" content="0; url=\{{link}}">
+         <h3 style="color: #7c7a8f">If the download doesn't start in a few seconds, please <a href=\{{link}}>click here</a> to start the download.</h3>
+         \{{else}}
+         <h3>Ooops - something doesn't seem quite right here. Please try again.</h3>
+         \{{/if}}
+         <p>Eclipse Temurin binaries are 100% free and open source and used by millions of developers every day. Here are three easy ways you can contribute toward the future development of Eclipse projects and technologies.</p>
+         <h2>Donate to the Eclipse Adoptium Working Group</h2>
+         <p>You can make a one-time of regular targetted donation to the Adoptium Working Group by filling in the <a href="https://www.eclipse.org/org/workinggroups/sponsorship/working-group-sponsorship-agreement.pdf">Working Group Sponsorship Agreement.</a></p>
+         <h2>Get involved</h2>
+         <p>Whether you choose to report bugs, request features, or become a committer, you can help improve the technology for yourself and the rest of the community.</p>
+         <h2>Join the Working Group</h2>
+         <div class="home-buttons">
+            <a class="dl-button a-button home-button-left" href="./join.html"><span>Join the Working group</span></a>
+            <a class="dl-button a-button home-button-right" href="./members.html"><span>View our Members</span></a>
+         </div>
+      </script>
+   </div>
+
+</main>
+
+{{> footer }}
