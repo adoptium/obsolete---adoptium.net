@@ -7,17 +7,20 @@
   <div class="align-left support">
 
     <p>We're currently working out our installation page. Please check back later!</p>
+
     <div class="margin-bottom">
       <p>Temurin binaries are available for <a href="./releases.html">download</a> in the following types of installation package:</p>
       <ul>
         <li><a href="#archives">Archive files</a></li>
         <li><a href="#installers">Installers</a></li>
         <li><a href="#packages">Package managers</a></li>
+        <li><a href="https://hub.docker.com/_/eclipse-temurin" target="_blank">Container images</a> (external docs at DockerHub)</li>
       </ul>
       <p>The binaries are supported on the architectures and operating systems listed in <a href="./supported_platforms.html">Supported Platforms</a>. If you're migrating
       to Temurin, you can learn about the differences between Oracle JDK and Temurin in our <a href="./migration.html" target="_blank">Migration Guide</a> and any
-      steps that you might need to take. {{!--For example, how to use IcedTea-Web as an alternative to Web Start. --}}
+      steps that you might need to take.
       </p>
+    </div>
 
     <div class="margin-bottom">
       <hr>
@@ -43,6 +46,7 @@
         <span class="copy-code-button">Copy</span>
       </pre>
     {{/inline}}
+
     <div id="installation-container" class="info-page-container hide">
       <div id="installation-template">
         <script id="template" type="text/x-handlebars-template">
@@ -87,6 +91,7 @@
         </script>
       </div>
     </div>
+    
     <div class="margin-bottom">
       <hr>
     </div>
@@ -100,7 +105,7 @@
         <ul>
           <li><a href="#windows-msi">Windows MSI installer packages</a></li>
           <li><a href="#macos-pkg">macOS PKG installer packages</a></li>
-{{!--          <li><a href="#linux-pkg">Linux RPM and DEB installer packages</a></li> --}}
+          <li><a href="https://github.com/adoptium/website-v2/blob/main/src/asciidoc-pages/installation/linux.adoc" target="_blank">Linux RPM and DEB installer packages</a> (opens external docs)</li>
         </ul>
 
     </div>
@@ -109,124 +114,124 @@
 
       <h3 id="windows-msi">Windows MSI installer packages</h3>
 
-        <p>Temurin Windows installer packages are available as standard <tt>.msi</tt> files, which can be run with an interactive user interface or run silently
-        from the command line. The installer is designed for use on a per-machine basis, not per-user basis, so you can have only one installation of the MSI
-        on a machine for all users.</p>
+      <p>Temurin Windows installer packages are available as standard <tt>.msi</tt> files, which can be run with an interactive user interface or run silently
+      from the command line. The installer is designed for use on a per-machine basis, not per-user basis, so you can have only one installation of the MSI
+      on a machine for all users.</p>
 
-        <p>Note: Windows installer packages are supported only on Windows x64 systems.</p>
+      <p>Note: Windows installer packages are supported only on Windows x64 systems.</p>
 
-     <h4 id="windows-msi-gui">GUI installation</h4>
+      <h4 id="windows-msi-gui">GUI installation</h4>
 
-        <p>Instructions for running an interactive installation using the Windows MSI installer.</p>
+      <p>Instructions for running an interactive installation using the Windows MSI installer.</p>
 
-        <p>1. <a href="./releases.html">Download</a> the <tt>.msi</tt> file. Open it to launch the installation program.</p>
-        <p>2. Read and accept the license if you are happy with the terms.</p>
-        <p>3. On the <strong>Custom Setup</strong> screen you can choose the features that you want to install and optionally change the default installation
-          directory. By default, Temurin installs to <tt>c:\Program Files\Temurin\&lt;package&gt;</tt> with the following features, which you can deselect, if necessary:
-                <br>
-                <ul>
-                  <li>Add the installation to the <strong>PATH</strong> environment variable</li>
-                  <li>Associate <tt>.jar</tt> files with Java applications</li>
-                </ul>
-                Additional features can be selected by clicking on the directory tree where you see a check mark (x). These features include:
-                <br>
-                <ul>
-                  <li>Updating the <strong>JAVA_HOME</strong> environment variable</li>
-                </ul>
-        <p>4. When you have chosen the features that you want to install, click <strong>Next</strong>.</p>
-        <p>5. Click <strong>Install</strong> to begin the installation.</p>
-        <p>6. When the installation is finished, click <strong>Finish</strong> to close the program.</p>
-
-     <h4 id="windows-msi-cmdline">Command-line installation</h4>
-
-        <p>A silent installation allows you to install the Windows package with pre-selected features without user interaction, which can be useful for widescale
-          deployment. Follow these steps:
-
-        <p>1. <a href="./releases.html">Download</a> the <tt>.msi</tt> file.</p>
-        <p>2. Choose the features that you want to install, which are shown in the following table:</p>
-        <table>
-
-          <tr>
-            <th>Feature</th>
-            <th>Description</th>
-          </tr>
-
-          <tr>
-            <td><tt>FeatureMain</tt></td>
-            <td>Core Temurin installation (DEFAULT)</td>
-          </tr>
-
-          <tr>
-            <td><tt>FeatureEnvironment</tt></td>
-            <td>Update the <strong>PATH</strong> environment variable (DEFAULT)</td>
-          </tr>
-
-          <tr>
-            <td><tt>FeatureJarFileRunWith</tt></td>
-            <td>Associate <tt>.jar</tt> files with Java applications (DEFAULT)</td>
-          </tr>
-
-          <tr>
-            <td><tt>FeatureJavaHome</tt></td>
-            <td>Update the <strong>JAVA_HOME</strong> environment variable</td>
-          </tr>
-
-          <tr>
-            <td><tt>FeatureOracleJavaSoft</tt></td>
-            <td>Updates registry keys HKLM\SOFTWARE\JavaSoft\</td>
-          </tr>
-
-        </table>
-
-        <p>Note: <tt>FeatureOracleJavaSoft</tt> can be used to prevent Oracle Java launching from PATH when Temurin is uninstalled. Reinstall Oracle Java if you need
-        to restore the Oracle registry keys.</p>
-
-        <p>Optional parameters can be used that group some of the features together:</p>
-        <table>
-          <tr>
-            <th>Parameter</th>
-            <th>Features</th>
-          </tr>
-
-          <tr>
-            <td>INSTALLLEVEL=1</td>
-            <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith</td>
-          </tr>
-        </table>
-
-        <p>3. Run the command on the target workstation.</p>
-
-        <p>The following example silently installs Temurin, updates the PATH, associates <tt>.jar</tt> files with Java applications and defines JAVA_HOME:</p>
-        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome INSTALLDIR="c:\Program Files\Eclipse Foundation\" /quiet</code></pre>
-        <p>Note: You must use <tt>INSTALLDIR</tt> with <tt>FeatureMain</tt>.
-        </p>
-
-        <p>The following example silently installs all the features for <tt>INSTALLLEVEL=1</tt>:</p>
-        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi INSTALLLEVEL=1 /quiet</code></pre>
-
-        <p>If you want to launch an interactive installation in another language you can use the Windows installer <tt>TRANSFORMS</tt> option to set
-        your language choice. For example, to set the UI language to German, use code <tt>1031</tt>, which must be preceded by a <tt>:</tt>.</p>
-        <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi INSTALLLEVEL=1 TRANSFORMS=:1031</code></pre>
-        <p>For a list of supported codes, see the <a href="https://github.com/adoptium/installer/blob/master/wix/Lang/LanguageList.config" target="_blank">Language list</a>.
-        </p>
-
-     <h4 id="windows-msi-upgrade">Reinstalling or upgrading</h4>
-
-       <p>To reinstall Temurin in silent mode with default features, run the following command:</p>
-       <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi REINSTALL=ALL /quiet</code></pre>
-
-       <p>If you want to upgrade Temurin in silent mode, run the following command:</p>
-       <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi REINSTALL=ALL REINSTALLMODE=amus /quiet</code></pre>
-
-       <p><tt>REINSTALLMODE</tt> options: (from <a href="https://www.advancedinstaller.com/user-guide/control-events.html" target="_blank">Control Events</a>)</p>
+      <p>1. <a href="./releases.html">Download</a> the <tt>.msi</tt> file. Open it to launch the installation program.</p>
+      <p>2. Read and accept the license if you are happy with the terms.</p>
+      <p>3. On the <strong>Custom Setup</strong> screen you can choose the features that you want to install and optionally change the default installation
+        directory. By default, Temurin installs to <tt>c:\Program Files\Temurin\&lt;package&gt;</tt> with the following features, which you can deselect, if necessary:
+        <br>
         <ul>
-           <li><tt>a</tt>: Force all files to be installed regardless of checksum or version</li>
-           <li><tt>m</tt>: Rewrite all required registry entries from the Registry Table that go to the HKEY_LOCAL_MACHINE</li>
-           <li><tt>o</tt>: Reinstall if the file is missing or is an older version</li>
-           <li><tt>u</tt>: Rewrite all required registry entries from the Registry Table that go to the HKEY_CURRENT_USER or HKEY_USERS</li>
-           <li><tt>s</tt>: Reinstall all shortcuts and re-cache all icons overwriting any existing shortcuts or icons</li>
+          <li>Add the installation to the <strong>PATH</strong> environment variable</li>
+          <li>Associate <tt>.jar</tt> files with Java applications</li>
         </ul>
-       <p>Note: <tt>REINSTALL=ALL</tt> automatically sets <tt>REINSTALLMODE=omus</tt></p>
+        Additional features can be selected by clicking on the directory tree where you see a check mark (x). These features include:
+        <br>
+        <ul>
+          <li>Updating the <strong>JAVA_HOME</strong> environment variable</li>
+        </ul>
+      <p>4. When you have chosen the features that you want to install, click <strong>Next</strong>.</p>
+      <p>5. Click <strong>Install</strong> to begin the installation.</p>
+      <p>6. When the installation is finished, click <strong>Finish</strong> to close the program.</p>
+
+      <h4 id="windows-msi-cmdline">Command-line installation</h4>
+
+      <p>A silent installation allows you to install the Windows package with pre-selected features without user interaction, which can be useful for widescale
+        deployment. Follow these steps:
+
+      <p>1. <a href="./releases.html">Download</a> the <tt>.msi</tt> file.</p>
+      <p>2. Choose the features that you want to install, which are shown in the following table:</p>
+      <table>
+
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+
+        <tr>
+          <td><tt>FeatureMain</tt></td>
+          <td>Core Temurin installation (DEFAULT)</td>
+        </tr>
+
+        <tr>
+          <td><tt>FeatureEnvironment</tt></td>
+          <td>Update the <strong>PATH</strong> environment variable (DEFAULT)</td>
+        </tr>
+
+        <tr>
+          <td><tt>FeatureJarFileRunWith</tt></td>
+          <td>Associate <tt>.jar</tt> files with Java applications (DEFAULT)</td>
+        </tr>
+
+        <tr>
+          <td><tt>FeatureJavaHome</tt></td>
+          <td>Update the <strong>JAVA_HOME</strong> environment variable</td>
+        </tr>
+
+        <tr>
+          <td><tt>FeatureOracleJavaSoft</tt></td>
+          <td>Updates registry keys HKLM\SOFTWARE\JavaSoft\</td>
+        </tr>
+
+      </table>
+
+      <p>Note: <tt>FeatureOracleJavaSoft</tt> can be used to prevent Oracle Java launching from PATH when Temurin is uninstalled. Reinstall Oracle Java if you need
+      to restore the Oracle registry keys.</p>
+
+      <p>Optional parameters can be used that group some of the features together:</p>
+      <table>
+        <tr>
+          <th>Parameter</th>
+          <th>Features</th>
+        </tr>
+
+        <tr>
+          <td>INSTALLLEVEL=1</td>
+          <td>FeatureMain,FeatureEnvironment,FeatureJarFileRunWith</td>
+        </tr>
+      </table>
+
+      <p>3. Run the command on the target workstation.</p>
+
+      <p>The following example silently installs Temurin, updates the PATH, associates <tt>.jar</tt> files with Java applications and defines JAVA_HOME:</p>
+      <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome INSTALLDIR="c:\Program Files\Eclipse Foundation\" /quiet</code></pre>
+      <p>Note: You must use <tt>INSTALLDIR</tt> with <tt>FeatureMain</tt>.
+      </p>
+
+      <p>The following example silently installs all the features for <tt>INSTALLLEVEL=1</tt>:</p>
+      <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi INSTALLLEVEL=1 /quiet</code></pre>
+
+      <p>If you want to launch an interactive installation in another language you can use the Windows installer <tt>TRANSFORMS</tt> option to set
+      your language choice. For example, to set the UI language to German, use code <tt>1031</tt>, which must be preceded by a <tt>:</tt>.</p>
+      <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi INSTALLLEVEL=1 TRANSFORMS=:1031</code></pre>
+      <p>For a list of supported codes, see the <a href="https://github.com/adoptium/installer/blob/master/wix/Lang/LanguageList.config" target="_blank">Language list</a>.
+      </p>
+
+      <h4 id="windows-msi-upgrade">Reinstalling or upgrading</h4>
+
+      <p>To reinstall Temurin in silent mode with default features, run the following command:</p>
+      <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi REINSTALL=ALL /quiet</code></pre>
+
+      <p>If you want to upgrade Temurin in silent mode, run the following command:</p>
+      <pre><code class="highlighted">msiexec /i &lt;package&gt;.msi REINSTALL=ALL REINSTALLMODE=amus /quiet</code></pre>
+
+      <p><tt>REINSTALLMODE</tt> options: (from <a href="https://www.advancedinstaller.com/user-guide/control-events.html" target="_blank">Control Events</a>)</p>
+      <ul>
+          <li><tt>a</tt>: Force all files to be installed regardless of checksum or version</li>
+          <li><tt>m</tt>: Rewrite all required registry entries from the Registry Table that go to the HKEY_LOCAL_MACHINE</li>
+          <li><tt>o</tt>: Reinstall if the file is missing or is an older version</li>
+          <li><tt>u</tt>: Rewrite all required registry entries from the Registry Table that go to the HKEY_CURRENT_USER or HKEY_USERS</li>
+          <li><tt>s</tt>: Reinstall all shortcuts and re-cache all icons overwriting any existing shortcuts or icons</li>
+      </ul>
+      <p>Note: <tt>REINSTALL=ALL</tt> automatically sets <tt>REINSTALLMODE=omus</tt></p>
 
       <p><strong>Upgrade limitation</strong>:</p>
 
@@ -236,12 +241,12 @@
           <li>Upgrading 8.0.2.1 to 8.0.2.2 does not work. Uninstall the previous <tt>.msi</tt> and install the new one.</li>
           <li>Upgrading 8.0.2.1 to 8.1.2.1 works.</li>
           <li>Upgrading 8.0.2.1 to 11.0.2.1 does not work. Temurin does not provide upgrades for major versions. Either keep both installations or uninstall the older one.</li>
-       </ul>
+      </ul>
 
       <h4>Reference reading</h4>
-       <ul>
-         <li><a href="https://www.advancedinstaller.com/user-guide/msiexec.html" target="_blank">Msiexec.exe Command Line</a></li>
-       </ul>
+      <ul>
+        <li><a href="https://www.advancedinstaller.com/user-guide/msiexec.html" target="_blank">Msiexec.exe Command Line</a></li>
+      </ul>
 
     </div>
 
@@ -249,244 +254,75 @@
 
       <h3 id="macos-pkg">macOS PKG installer packages</h3>
 
-        <p>Temurin macOS installer packages are available as standard <tt>.pkg</tt> files, which can be run with an interactive user interface or run silently
-          from the <strong>Terminal</strong> command line.
-        </p>
+      <p>Temurin macOS installer packages are available as standard <tt>.pkg</tt> files, which can be run with an interactive user interface or run silently
+        from the <strong>Terminal</strong> command line.
+      </p>
 
       <h4 id="macos-pkg-gui">GUI installation</h4>
 
-        <p>Instructions for running an interactive installation using the macOS PKG installer.
-        </p>
-        <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.
-        </p>
-        <p>2. Navigate to the folder that contains the file and open it to launch the installation program or drag the icon to your Application folder.
-        </p>
-        <p>3. The <strong>Introduction</strong> screen indicates the target location for the installation, which you can change later in the install process. Click <strong>Continue</strong>.
-        </p>
-        <p>4. Read the license, click <strong>Continue</strong> and accept the license if you are happy with the terms.
-        </p>
-        <p>5. Change the target location for the installation. Click <strong>Install</strong> to complete the installation.
-        </p>
-
+      <p>Instructions for running an interactive installation using the macOS PKG installer.</p>
+      <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.</p>
+      <p>2. Navigate to the folder that contains the file and open it to launch the installation program or drag the icon to your Application folder.</p>
+      <p>3. The <strong>Introduction</strong> screen indicates the target location for the installation, which you can change later in the install process. Click <strong>Continue</strong>.</p>
+      <p>4. Read the license, click <strong>Continue</strong> and accept the license if you are happy with the terms.</p>
+      <p>5. Change the target location for the installation. Click <strong>Install</strong> to complete the installation.</p>
 
       <h4 id="macos-pkg-cmdline">Command-line installation</h4>
 
-        <p>A silent installation allows you to install the macOS package without user interaction, which can be useful for widescale
-          deployment. You must have administrator privileges. Follow these steps:
-        </p>
+      <p>
+        A silent installation allows you to install the macOS package without user interaction, which can be useful for widescale
+        deployment. You must have administrator privileges. Follow these steps:
+      </p>
 
-        <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.
-        </p>
-        <p>2. Launch the Terminal app (<tt>terminal.app</tt>).
-        </p>
-        <p>3. Run the following command:</p>
-        <pre><code class="highlighted">installer -pkg &lt;path_to_pkg&gt;/&lt;pkg_name&gt;.pkg -target /</code></pre>
-        <p>4. Enter the Administrator password.
-        </p>
-        <p>5. Temurin installs to <tt>/Library/Java/JavaVirtualMachines/temurin-&lt;version&gt;.&lt;jdk|jre&gt;/</tt>
-        </p>
+      <p>1. <a href="./releases.html">Download</a> the <tt>.pkg</tt> file.</p>
+      <p>2. Launch the Terminal app (<tt>terminal.app</tt>).</p>
+      <p>3. Run the following command:</p>
+      <pre><code class="highlighted">installer -pkg &lt;path_to_pkg&gt;/&lt;pkg_name&gt;.pkg -target /</code></pre>
+      <p>4. Enter the Administrator password.</p>
+      <p>5. Temurin installs to <tt>/Library/Java/JavaVirtualMachines/temurin-&lt;version&gt;.&lt;jdk|jre&gt;/</tt></p>
     </div>
-    {{!--
-    <div class="margin-bottom">
-
-      <h3 id="linux-pkg">Linux RPM and DEB installer packages</h3>
-
-        <p>AdoptOpenJDK RPM and DEB packages are available for installing on your favourite Linux distribution.
-        </p>
-
-      <h4 id="linux-pkg-deb">Deb installation on Debian or Ubuntu</h4>
-
-        <p>
-          You need the codename of your Debian or Ubuntu version. It is usually recorded in
-          <code>/etc/os-release</code> and can be extracted on Debian by running  
-          <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
-          and on Ubuntu by running
-          <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
-        </p>
-
-        <ol>
-          <li>Ensure the necessary packages are present:
-            <pre>
-              <code class="highlighted">
-  sudo apt-get install wget apt-transport-https gnupg
-              </code>
-            </pre>
-          </li>
-          <li>Import the AdoptOpenJDK GPG key:
-            <pre>
-              <code class="highlighted">
-  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-              </code>
-            </pre>
-          </li>
-          <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
-            <pre>
-              <code class="highlighted">
-  echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
-              </code>
-            </pre>
-          </li>
-          <li>Refresh the package indexes:
-            <pre>
-              <code class="highlighted">
-  sudo apt-get update
-              </code>
-            </pre>
-          </li>
-          <li>To see which variants of AdoptOpenJDK are available, run
-            <pre>
-              <code class="highlighted">
-  sudo apt-cache search adoptopenjdk
-              </code>
-            </pre>
-          </li>
-          <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
-            <pre>
-              <code class="highlighted">
-  sudo apt-get install adoptopenjdk-11-hotspot
-              </code>
-            </pre>
-          </li>
-        </ol>
-
-      <h4 id="linux-pkg-deb-derivatives">Deb installation on Raspberry Pi OS, Linux Mint and other Debian-based distributions</h4>
-
-        <p>
-          Raspberry Pi OS (formerly known as Raspbian), Linux Mint and other Debian- and Ubuntu-based distributions are usually based
-          on a specific Debian or Ubuntu release. For example, Linux Mint 20.04 (Ulyanna) is based on Ubuntu 20.04 (Focal Fossa),
-          Raspberry Pi OS 10 is based on Debian GNU/Linux 10 (Buster). Because AdoptOpenJDK only offers repositories for Debian and
-          Ubuntu, you need to find out which Debian or Ubuntu version your distribution is based on. This is usually recorded in
-          <code>/etc/os-release</code> and can usually be extracted on Debian-based distributions by running  
-          <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
-          and on Ubuntu-based distributions by running
-          <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
-        </p>
-
-        <ol>
-          <li>Ensure the necessary packages are present:
-            <pre>
-              <code class="highlighted">
-  sudo apt-get install wget apt-transport-https gnupg
-              </code>
-            </pre>
-          </li>
-          <li>Import the AdoptOpenJDK GPG key:
-            <pre>
-              <code class="highlighted">
-  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-              </code>
-            </pre>
-          </li>
-          <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
-            <pre>
-              <code class="highlighted">
-  echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
-              </code>
-            </pre>
-          </li>
-          <li>Refresh the package indexes:
-            <pre>
-              <code class="highlighted">
-  sudo apt-get update
-              </code>
-            </pre>
-          </li>
-          <li>To see which variants of AdoptOpenJDK are available, run
-            <pre>
-              <code class="highlighted">
-  sudo apt-cache search adoptopenjdk
-              </code>
-            </pre>
-          </li>
-          <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
-            <pre>
-              <code class="highlighted">
-  sudo apt-get install adoptopenjdk-11-hotspot
-              </code>
-            </pre>
-          </li>
-        </ol>
-
-      <h4 id="linux-pkg-rpm">RPM installation</h4>
-
-        <p>RPM packages are maintained in artifactory for various Linux distributions. For a full list (with artifactory <tt>baseurl</tt> values), see
-          <a href="https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/" target="_blank">Supported RPM versions</a>.
-        </p>
-
-        <p><strong>RPM installation on Centos, RHEL, or Fedora</strong></p>
-        <p>The following steps describe how to install an RPM package for Centos. To install an RPM for RHEL or Fedora update the <tt>baseurl</tt> value accordingly.
-        </p>
-        <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
-        <pre><code class="highlighted">
-  cat &lt;&lt;&apos;EOF&apos; &gt; /etc/yum.repos.d/adoptopenjdk.repo
-  [AdoptOpenJDK]
-  name=AdoptOpenJDK
-  baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
-  enabled=1
-  gpgcheck=1
-  gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
-  EOF
-        </code></pre>
-
-        <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
-        <pre><code class="highlighted">yum install adoptopenjdk-8</code></pre>
-
-        <p><strong>RPM installation on openSUSE or SLES</strong></p>
-        <p>The following steps describe how to install an RPM package on openSUSE v15. To install an RPM for SLES, or
-          to install a different version of openSUSE, switch the <tt>baseurl</tt> value.
-        </p>
-
-        <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
-        <pre><code class="highlighted">zypper ar -f http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.0/$(uname -m) adoptopenjdk</code></pre>
-
-        <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
-        <pre><code class="highlighted">zypper install adoptopenjdk-8-hotspot</code></pre>
-
-    </div>
-    </div> --}}
-    </div>
-
+        
     <h2 id="packages">Package Managers</h2>
 
     <div class="margin-bottom">
       <p>Package managers are currently available for Windows. Installation steps
         are covered in the following sections:
       </p>
-        <ul>
-          <li><a href="#windows-winget">Windows winget</a></li>
-        </ul>
-
+      <ul>
+        <li><a href="#windows-winget">Windows winget</a></li>
+      </ul>
     </div>
 
     <div class="margin-bottom">
 
       <h3 id="windows-winget">Windows Winget</h3>
 
-        <p>Temurin Windows installer packages are available on winget, which can be run silently
-        from the command line. The installer is designed for use on a per-machine basis, not per-user basis, so you can have only one installation of the MSI
-        on a machine for all users.</p>
+      <p>Temurin Windows installer packages are available on winget, which can be run silently
+      from the command line. The installer is designed for use on a per-machine basis, not per-user basis, so you can have only one installation of the MSI
+      on a machine for all users.</p>
 
-        <p>Note: Windows installer packages are supported only on Windows x64 systems.</p>
+      <p>Note: Windows installer packages are supported only on Windows x64 systems.</p>
 
-        <h4 id="windows-winget-install">Winget installation</h4>
+      <h4 id="windows-winget-install">Winget installation</h4>
 
-        <p>Run the following command to install the package.</p>
+      <p>Run the following command to install the package.</p>
 
-        <pre><code class="highlighted">winget install EclipseAdoptium.Temurin.17</code></pre>
+      <pre><code class="highlighted">winget install EclipseAdoptium.Temurin.17</code></pre>
 
-        <p>Note: You can install a different major version by change the version number at the end of the package name.</p>
+      <p>Note: You can install a different major version by change the version number at the end of the package name.</p>
 
-        <h4 id="windows-winget-upgrade">Winget upgrade</h4>
+      <h4 id="windows-winget-upgrade">Winget upgrade</h4>
 
-        <p>Run the following command to upgrade the package to the latest minor version of the currently installed major version.</p>
-        <pre><code class="highlighted">winget upgrade EclipseAdoptium.Temurin.17</code></pre>
+      <p>Run the following command to upgrade the package to the latest minor version of the currently installed major version.</p>
+      <pre><code class="highlighted">winget upgrade EclipseAdoptium.Temurin.17</code></pre>
 
-        <h4 id="windows-winget-uninstall">Winget uninstall</h4>
+      <h4 id="windows-winget-uninstall">Winget uninstall</h4>
 
-        <p>Run the following command to uninstall the package.</p>
-        <pre><code class="highlighted">winget uninstall EclipseAdoptium.Temurin.17</code></pre>
+      <p>Run the following command to uninstall the package.</p>
+      <pre><code class="highlighted">winget uninstall EclipseAdoptium.Temurin.17</code></pre>
     </div>
-
+  </div>
+  
   <div class="align-left support">
     <div style="margin-top: 3rem;">
       <a href="./migration.html" class="no-underline home-links">

@@ -139,7 +139,7 @@ The website's JavaScript then uses a GET request to access these `.json` files, 
 
 ### SCSS
 
-* Only use the units `rem` and `%`. __Do not__ use `em` or `px`.
+* Only use the units `rem` and `%`. *Do not* use `em` or `px`.
 * Try to use only the colours that exist as variables at the top of each stylesheet, such as `$mainblue`.
 * Use `styles-1-large-main.scss` for global CSS changes
 * Use individual scss files for styles that are specific to a page, such as `styles-nightly.scss`.
@@ -220,7 +220,7 @@ In this project, Gulp can be run in two different ways:
 
 * At the top of `gulpfile.js`, all of the add-on `npm` Gulp packages, such as `gulp-rename` and `gulp-concat`, are loaded into variables with `require(...);`.
 * Following this, all of the `gulp.task(...);` tasks are defined.
-* If you run, for example, `gulp scripts`, then just the `gulp.task('scripts'...` task would run. However, the first two tasks (`gulp default` and `gulp build`) are different - their sole purpose is to run _other_ tasks. They can be seen as 'parent' tasks, while the others are 'child' tasks.
+* If you run, for example, `gulp scripts`, then just the `gulp.task('scripts'...` task would run. However, the first two tasks (`gulp default` and `gulp build`) are different - their sole purpose is to run *other* tasks. They can be seen as 'parent' tasks, while the others are 'child' tasks.
 * For the purposes of this guide, we will run through what happens when you run `gulp default` (just `gulp` for short, or alternatively `npm start`).
 
 #### What happens, step-by-step, when I run `npm start`?

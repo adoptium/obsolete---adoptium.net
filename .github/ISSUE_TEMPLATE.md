@@ -8,6 +8,6 @@ To find out what version your browser is:
 http://www.bbc.co.uk/accessibility/guides/which_browser.shtml
 
 -->
-* **Browser**:
+# Browser
 
 <!-- Enter your issue details below this comment. -->
