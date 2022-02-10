@@ -14,6 +14,7 @@
         <li><a href="#archives">Archive files</a></li>
         <li><a href="#installers">Installers</a></li>
         <li><a href="#packages">Package managers</a></li>
+        <li><a href="https://hub.docker.com/_/eclipse-temurin" target="_blank">Container images</a> (external docs at DockerHub)</li>
       </ul>
       <p>The binaries are supported on the architectures and operating systems listed in <a href="./supported_platforms.html">Supported Platforms</a>. If you're migrating
       to Temurin, you can learn about the differences between Oracle JDK and Temurin in our <a href="./migration.html" target="_blank">Migration Guide</a> and any
@@ -104,7 +105,7 @@
         <ul>
           <li><a href="#windows-msi">Windows MSI installer packages</a></li>
           <li><a href="#macos-pkg">macOS PKG installer packages</a></li>
-          <li><a href="#linux-pkg">Linux RPM and DEB installer packages</a></li>
+          <li><a href="https://github.com/adoptium/website-v2/blob/main/src/asciidoc-pages/installation/linux.adoc" target="_blank">Linux RPM and DEB installer packages</a> (opens external docs)</li>
         </ul>
 
     </div>
@@ -280,163 +281,7 @@
       <p>4. Enter the Administrator password.</p>
       <p>5. Temurin installs to <tt>/Library/Java/JavaVirtualMachines/temurin-&lt;version&gt;.&lt;jdk|jre&gt;/</tt></p>
     </div>
-    
-    <div class="margin-bottom">
-
-      <h3 id="linux-pkg">Linux RPM and DEB installer packages</h3>
-
-      <p>AdoptOpenJDK RPM and DEB packages are available for installing on your favourite Linux distribution.</p>
-
-      <h4 id="linux-pkg-deb">Deb installation on Debian or Ubuntu</h4>
-
-      <p>
-        You need the codename of your Debian or Ubuntu version. It is usually recorded in
-        <code>/etc/os-release</code> and can be extracted on Debian by running  
-        <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
-        and on Ubuntu by running
-        <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
-      </p>
-
-      <ol>
-        <li>Ensure the necessary packages are present:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install wget apt-transport-https gnupg
-            </code>
-          </pre>
-        </li>
-        <li>Import the AdoptOpenJDK GPG key:
-          <pre>
-            <code class="highlighted">
-wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-            </code>
-          </pre>
-        </li>
-        <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
-          <pre>
-            <code class="highlighted">
-echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
-            </code>
-          </pre>
-        </li>
-        <li>Refresh the package indexes:
-          <pre>
-            <code class="highlighted">
-sudo apt-get update
-            </code>
-          </pre>
-        </li>
-        <li>To see which variants of AdoptOpenJDK are available, run
-          <pre>
-            <code class="highlighted">
-sudo apt-cache search adoptopenjdk
-            </code>
-          </pre>
-        </li>
-        <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install adoptopenjdk-11-hotspot
-            </code>
-          </pre>
-        </li>
-      </ol>
-
-      <h4 id="linux-pkg-deb-derivatives">Deb installation on Raspberry Pi OS, Linux Mint and other Debian-based distributions</h4>
-
-      <p>
-        Raspberry Pi OS (formerly known as Raspbian), Linux Mint and other Debian- and Ubuntu-based distributions are usually based
-        on a specific Debian or Ubuntu release. For example, Linux Mint 20.04 (Ulyanna) is based on Ubuntu 20.04 (Focal Fossa),
-        Raspberry Pi OS 10 is based on Debian GNU/Linux 10 (Buster). Because AdoptOpenJDK only offers repositories for Debian and
-        Ubuntu, you need to find out which Debian or Ubuntu version your distribution is based on. This is usually recorded in
-        <code>/etc/os-release</code> and can usually be extracted on Debian-based distributions by running  
-        <code>cat /etc/os-release | grep VERSION_CODENAME | cut -d = -f 2</code>
-        and on Ubuntu-based distributions by running
-        <code>cat /etc/os-release | grep UBUNTU_CODENAME | cut -d = -f 2</code>.
-      </p>
-
-      <ol>
-        <li>Ensure the necessary packages are present:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install wget apt-transport-https gnupg
-            </code>
-          </pre>
-        </li>
-        <li>Import the AdoptOpenJDK GPG key:
-          <pre>
-            <code class="highlighted">
-wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-            </code>
-          </pre>
-        </li>
-        <li>Configure AdoptOpenJDK's apt repository by replacing the values in angle brackets:
-          <pre>
-            <code class="highlighted">
-echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb &lt;codename&gt; main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
-            </code>
-          </pre>
-        </li>
-        <li>Refresh the package indexes:
-          <pre>
-            <code class="highlighted">
-sudo apt-get update
-            </code>
-          </pre>
-        </li>
-        <li>To see which variants of AdoptOpenJDK are available, run
-          <pre>
-            <code class="highlighted">
-sudo apt-cache search adoptopenjdk
-            </code>
-          </pre>
-        </li>
-        <li>To install a variant of AdoptOpenJDK, run <code>apt-get install &lt;packagename&gt;</code>, for example:
-          <pre>
-            <code class="highlighted">
-sudo apt-get install adoptopenjdk-11-hotspot
-            </code>
-          </pre>
-        </li>
-      </ol>
-
-      <h4 id="linux-pkg-rpm">RPM installation</h4>
-
-      <p>RPM packages are maintained in artifactory for various Linux distributions. For a full list (with artifactory <tt>baseurl</tt> values), see
-        <a href="https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/" target="_blank">Supported RPM versions</a>.
-      </p>
-
-      <p><strong>RPM installation on Centos, RHEL, or Fedora</strong></p>
-      <p>The following steps describe how to install an RPM package for Centos. To install an RPM for RHEL or Fedora update the <tt>baseurl</tt> value accordingly.
-      </p>
-      <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
-      <pre><code class="highlighted">
-cat &lt;&lt;&apos;EOF&apos; &gt; /etc/yum.repos.d/adoptopenjdk.repo
-[AdoptOpenJDK]
-name=AdoptOpenJDK
-baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
-enabled=1
-gpgcheck=1
-gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
-EOF
-      </code></pre>
-
-      <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
-      <pre><code class="highlighted">yum install adoptopenjdk-8</code></pre>
-
-      <p><strong>RPM installation on openSUSE or SLES</strong></p>
-      <p>The following steps describe how to install an RPM package on openSUSE v15. To install an RPM for SLES, or
-        to install a different version of openSUSE, switch the <tt>baseurl</tt> value.
-      </p>
-
-      <p>1. Add the appropriate RPM repository to your <tt>/etc/yum.repos.d/adoptopenjdk.repo</tt> file, by running the following command:</p>
-      <pre><code class="highlighted">zypper ar -f http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/opensuse/15.0/$(uname -m) adoptopenjdk</code></pre>
-
-      <p>2. Install your choice of OpenJDK. For example, to install AdoptOpenJDK version 8 with HotSpot, run:</p>
-      <pre><code class="highlighted">zypper install adoptopenjdk-8-hotspot</code></pre>
-
-    </div>
-    
+        
     <h2 id="packages">Package Managers</h2>
 
     <div class="margin-bottom">
