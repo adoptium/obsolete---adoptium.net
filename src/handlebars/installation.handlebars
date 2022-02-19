@@ -285,11 +285,12 @@
     <h2 id="packages">Package Managers</h2>
 
     <div class="margin-bottom">
-      <p>Package managers are currently available for Windows. Installation steps
-        are covered in the following sections:
+      <p>You can install Eclipse Temurin via a package manager, which makes it easy to keep your installation up to date.
+         Installation steps are covered in the following sections:
       </p>
       <ul>
         <li><a href="#windows-winget">Windows winget</a></li>
+        <li><a href="#macports">MacPorts</a></li>
       </ul>
     </div>
 
@@ -321,7 +322,36 @@
       <p>Run the following command to uninstall the package.</p>
       <pre><code class="highlighted">winget uninstall EclipseAdoptium.Temurin.17</code></pre>
     </div>
-  </div>
+
+    <div class="margin-bottom">
+
+      <h3 id="macports">MacPorts</h3>
+
+      <p>The MacPorts project provides ports for Eclipse Temurin on macOS.</p>
+
+      <h4 id="macports-install">MacPorts installation</h4>
+
+      <p>After <a href="https://www.macports.org/install.php">installing MacPorts</a>, run the following command to install the port.</p>
+
+      <pre><code class="highlighted">sudo port install openjdk17-temurin</code></pre>
+
+      <p>Note: see the overview of <a href="https://ports.macports.org/search/?q=temurin&name=on">all Eclipse Temurin ports</a> to for all available Java versions.</p>
+
+      <h4 id="macports-upgrade">MacPorts upgrade</h4>
+
+      <p>Run the following command to upgrade an Eclipse Temurin port to the latest version for the currently installed major version.</p>
+      <pre><code class="highlighted">sudo port upgrade openjdk17-temurin</code></pre>
+
+      <p>It is recommended to upgrade all outdated ports regularly, which will include your Eclipse Temurin installations.</p>
+      <pre><code class="highlighted">sudo port upgrade outdated</code></pre>
+
+      <h4 id="macports-uninstall">MacPorts uninstall</h4>
+
+      <p>Run the following command to uninstall a port.</p>
+      <pre><code class="highlighted">sudo port uninstall openjdk17-temurin</code></pre>
+
+      <p>If you want to completely uninstall the MacPorts package manager and all installed ports, see how to <a href="https://guide.macports.org/chunked/installing.macports.uninstalling.html">uninstall MacPorts</a>.</p>
+    </div>
   
   <div class="align-left support">
     <div style="margin-top: 3rem;">
