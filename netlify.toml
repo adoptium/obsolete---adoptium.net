@@ -8,11 +8,11 @@ NODE_VERSION = "12.18.3"
 [[redirects]]
   from = "/marketplace-policy"
   to = "https://eclipsefdn-adoptium-v2.netlify.app/docs/marketplace-policy/"
-  status = 301
+  status = 200
   force = true
 
 [[redirects]]
   from = "/qvs-policy"
   to = "https://eclipsefdn-adoptium-v2.netlify.app/docs/qvs-policy/"
-  status = 301
+  status = 200
   force = true
